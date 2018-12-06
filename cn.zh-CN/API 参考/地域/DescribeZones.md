@@ -41,73 +41,69 @@ XML格式
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <DescribeZonesResponse>
-    <Zones>
-        <Zone>
-            <AvailableResourceCreation>
-                <ResourceTypes>Instance</ResourceTypes>
-                <ResourceTypes>Disk</ResourceTypes>
-            </AvailableResourceCreation>
-            <LocalName></LocalName>
-            <ZoneId>cn-hangzhou-d</ZoneId>
-            <AvailableDiskCategories>
-                <DiskCategories>cloud</DiskCategories>
-            </AvailableDiskCategories>
-        </Zone>
-        <Zone>
-            <AvailableResourceCreation>
-                <ResourceTypes>Instance</ResourceTypes>
-                <ResourceTypes>Disk</ResourceTypes>
-            </AvailableResourceCreation>
-            <LocalName></LocalName>
-            <ZoneId>cn-hangzhou-b</ZoneId>
-            <AvailableDiskCategories>
-                <DiskCategories>cloud</DiskCategories>
-            </AvailableDiskCategories>
-        </Zone>
-    </Zones>
-    <RequestId>6DB97BCC-92BA-424D-A7C8-3F6486612BAE</RequestId>
-</DescribeZonesResponse>
+<RequestId>6FEA0CF3-D3B9-43E5-A304-D217037876A8</RequestId>
+	<Zones>
+		<Zone>
+			<ZoneId>cn-hangzhou-b</ZoneId>
+			<LocalName>华东 1 可用区 B</LocalName>
+		</Zone>
+		<Zone>
+			<ZoneId>cn-hangzhou-d</ZoneId>
+			<LocalName>华东 1 可用区 D</LocalName>
+		</Zone>
+		<Zone>
+			<ZoneId>cn-hangzhou-e</ZoneId>
+			<LocalName>华东 1 可用区 E</LocalName>
+		</Zone>
+		<Zone>
+			<ZoneId>cn-hangzhou-f</ZoneId>
+			<LocalName>华东 1 可用区 F</LocalName>
+		</Zone>
+		<Zone>
+			<ZoneId>cn-hangzhou-g</ZoneId>
+			<LocalName>华东 1 可用区 G</LocalName>
+		</Zone>
+		<Zone>
+			<ZoneId>cn-hangzhou-h</ZoneId>
+			<LocalName>华东 1 可用区 H</LocalName>
+		</Zone>
+	</Zones>
+<DescribeZonesResponse>
 ```
 
 JSON格式
 
 ```
 {
-  "RequestId": "A347EF0E-BBCC-4EFA-BD79-27AA3ACFD1BF",
-  "Zones": {
-    "Zone": [
-      {
-        "AvailableDiskCategories": {
-          "DiskCategories": [
-            "cloud"
-          ]
-        },
-        "AvailableResourceCreation": {
-          "ResourceTypes": [
-            "Instance",
-            "Disk"
-          ]
-        },
-        "LocalName": "",
-        "ZoneId": "cn-hangzhou-d"
-      },
-      {
-        "AvailableDiskCategories": {
-          "DiskCategories": [
-            "cloud"
-          ]
-        },
-        "AvailableResourceCreation": {
-          "ResourceTypes": [
-            "Instance",
-            "Disk"
-          ]
-        },
-        "LocalName": "",
-        "ZoneId": "cn-hangzhou-b"
-      }
-    ]
-  }
+    "RequestId": "6FEA0CF3-D3B9-43E5-A304-D217037876A8", 
+    "Zones": {
+        "Zone": [
+            {
+                "ZoneId": "cn-hangzhou-b", 
+                "LocalName": "华东 1 可用区 B"
+            }, 
+            {
+                "ZoneId": "cn-hangzhou-d", 
+                "LocalName": "华东 1 可用区 D"
+            }, 
+            {
+                "ZoneId": "cn-hangzhou-e", 
+                "LocalName": "华东 1 可用区 E"
+            }, 
+            {
+                "ZoneId": "cn-hangzhou-f", 
+                "LocalName": "华东 1 可用区 F"
+            }, 
+            {
+                "ZoneId": "cn-hangzhou-g", 
+                "LocalName": "华东 1 可用区 G"
+            }, 
+            {
+                "ZoneId": "cn-hangzhou-h", 
+                "LocalName": "华东 1 可用区 H"
+            }
+        ]
+    }
 }
 ```
 
