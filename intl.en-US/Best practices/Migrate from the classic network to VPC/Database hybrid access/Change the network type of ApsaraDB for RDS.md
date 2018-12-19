@@ -1,19 +1,19 @@
 # Change the network type of ApsaraDB for RDS {#concept_xnk_1w5_sdb .concept}
 
-This document describes how to switch the network type of an ApsaraDB for RDS instance to a VPC network through the console and API while preserving the classic network endpoint.
+This document describes how to switch the network type of an ApsaraDB for RDS instance to VPC through the console or API while retaining the classic network endpoint.
 
-For more information, see [Migrate from the classic network to VPC](https://help.aliyun.com/document_detail/57978.html).
+For more information, see [Hybrid access solution for smooth migration from classic networks to VPCs](../../../../reseller.en-US/User Guide/Connection management/Hybrid access solution for smooth migration from classic networks to VPCs.md#).
 
 **Note:** 
 
--   The classic network endpoint has a retention time limit. You can specify a retention period as needed. When the retention time is reached, the classic network endpoint is automatically deleted by the system. Before the endpoint is deleted, you will receive a message.
+-   The classic network endpoint has an expiration time. You can specify the period as needed. When the expiration time is reached, the classic network endpoint is automatically deleted by the system. Before the endpoint is deleted, you will receive a message.
 
--   If the RDS instance is a split table of a DRDS instance, the network connection between the DRDS and the RDS instances will be interrupted and you must reconnect them.
+-   If the RDS instance is a branch database of a DRDS instance, the network connection between the DRDS and the RDS instances will be interrupted after the network type is changed and you must reconnect them.
 
 
 ## Prerequisites {#section_vcx_2w5_sdb .section}
 
--   The access mode of the instance is the safe connection mode. For more information, see . MySQL 5.7, SQL Server 2012, and SQL Server 2016 version only support the standard mode. This mode supports changing the network type.
+-   The access mode of the instance is the enhanced security mode. For more information, see . MySQL 5.7, SQL Server 2012, and SQL Server 2016 version only supports the standard mode. This mode supports changing the network type through hybrid access.
 
 -   The network type is the classic network.
 
@@ -22,39 +22,39 @@ For more information, see [Migrate from the classic network to VPC](https://help
 
 ## Change the network type on the console {#section_p5v_fw5_sdb .section}
 
-1.  Log on to the RDS Management Console.
+1.  Log on to the RDS console.
 2.  Select the region of the target instance.
 3.  Click the ID of the target instance.
-4.  In the left-side navigation pane, select **Database Connection**.
+4.  In the left-side navigation pane, select **Connection Options**.
 5.  In the Instance Connection tab, click **Switch to VPC**.
-6.  On the Switch to VPC page, select the VPC and VSwitch where the RDS instance is located.
-7.  Select the **Reserve original classic endpoint** check box, and select an **Expiration time**.
+6.  On the Switch to VPC page, select the target VPC and VSwitch.
+7.  Click **Reserve original classic endpoint**, and select the **Expiration time**.
 
     -   From the 7th day before the classic network endpoint is deleted, the system will send a reminder message to the mobile phone bound to your account every day.
 
-    -   When the retention time of the classic network endpoint expires, the classic network endpoint will be automatically released, and you will not be able to access the database through the classic network endpoint. To prevent service interruption, set the retention time according to your needs. After the hybrid access configuration is complete, you can change the expiration time.
+    -   When the classic network endpoint expires, the classic network endpoint will be automatically released, and you cannot access the database through the classic network endpoint. To prevent service interruption, set the expiration time according to your needs. After the hybrid access configuration is complete, you can change the expiration time.
 
-8.  Click **OK**. A **Retained Connection Address of the Classic Network** is added on the console.
+8.  Click **OK**. An **Original classic endpoint** is added on the console.
 
-    ![](images/842_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2461/1545208040842_en-US.png)
 
 
-## Modify the retention time {#section_pnk_cx5_sdb .section}
+## Modify the expiration time of the original classic endpoint on the console {#section_pnk_cx5_sdb .section}
 
-After setting the retention time for the classic network endpoint, you can extend its retention time through the console before it expires.
+After setting the expiration time for the classic network endpoint, you can extend the period on the console before the expiration time.
 
-During the hybrid access period, you can change the retention time of the classic network endpoint at any time as needed. The expiration time will be calculated from the date the change occurs. For example, if the classic network endpoint is set to expire on August 18, 2017 and you change the expiration date to 14 days later on August 15, 2017, the endpoint will be released on August 29, 2017.
+During the hybrid access period, you can change the expiration time of the classic network endpoint at any time as needed. The expiration time will be calculated from the date the change occurs. For example, if the classic network endpoint is set to expire on August 18, 2017 and you change the expiration date to 14 days later on August 15, 2017, the endpoint will be released on August 29, 2017.
 
 1.  Log on to the RDS Console.
 2.  Select the region of the target instance.
 3.  Click the ID of the target instance.
-4.  In the left-side navigation pane, select **Database Connection**.
-5.  In the Instance Connection tab, click **Change Expiration time**.
+4.  In the left-side navigation pane, select **Connection Options**.
+5.  In the Instance Connection tab, click **Change Expiration Time**.
 6.  Select the expiration time and click **OK**.
 
 ## Change the network type through API {#section_gyr_xw5_sdb .section}
 
-1.  Download the SDK.
+1.  Click the SDK link to download the SDK.
     -   [aliyun-java-sdk-rds-new.zip](http://sdk-release.oss-cn-hangzhou.aliyuncs.com/jarfiles/aliyun-java-sdk-rds-2.1.0.jar?spm=5176.143622.693811.15.tKN4aq&file=aliyun-java-sdk-rds-2.1.0.jar)
 
     -   [aliyun-python-sdk-rds-new.zip](https://pypi.python.org/pypi/aliyun-python-sdk-rds?spm=5176.143622.695759.10.vdzt6P)
@@ -84,7 +84,7 @@ During the hybrid access period, you can change the retention time of the classi
     -   True: Retain
     -   False: Do not retain
  |
-    |ClassicExpiredDays|String|No| The retention time of the classic network endpoint. The shortest time is 1 day, the longest time is 120 days, and the default value is 7 days.
+    |ClassicExpiredDays|String|No| The expiration time of the classic network endpoint. The shortest time is 1 day, the longest time is 180 days, and the default value is 7 days.
 
  This parameter must be specified if RetainClassic is set to True.
 
@@ -119,12 +119,12 @@ During the hybrid access period, you can change the retention time of the classi
          @Test
          public  void switchNetwork_success() {
          ModifyDBInstanceNetworkTypeRequest request=new ModifyDBInstanceNetworkTypeRequest ();
-             request.setInstanceId("<Your instance ID>");
+             request.setInstanceId ("<Your instance ID>");
              request.setInstanceNetworkType ("VPC");
              request. setVPCId("<VpcId: This parameter is required when the TargetNetworkType is VPC>");
              request.setVSwitchId("<VSwitchId: This parameter is required when the TargetNetworkType is VPC>");
              request.setRetainClassic("<Whether to retain the classic network endpoint>");
-             request.setClassicExpiredDays("The retention time of the classic network endpoint");
+             request.setClassicExpiredDays("The expiration time of the classic network endpoint");
              IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "<Your AK>",
                  "<Your Security>");
              IAcsClient client = new DefaultAcsClient(profile);
@@ -178,7 +178,7 @@ During the hybrid access period, you can change the retention time of the classi
     |Port|String|The port information.|
     |VPCId|String|The ID of the VPC.|
     |VSwitchId|String|The ID of the VSwitch.|
-    |ExpiredTime|String|The time of expiration.|
+    |ExpiredTime|String|The expiration time.|
 
     **Reference code**
 
@@ -214,7 +214,7 @@ During the hybrid access period, you can change the retention time of the classi
     ```
 
 
-## Modify the retention time of the classic network endpoint through API {#section_a3s_sy5_sdb .section}
+## Modify the expiration time of the classic network endpoint through API {#section_a3s_sy5_sdb .section}
 
 1.  Click the SDK link to download the SDK.
     -   [aliyun-java-sdk-rds-new.zip](http://sdk-release.oss-cn-hangzhou.aliyuncs.com/jarfiles/aliyun-java-sdk-rds-2.1.0.jar?spm=5176.143622.693811.15.tKN4aq&file=aliyun-java-sdk-rds-2.1.0.jar)
@@ -223,7 +223,7 @@ During the hybrid access period, you can change the retention time of the classi
 
     -   [aliyun-php-sdk-rds-new.zip](https://github.com/aliyun/aliyun-openapi-php-sdk)
 
-2.  Call the ModifyDBInstanceNetworkExpireTime API to modify the retention time of the classic network endpoint.
+2.  Call the ModifyDBInstanceNetworkExpireTime API to modify the expiration time of the classic network endpoint.
 
     **Request parameters**
 
@@ -233,8 +233,8 @@ During the hybrid access period, you can change the retention time of the classi
 
 .|
     |DBInstanceId|String|Yes|The ID of the instance.|
-    |ConnectionString|String|Yes|The classic network connection string to be postponed. There are two string types: the classic network endpoint of the current instance and the classic network endpoint separating reading and writing.|
-    |ClassicExpiredDays|Integer|Yes|The retention time of the classic network endpoint is \[1-120\] days.|
+    |ConnectionString|String|Yes|The classic network connection string to be postponed. There are two string types: the classic network string of the current instance and the classic network string separating reading and writing.|
+    |ClassicExpiredDays|Integer|Yes|The expiration time of the classic network string is \[1-120\] days.|
 
     **Response parameters**
 
