@@ -18,7 +18,7 @@
 
 -   迁移过程中实例ID及登录信息不变。
 
--   包年包月购买方式的实例迁移过程中不需要额外付费。从新的计费周期开始，按照同规格专有网络的价格计算。迁移到VPC后，ECS的使用费用会降低。
+-   包年包月购买方式的实例迁移过程中不需要额外付费。从新的计费周期开始，按照同规格专有网络的价格计算。
 
 -   迁移前如有续费变配未生效订单或未支付订单，迁移后该订单将被取消且不能恢复，需要重新下单。
 
@@ -30,13 +30,13 @@
 3.  在弹出的对话框中，单击**确定**。
 4.  单击**查看计划事件**，或在概览页面的右上方的常用操作区域，单击**待处理事件**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2466/1538985037853_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2466/1547704921853_zh-CN.png)
 
 5.  在待处理事件页面，单击**专有网络迁移**页签。
 6.  选择需要迁移的实例，然后单击**预约迁移**。
 7.  在弹出的对话框中，选择要迁移到的专有网络、交换机、迁移时间等配置，然后单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2466/1538985037852_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2466/1547704922852_zh-CN.png)
 
 
 ## 步骤二 正式迁移 {#section_etq_42v_sdb .section}
