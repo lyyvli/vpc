@@ -155,7 +155,7 @@ Options:
 
 以下图中的组播通信为例，ECS1为组播源，ECS2、ECS3、ECS4为组播成员，组播IP地址和端口分别为224.1.2.3：65535。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13393/2953_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13393/15484050322953_zh-CN.png)
 
 此时需要在ECS1上安装运行组播服务端。安装运行以后需要对各ECS进行配置，有如下两种配置方法：
 
