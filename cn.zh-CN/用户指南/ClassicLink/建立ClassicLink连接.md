@@ -2,7 +2,7 @@
 
 您可以通过建立ClassicLink连接，使经典网络的ECS实例可以和专有网络内的云资源通信。
 
-确保您已经了解建立连接的限制，详情参见[ClassicLink概述](intl.zh-CN/用户指南/ClassicLink/ClassicLink概述.md#)。
+确保您已经了解建立连接的限制，详情参见[ClassicLink概述](cn.zh-CN/用户指南/ClassicLink/ClassicLink概述.md#)。
 
 1.   登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。 
 2.   选择目标专有网络的地域，然后单击目标专有网络的ID。 
@@ -13,7 +13,7 @@
 7.  单击**更多** \> **网络和安全组** \> **连接专有网络**。 
 8.   在弹出的对话框中选择目标VPC，单击**确定**，然后单击配置安全组的链接。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2441/1543493572818_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2441/1548405020818_zh-CN.png)
 
 9.   单击**添加ClassicLink安全组规则**，根据以下信息配置ClassicLink安全组规则，然后单击**确定**。 
 
