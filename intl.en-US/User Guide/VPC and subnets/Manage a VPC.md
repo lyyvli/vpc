@@ -11,7 +11,7 @@ VRouter and VSwitch are two basic components of VPC:
 -   VSwitch is a basic network module in a VPC, used to connect different cloud product instances. After creating a VPC, you can further segment your virtual private network to one or more subnets by creating VSwitches. You can deploy different applications to different VSwitches that are located in different zones to improve the service availability. VSwitches in different zones of a VPC can communicate with each other through the intranet by default. For more information, see [Manage VSwitches](intl.en-US/User Guide/VPC and subnets/Manage VSwitches.md#).
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/1549093925809_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/1549093989809_en-US.png)
 
 ## IP address range \(CIDR block\) {#section_uy3_vqw_rdb .section}
 
@@ -95,7 +95,7 @@ To enable the ClassicLink function, complete these steps:
 2.  Click the ID of the target VPC.
 3.  On theVPC Detailspage, click**Enable the ClassicLink**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15490939259786_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15490939899786_en-US.png)
 
 4.  Click **OK**.
 5.  Create a ClassicLink connection.
@@ -113,7 +113,7 @@ To quickly attach a VPC to a CEN instance in the same account, complete these st
 2.  Click the ID of the target VPC.
 3.  On the VPC Details page, click **Attach to CEN**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15490939259784_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15490939899784_en-US.png)
 
 4.  Select a CEN instance and click **OK**.
 
@@ -127,7 +127,7 @@ To authorize a CEN instance in a different account to attach your VPC, complete 
 2.  Click the ID of the target VPC to attach.
 3.  On the VPC Details page, click **CEN Cross Account Authorization**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15490939259785_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15490939899785_en-US.png)
 
 4.  In the Attach to CEN dialog box, enter the ID of the account that the CEN instance belongs to and the ID of the CEN Instance, and then click **OK**.
 
