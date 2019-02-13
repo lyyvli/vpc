@@ -4,11 +4,11 @@
 
 ## 概述 {#section_mw2_mhl_wfb .section}
 
-您可以在本地数据中心和阿里云专有网络间建立私网通信，构建混合云。然后将本地的IT基础架构无缝地扩展到阿里云上，借助阿里云海量的计算、存储、网络、CND资源，应对业务波动，提高应用的稳定性。
+您可以在本地数据中心和阿里云专有网络间建立私网通信，构建混合云。然后将本地的IT基础架构无缝地扩展到阿里云上，借助阿里云海量的计算、存储、网络、CDN资源，应对业务波动，提高应用的稳定性。
 
 您可以通过VPN网关、高速通道物理专线、智能接入网关将本地数据中心和云上VPC打通。并且，可以通过云企业网实现全球网络互通。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/64763/154841167638213_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/64763/155004071238213_zh-CN.png)
 
 ## 连接方案 {#section_n25_qq4_4gb .section}
 
