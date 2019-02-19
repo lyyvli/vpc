@@ -18,7 +18,7 @@ A region can only have one default VPC but many default VSwitches. Because VPC i
 4.   On the Basic Configurations page, configure ECS instance and click **Next: Networking**. 
 5.   On the Networking page, select **default VPC** and the **default VSwitch**. Click **Next: System Configurations**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2438/1549093897815_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2438/1550556199815_en-US.png)
 
 6.   Configure the login credential and instance name, and click **Create Order**. 
 
