@@ -1,8 +1,8 @@
 # 云数据库RDS版网络切换 {#concept_xnk_1w5_sdb .concept}
 
-本文档介绍了如何通过控制台和API将云数据库RDS版的网络类型切换至专有网络，同时保留经典网络的访问地址。
+您可以通过控制台和API将云数据库RDS版的网络类型切换至专有网络，同时保留经典网络的访问地址。
 
-关于RSD平滑迁移网络的原理介绍，请参见[经典网络平滑迁移到VPC的混访方案](../../../../intl.zh-CN/用户指南/数据库连接/经典网络平滑迁移到VPC的混访方案.md#)。
+关于RSD平滑迁移网络的原理介绍，请参见[经典网络平滑迁移到VPC的混访方案](../../../../../cn.zh-CN/用户指南/数据库连接/经典网络平滑迁移到VPC的混访方案.md#)。
 
 **说明：** 
 
@@ -10,14 +10,14 @@
 
 -   如果要切换的RDS实例是DRDS实例的一个分库，当RDS切换了网络类型后，DRDS与RDS之间的网络连通性会被破坏，需要手动修复。
 
+    详情参见[修复数据库分库链接](https://help.aliyun.com/document_detail/52165.html)。
+
 
 ## 前提条件 {#section_vcx_2w5_sdb .section}
 
--   实例的访问模式为高安全模式，关于切换访问模式的步骤，请参见[设置访问模式](https://www.alibabacloud.com/help/doc-detail/26193.htm)。MySQL 5.7、SQL Server 2012和SQL Server 2016版本仅支持标准模式，在此访问模式下仍支持混访迁移网络类型的操作。
-
 -   实例的网络类型是经典网络。
 
--   实例所在可用区已有可用的VPC和交换机。详情参见[管理专有网络](../../../../intl.zh-CN/用户指南/管理专有网络.md#)。
+-   实例所在可用区已有可用的VPC和交换机。详情参见[管理专有网络](../../../../../cn.zh-CN/用户指南/专有网络和子网/管理专有网络.md#)。
 
 
 ## 通过控制台切换网络类型 {#section_p5v_fw5_sdb .section}
@@ -36,7 +36,7 @@
 
 8.  单击**确定**，控制台会增加**保留的经典网络地址**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2461/1543980205842_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2461/1551418912842_zh-CN.png)
 
 
 ## 通过控制台修改经典网络内网地址使用期限 {#section_pnk_cx5_sdb .section}
