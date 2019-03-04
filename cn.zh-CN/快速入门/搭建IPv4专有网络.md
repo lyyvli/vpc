@@ -69,7 +69,7 @@
 
  交换机的IPv6网段的掩码默认为/64，您可以输入十进制数字0-255，来自定义交换机IPv6网段的最后8比特位。
 
- 如VPC的IPv6网段为2001:db8::/64，在交换机的IPv6网段输入十进制数字255（对应十六进制为ff），则交换机的IPv6网段将为2001:db8::ff/64。
+ 如VPC的IPv6网段为2001:db8::/64，在交换机的IPv6网段输入十进制数字255（对应十六进制为ff），则交换机的IPv6网段将为2001:db8:ff::/64。
 
  |
     |**描述**|输入交换机的描述信息。描述可包含2-256个中英文字符，不能以http://和https://开头。
@@ -90,12 +90,12 @@
 
     -   **网络**：选择已创建的专有网络和交换机。
     -   **公网IP带宽**：选择不分配。
-    -   **安全组**：选择使用默认安全组。关于默认安全组的规则，请参见[../../SP\_2/DNA0011894323/ZH-CN\_TP\_9716.md\#](../../intl.zh-CN/用户指南/安全组/安全组默认规则.md#)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/154839571434441_zh-CN.png)
+    -   **安全组**：选择使用默认安全组。关于默认安全组的规则，请参见[../../SP\_2/DNA0011894323/ZH-CN\_TP\_9716.md\#](../../intl.zh-CN//安全组默认规则.md#)。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/155168104934441_zh-CN.png)
 
 5.  返回ECS管理控制台，查看已创建的ECS实例。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/1548395714808_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/1551681049808_zh-CN.png)
 
 
 ## 步骤三：创建EIP并绑定EIP {#section_xw3_lkw_rdb .section}
@@ -114,9 +114,9 @@
 5.  在弹出的对话框中，**实例类型**选择**ECS实例**，然后选择已创建的ECS实例。
 6.  单击**确定**。
 
-## 步骤四： 公网访问测试 {#section_q5d_smw_rdb .section}
+## 步骤四： 测试公网访问 {#section_q5d_smw_rdb .section}
 
-在绑定EIP后，专有网络的ECS实例就可以和公网进行通信了。您使用绑定的EIP地址远程访问绑定的ECS实例。
+专有网络类型的ECS实例绑定EIP后，即可和公网进行通信。您可以使用绑定的EIP地址远程访问ECS实例。
 
-**说明：** 确保ECS实例的安全组规则允许远程访问。
+**说明：** 您必须确保ECS实例的安全组规则允许远程访问。详情信息，请参见[常用端口的典型应用](../../intl.zh-CN/安全/安全组/常用端口的典型应用.md#)。
 
