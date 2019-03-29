@@ -78,7 +78,7 @@ For example, for the IP address range 192.168.1.0/24, IP addresses 192.168.1.0, 
 
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/155385322034424_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/155385330434424_en-US.png)
 
 
 ## Step 2: Create and configure an ECS instance {#section_d2s_s1r_dgb .section}
@@ -106,21 +106,15 @@ To buy an Internet bandwidth, follow these steps:
 
 1.  In the left-side navigation pane of the VPC console, click **IPv6 Gateway**.
 2.  Find the target IPv6 Gateway and click **Manage**.
-
-    ![](images/34439_en-US.png)
-
 3.  In the left-side navigation pane, click **IPv6 Internet Bandwidth**.
 4.  Find the IPv6 address used by the ECS instance and click **Enable Internet Bandwidth**.
-
-    ![](images/34438_en-US.png)
-
 5.  Select a billing method and an Internet bandwidth, and complete the payment.
 
 ## Step 4: Configure security group rules {#section_ugx_1jr_dgb .section}
 
 By default, after you create an ECS instance using IPv6 addresses, the system adds a security group rule that allows IPv6 clients to access this ECS instance. You can modify this rule or add new security group rules based on your needs.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/155385322034435_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/155385330434435_en-US.png)
 
 In this tutorial, the ECS instance needs to access IPv6 services through the Internet, therefore, a security group rule regulating outbound traffic must be added. The operation steps are as follows:
 
@@ -140,5 +134,5 @@ In this tutorial, the ECS instance needs to access IPv6 services through the Int
 
 Log on to the ECS instance and ping an IPv6 service to test if the service can be accessed.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/155385322034440_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/155385330434440_en-US.png)
 
