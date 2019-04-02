@@ -48,7 +48,7 @@
 -   **Year**：按年购买
 
  |
-|Spec|String|否|small|IPv6转换服务服务实例的规格。取值： **small**。
+|Spec|String|否|small|IPv6转换服务实例的规格。取值： **small**。
 
  |
 
