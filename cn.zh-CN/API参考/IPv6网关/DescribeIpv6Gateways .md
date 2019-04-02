@@ -1,10 +1,10 @@
-# DescribeIpv6Gateways {#doc_api_910117 .reference}
+# DescribeIpv6Gateways {#doc_api_Vpc_DescribeIpv6Gateways .reference}
 
 调用DescribeIpv6Gateways接口查询已创建的IPv6网关。
 
 ## 调试 {#apiExplorer .section}
 
-单击[这里](https://api.aliyun.com/#product=Vpc&api=DescribeIpv6Gateways)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
+前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeIpv6Gateways)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
 ## 请求参数 {#parameters .section}
 
@@ -39,7 +39,10 @@
 |Ipv6Gateways| | |IPv6网关的详细信息。
 
  |
-|└BusinessStatus|String|Normal|IPv6网关的状态。
+|└BusinessStatus|String|Normal|IPv6网关的状态，取值：
+
+ -   Normal：正常。
+-   FinancialLocked：欠费锁定。
 
  |
 |└CreationTime|String|2018-12-20T14:51:23Z|IPv6网关的创建时间。
