@@ -1,4 +1,4 @@
-# CreateIPv6Translator {#doc_api_1132486 .reference}
+# CreateIPv6Translator {#doc_api_Vpc_CreateIPv6Translator .reference}
 
 创建IPv6转换服务实例。
 
@@ -36,7 +36,7 @@
 |Name|String|否|ipv6\_1|IPv6转换服务实例的名称，默认为实例ID。 长度为 2-100个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以http:// 或https://开头。
 
  |
-|PayType|String|否|PREPAY|IPv6转换服务服务实例的付费类型。取值：
+|PayType|String|否|PREPAY|IPv6转换服务实例的付费类型。取值：
 
  -   **PREPAY**：预付费
 -   **POSTPAY**：后付费
