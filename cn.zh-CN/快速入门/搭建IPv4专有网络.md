@@ -4,7 +4,7 @@
 
 ## 步骤一：创建专有网络和交换机 {#section_ufw_rhv_rdb .section}
 
-在专有网络中使用云产品，您必须要先做好网络规划，创建好VPC和云产品所属的子网（交换机）。关于如何规划网段，请参见[../DNVPC11852882/ZH-CN\_TP\_2447.md\#](../intl.zh-CN/最佳实践/网络规划.md#)。
+在专有网络中使用云产品，您必须要先做好网络规划，创建好VPC和云产品所属的子网（交换机）。关于如何规划网段，请参见[网络规划](../intl.zh-CN/最佳实践/网络规划.md#)。
 
 完成以下操作步骤，创建一个专有网络和交换机：
 
@@ -90,12 +90,12 @@
 
     -   **网络**：选择已创建的专有网络和交换机。
     -   **公网IP带宽**：选择不分配。
-    -   **安全组**：选择使用默认安全组。关于默认安全组的规则，请参见[../../SP\_2/DNA0011894323/ZH-CN\_TP\_9716.md\#](../../intl.zh-CN//安全组默认规则.md#)。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/155168104934441_zh-CN.png)
+    -   **安全组**：选择使用默认安全组。关于默认安全组的规则，请参见[../../SP\_2/DNA0011894323/ZH-CN\_TP\_9716.md\#](../../intl.zh-CN/隐藏/新架构后需要隐藏的文档汇总/安全/安全组默认规则.md#)。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/155425633834441_zh-CN.png)
 
 5.  返回ECS管理控制台，查看已创建的ECS实例。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/1551681049808_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2434/1554256338808_zh-CN.png)
 
 
 ## 步骤三：创建EIP并绑定EIP {#section_xw3_lkw_rdb .section}
@@ -108,7 +108,7 @@
 2.  单击[申请弹性公网IP](https://common-buy.aliyun.com/eip/postpay?spm=5176.11182188.0.0.739b48826BZSdG&regionId=cn-huhehaote-nt12-a01#/buy)。
 3.  配置EIP，完成支付。
 
-    EIP计费的相关说明，请参见[../../SP\_73/DNEIP11831937/ZH-CN\_TP\_12802.md\#](../../intl.zh-CN/产品定价/预付费.md#)和[../../SP\_73/DNEIP11831937/ZH-CN\_TP\_12814.md\#](../../intl.zh-CN/产品定价/按量付费.md#)。
+    EIP计费的相关说明，请参见[按量付费](../../intl.zh-CN/产品定价/按量付费.md#)。
 
 4.  找到已创建的EIP，然后单击**绑定**。
 5.  在弹出的对话框中，**实例类型**选择**ECS实例**，然后选择已创建的ECS实例。
