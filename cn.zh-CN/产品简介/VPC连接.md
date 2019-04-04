@@ -1,6 +1,6 @@
 # VPC连接 {#concept_wyd_112_sdb .concept}
 
-阿里云提供了丰富的解决方案以满足VPC内的云产品实例与Internet、其他VPC、或本地数据中心（IDC）互连的需求。
+阿里云提供了丰富的解决方案以满足VPC内的云产品实例与公网（Internet）、其他VPC、或本地数据中心（IDC）互连的需求。
 
 ## 连接公网 {#section_jyt_lhj_w2b .section}
 
