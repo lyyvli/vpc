@@ -1,18 +1,16 @@
 # VPC连接 {#concept_wyd_112_sdb .concept}
 
-阿里云提供了丰富的解决方案以满足VPC内的云产品实例与Internet、其他VPC、或本地数据中心（IDC）互连的需求。
+阿里云提供了丰富的解决方案以满足VPC内的云产品实例与公网（Internet）、其他VPC、或本地数据中心（IDC）互连的需求。
 
 ## 连接公网 {#section_jyt_lhj_w2b .section}
 
-您可以使用下表中的产品或功能，将VPC网络连接至公网。
+您可以使用下表中的产品或功能，将专有网络和公网（Internet）打通。
 
 |产品|功能|优势|
 |:-|:-|:-|
 |VPC ECS固定公网IP| 在专有网络内创建ECS时自动分配的公网IP，支持VPC ECS访问公网（SNAT）和用户从公网访问VPC ECS（DNAT）。
 
- | 无。
-
- 支持使用共享流量包，将公网IP转换为EIP后也可以使用[共享带宽](https://www.aliyun.com/product/cbwp)。
+ | 支持使用[共享流量包](https://www.aliyun.com/product/flowbag)，将公网IP转换为EIP后也可以使用[共享带宽](https://www.aliyun.com/product/cbwp)。
 
  |
 |弹性公网IP（EIP）|能够动态和VPC ECS绑定和解绑，支持VPC ECS访问公网（SNAT）和用户从公网访问VPC ECS（DNAT）。| EIP可以随时和ECS实例绑定和解绑。
@@ -20,14 +18,14 @@
  可以使用[共享带宽](https://www.aliyun.com/product/cbwp)和[共享流量包](https://www.aliyun.com/product/flowbag)，降低公网成本。
 
  |
-|NAT网关|NAT网关支持多台VPC ECS访问公网（SNAT）和用户从公网访问VPC ECS（DNAT）。**说明：** 和负载均衡相比，NAT网关本身没有均衡流量的功能。
+|NAT网关|支持多台VPC ECS访问公网（SNAT）和用户从公网访问VPC ECS（DNAT）。**说明：** 和负载均衡相比，NAT网关本身没有均衡流量的功能。
 
 | NAT网关和EIP的核心区别是NAT网关可用于多台VPC ECS和公网通信，而EIP只能用于一台VPC ECS和公网通信。
 
  |
-|负载均衡| 基于端口的负载均衡，提供四层和七层负载均衡，支持从公网通过负载均衡访问ECS。
+|负载均衡| 基于端口提供四层和七层负载均衡功能，支持用户从公网通过负载均衡（SLB）访问ECS。
 
- **说明：** 负载均衡不支持VPC网络的ECS通过负载均衡主动访问公网（SNAT）
+**说明：** 负载均衡不支持VPC网络的ECS通过负载均衡主动访问公网（SNAT）。
 
  | 在DNAT方面，负载均衡是基于端口的负载均衡，即一个负载均衡的一个端口可以对应多台ECS。
 
@@ -45,9 +43,9 @@
 |:-|:-|:-|
 |VPN网关| 您可以通过在两个VPC之间创建IPsec连接，建立加密通信通道。
 
- 详情参见[配置VPC到VPC连接](../intl.zh-CN/IPsec-VPN入门/配置VPC到VPC连接.md#)。
+ 详细说明，请参见[../DNvpc1887258/../../../../../../dita-oss-bucket/SP\_74/DNVPN11815583/ZH-CN\_TP\_13352.md\#](../intl.zh-CN/用户指南/配置IPsec-VPN/配置VPC到VPC连接.md#)。
 
- | -   成本低、安全、配置简单，即开即用，但网络质量依赖公网（Internet）。
+ | -   成本低，安全，配置简单、即开即用，但网络质量依赖公网（Internet）。
 
 -   IPsec-VPN支持IKEv1和IKEv2协议。只要支持这两种协议的设备都可以和阿里云VPN网关互连，比如华为、华三、山石、深信服、Cisco ASA、Juniper、SonicWall、Nokia、IBM 和 Ixia等。
 
@@ -55,7 +53,7 @@
  |
 |云企业网| 支持将多个不同地域、不同账号的VPC连接起来，构建互联网络。
 
- 详情参见[教程概览](../intl.zh-CN/快速入门/教程概览.md#)。
+ 详细说明，请参见[教程概览](../intl.zh-CN/快速入门/教程概览.md#)。
 
  | -   配置简单，自动学习分发路由。
 
@@ -70,13 +68,13 @@
 
 ## 连接本地IDC {#section_s1d_4hj_w2b .section}
 
-您可以使用下表中的产品或功能，连接VPC和本地IDC。
+您可以使用下表中的产品或功能，将本地网络和云上专有网络打通。
 
 |产品|功能|优势|
 |:-|:-|:-|
 |高速通道| 通过物理专线接入使VPC与本地数据中心网络互通。
 
- 详情参见[物理专线接入](../intl.zh-CN/快速入门（新版）/物理专线接入.md#)。
+ 详细说明，请参见[物理专线接入](../intl.zh-CN/快速入门/物理专线接入.md#)。
 
  | -   基于骨干网络，延迟低。
 
