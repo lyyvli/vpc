@@ -1,6 +1,6 @@
 # Call VPC APIs {#concept_jyw_13k_qdb .concept}
 
-When a VPC API is called, an HTTP GET request is sent to the server address of the VPC API. You must add corresponding request parameters in the request according to the API description. After the calling, the system returns the handling result. The request and response results are encoded using the UTF-8 character set.
+When a VPC API is called, an HTTP GET request is sent to the endpoint of VPC APIs. You must add corresponding request parameters in the request according to the API description. After the calling, the system returns the handling result. The request and response results are encoded using the UTF-8 character set.
 
 ## Request structure {#section_mqj_q3f_mdb .section}
 
@@ -12,19 +12,19 @@ The request structure is as follows:
 http://Endpoint/?Action=xx&Parameters
 ```
 
-where:
+Where:
 
 -   Endpoint: The endpoint of VPC APIs is `vpc.aliyuncs.com`.
 -   Action: The action to perform. For example, call DescribeVpcs to query all the created VPCs.
 -   Version: The version of the API to use. The current VPC API version is 2016-04-28.
 -   Parameters: Request parameters. Use “&” to separate multiple parameters.
 
-    Request parameters consist of common parameters and API specific parameters. Common parameters include VPI version, credentials and so on.
+    Request parameters consist of common parameters and API specific parameters. Common parameters include VPI version, credentials, and so on.
 
 
 The following is an example using the DescribeVpcs API to query the created VPCs:
 
-**Note:** To make it easy to read, the API request is displayed in the following format in the document:
+**Note:** To make it easy to read, the API request is displayed in the following format:
 
 ```
 https://vpc.aliyuncs.com/?Action=DescribeVpcs
@@ -80,13 +80,13 @@ Follow these steps to calculate the signature:
 
 2.  Calculate the HMAC value of the string to sign.
 
-    Append an ampersand \(&\) to the AccessKey Secret and use the new string as the key to calculate the HMAC value. In this example, the key is `testsecret&`.
+    Append an ampersand \(&\) to the AccessKey Secret to use the new string as the key to compute the HMAC. In this example, the key is `testsecret&amp;`.
 
     ```
     CT9X0VtwR86fNWSnsc6v8YGOjuE=
     ```
 
-3.  Add the signature to the request URL.
+3.  Add the signature to the request parameters:
 
     ```
     http://vpc.aliyuncs.com/?Action=DescribeVpcs
