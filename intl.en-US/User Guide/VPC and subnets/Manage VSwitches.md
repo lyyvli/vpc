@@ -1,98 +1,108 @@
 # Manage VSwitches {#concept_smn_zdx_rdb .concept}
 
-A VSwitch is a basic network module in a VPC network, used to connect different cloud product instances in the VPC.
+This topic describes how to manage VSwitches, covering how to create and delete a VSwitch and how to create a cloud a cloud resource in a VSwitch.
 
-After creating a VPC, you can further segment your virtual private network to one or more subnets by creating VSwitches. The VSwitches within a VPC are interconnected by default. You can deploy different applications to the VSwitches that are located in different zones to improve the service availability.
+After creating a VPC, you can further your virtual private network to one or more subnets by creating VSwitches. The VSwitches within a VPC are interconnected by default. You can deploy different applications to the VSwitches that are located in different zones to improve the service availability.
 
-**Note:** A VSwitch does not support multicast or broadcast. You can achieve multicast proxy by using the multicast agent tool provided by Alibaba Cloud. For more information, see [Configure multicast for Linux kernel](intl.en-US/User Guide/VPC and subnets/Configure multicast for Linux kernel.md#).
+**Note:** A VSwitch does not support multicast or broadcast.
 
-## Create VSwitch {#section_hd5_g5x_rdb .section}
+## Create a VSwitch {#section_hd5_g5x_rdb .section}
 
-To create a VSwitch, complete these steps:
+To create a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
-2.  Select the region of the VPC to which the VSwitch belongs.
+1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
+2.  Select the region of the VPC to which the VSwitch will belong.
 3.  In the left-side navigation pane, click **VSwitches**.
-4.  Click **Create VSwitch**, configure the VSwitch according to the following information and click **OK**.
+4.  Click **Create VSwitch** and then click **OK**. Descriptions about the configuration items are provided in the following table.
 
-    |Configuration|Description|
-    |:------------|:----------|
-    |**VPC**|Select the VPC to which the VSwitch belongs.|
-    |**CIDR Block**|Display the CIDR block of the VPC.|
-    |**Name**| Enter the name of the VSwitch.
+    **Note:** Currently, only the China \(Hohhot\) region supports enabling IPv6. After IPv6 is enabled, the system creates an IPv6 Gateway.
 
- The name can contain 2 to 128 characters. It must begin with English letters or Chinese characters and can contain numbers, hyphens, and underlines.
+    |配置|说明|
+    |:-|:-|
+    |**资源组**|选择交换机的所属资源组。|
+    |**专有网络**|选择交换机的所属专有网络。|
+    |**IPv4网段**|所选专有网络的IPv4网段。|
+    |**IPv6网段**|所选专有网络的IPv6网段。**Note:** 如果选择的专有网络未开启IPv6网段，单击**开通IPv6网段**。开通后，系统将为您创建免费版IPv6网关。
+
+|
+    |**描述**|输入VPC的描述信息。描述可包含2-256个中英文字符，不能以http://和https://开头。
+
+|
+    |**名称**|交换机的名称。长度为2-128个字符，以英文字母或中文开头，可包含数字，下划线（\_）和短横线（-）。
+
+|
+    |**可用区**|交换机的可用区。同一VPC内不同可用区的交换机内网互通。|
+    |**IPv4网段**|交换机的IPv4网段。交换机的网段限制如下：    -   交换机的网段可以和其所属的VPC网段相同或者是其VPC网段的子集。
+
+例如，VPC的网段是192.168.0.0/16，那么该VPC内的交换机的网段可以是192.168.0.0/16，也可以是192.168.0.0/17，一直到192.168.0.0/29。
+
+**Note:** 如果交换机的网段和专有网络的网段相同，您只能创建一个交换机。
+
+    -   交换机的网段的大小在16位网络掩码与29位网络掩码之间，可提供8-65536个地址。
+
+    -   每个交换机的第一个和最后三个IP地址为系统保留地址。
+
+以192.168.1.0/24为例，192.168.1.0、 192.168.1.253、 192.168.1.254和192.168.1.255这些地址是系统保留地址。
+
+    -   如果该交换机有和其他专有网络的交换机，或本地数据中心通信的需求，确保交换机的网段和要通信的网段不冲突。
+
+**Note:** 交换机创建后，不能再修改网段。
+
+|
+    |**可用IP数量**|显示交换机可用的IPv4地址数量。|
+    |**IPv6网段**| 交换机的IPv6网段。
+
+ 交换机的IPv6网段的掩码默认为/64，您可以输入十进制数字0-255，来自定义交换机IPv6网段的最后8比特位。
+
+ 如VPC的IPv6网段为2001:db8::/64，在交换机的IPv6网段输入十进制数字255（对应十六进制为ff），则交换机的IPv6网段将为2001:db8::ff/64。
 
  |
-    |**Zones**|Select the zone of the VSwitch. In a VPC, VSwitches in different zones can communicate with each other through the intranet.|
-    |**Zone Resource**|Display the cloud resources that can be used in the selected zone.|
-    |**CIDR**| Enter the CIDR block of the VSwitch.
+    |**描述**|输入交换机的描述信息。描述可包含2-256个中英文字符，不能以http://和https://开头。
 
- Note the following when specifying the VSwitch CIDR block:
-
-    -   The CIDR block of the VSwitch can be the same as that of the VPC to which it belongs, or a subset of the VPC CIDR block.
-
-For example, if the CIDR block of the VPC is 192.168.0.0/16, the CIDR block of the VSwitch in the VPC can be 192.168.0.0/16, 192.168.0.0/17, …, till 192.168.0.0/29.
-
-**Note:** If the CIDR block of the VSwitch is the same as that of the VPC to which it belongs, you can only create one VSwitch in the VPC.
-
-    -   The size of the subnet mask for the VSwitch can be /16 to /29, which can provide 8 to 65536 IP addresses.
-
-    -   The first and last three IP addresses are reserved by the system.
-
-Take the IP address range 192.168.1.0/24 as an example, IP addresses 192.168.1.0, 192.168.1.253, 192.168.1.254, and 192.168.1.255 are reserved by the system.
-
-    -   Make sure the CIDR block does not conflict with that of the VSwitch in another VPC or the local data center that the VSwitch connects to.
-
- |
-    |**Number of Available Private IPs**|Display the number of available private IPs of the VSwitch.|
-    |**Description**| Enter a description of the VSwitch.
-
- The name can contain 2 to 256 characters, but cannot begin with`http://` and `https://`.
-
- |
+|
 
 
 ## Create cloud resources in a VSwitch {#section_drn_dwx_rdb .section}
 
-To create cloud resources in a VSwitch, complete these steps:
+To create cloud resources in a VSwitch, follow these steps:
 
-1.  Log on to the VPC console.
+1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  Select the region of the VPC.
 3.  In the left-side navigation pane, click **VSwitches**.
-4.  Locate the target VSwitch, click **Purchase** and select the cloud resources to create.
+4.  Locate the target VSwitch, click **Purchase** and select the cloud resource to create.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15490940179789_en-US.png)
+    **Note:** Currently, you can create the following cloud resources in a VSwitch: ECS instances, SLB instances, and RDS instances.
 
-5.  Complete the configuration.
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15547980769789_en-US.png)
+
 
 ## Delete a VSwitch {#section_ztp_pwx_rdb .section}
 
-**Note:** Before deleting a VSwitch, make sure that:
+Before deleting a VSwitch, make sure the following conditions are met:
 
--   You have deleted all cloud resources in the VSwitch, such as ECS, SLB, and RDS.
+-   You have deleted all cloud resources in the VSwitch \(such as ECS, SLB, and RDS instances\).
 
--   If the VSwitch has configured an SNAT entry, VPN Gateway, or HAVIP, delete these associated resources.
+-   If the VSwitch has been configured with SNAT entries, HAVIP, or any other configuration, make sure that you have deleted these associated resources.
 
 
-To delete a VSwitch, complete these steps:
+To delete a VSwitch, follow these steps:
 
-1.  Log on to the VPC console.
+1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  Select the region of the VPC.
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Locate the target VSwitch, and click **Delete**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15490940179788_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15547980769788_en-US.png)
 
-5.  In the displayed dialog, click **OK**.
+5.  In the displayed dialog box, click **OK**.
 
 ## Related APIs {#section_vhd_xwx_rdb .section}
 
-[CreateVSwitch](../../../../../intl.en-US/API reference/VSwitch/CreateVSwitch.md#)
+[CreateVSwitch](../reseller.en-US/API reference/VSwitch/CreateVSwitch.md#)
 
-[DeleteVSwitch](../../../../../intl.en-US/API reference/VSwitch/DeleteVSwitch.md#)
+[DescribeVSwitches](../reseller.en-US/API reference/VSwitch/DescribeVSwitches.md#)
 
-[DescribeVSwitches](../../../../../intl.en-US/API reference/VSwitch/DescribeVSwitches.md#)
+[DeleteVSwitch](../reseller.en-US/API reference/VSwitch/DeleteVSwitch.md#)
 
-[ModifyVSwitchAttribute](../../../../../intl.en-US/API reference/VSwitch/ModifyVSwitchAttribute.md#)
+[DescribeVSwitchAttributes](../reseller.en-US/API reference/VSwitch/DescribeVSwitchAttributes.md#)
 
