@@ -1,49 +1,49 @@
 # Flow logs {#concept_ubn_5ly_52b .concept}
 
-VPC provides you with the flow log function to capture the IP traffic going to and from Elastic Network Interfaces \(ENI\) in your VPC. With flow logs, you can check access control rules, monitor network traffic, and troubleshoot networking problems.
+This topic describes the flow logs function in Alibaba Cloud Virtual Private Cloud \(VPC\). The flow logs function allows you to monitor the IP traffic going to and coming from Elastic Network Interfaces \(ENI\) in your VPC. By using the flow logs, you can check the access control list \(ACL\) rules, monitor network traffic, and troubleshoot networking problems.
 
-**Note:** The flow log function is only available in the Indonesia \(Jakarta\) region.
+**Note:** The flow log function is available only in the China \(Hohhot\), Malaysia, Indonesia \(Jakarta\), UK \(London\), and Indonesia \(Jakarta\) regions.
 
 ## Introduction to flow logs {#section_cq5_rny_52b .section}
 
-You can capture IP traffic information for an ENI, a VSwitch or a VPC. If you create a flow log for VSwitch or VPC, all the Elastic Network Interfaces, including the newly created Elastic Network Interfaces, are monitored.
+You can use the flow log function to monitor the IP traffic information for an ENI, a VSwitch or a VPC. If you create a flow log for a VSwitch or a VPC, all the Elastic Network Interfaces, including the newly created Elastic Network Interfaces, are monitored.
 
-Flow log data is stored in Log Service. You can view and analyze IP traffic information in Log Service. Flow log is free of charge in the test phase. But corresponding storage and indexing fees are billed when using Log Service. For more information, see [Billing method](../../../../../reseller.en-US/Pricing/Billing method.md#).
+Flow log data is stored in Log Service, where you can view and analyze IP traffic information. Currently, the flow log function is available free of charge. However, corresponding storage and indexing fees associated with the use of Log Service are billed. For more information, see [Billing method](../../../../../reseller.en-US/Pricing/Billing method.md#).
 
-The traffic information captured by the flow log function is recorded as flow log records. Each record captures the network flow for a specific 5-tuple in a specific capture window. The capture window is about 10 minutes. During the capture window, Log Service aggregates data and it takes about 5 minutes, then publishes flow log records.
+The traffic information monitored by the flow log function is recorded as flow log records. Each record captures the network flow for a specific 5-tuple in a specific monitoring time period \(approximately 10 minutes\). During the monitoring time period, Log Service aggregates data, which takes about 5 minutes, and then publishes the generated flow log records.
 
-The following table lists recorded fields of flow log records.
+The following table describes the fields recorded in flow log records.
 
 |Field|Description|
 |:----|:----------|
 |version|The version of the flow log.|
-|vswitch-id|The ID of the VSwitch that the ENI belongs to.|
-|vm-id|The ID of the ECS instance that the ENI is bound to. |
-|vpc-id|The ID of the VPC that the ENI belongs to.|
+|vswitch-id|The ID of the VSwitch to which the ENI belongs.|
+|vm-id|The ID of the ECS instance to which the ENI is attached. |
+|vpc-id|The ID of the VPC to which the ENI belongs.|
 |account-id|The ID of the account.|
 |eni-id|The ID of the ENI.|
-|srcaddr|The private IP address of the Elastic Network Interface.|
-|srcport|The source port of the traffic.|
+|srcaddr|The source address.|
+|srcport|The source port.|
 |dstaddr|The destination IP address.|
-|dstport|The destination port of the traffic.|
-|protocol|The IANA protocol number of the traffic.For more information, see [Assigned Internet Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
+|dstport|The destination port of traffic.|
+|protocol|The IANA protocol number of traffic.For more information, see [Assigned Internet Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
 
 |
-|direction|The direction of the traffic:-   in: traffic goes to the ENI
+|direction|The direction of traffic. Supported values include:-   in: traffic goes to the ENI
 -   out: traffic goes from the ENI
 
 |
-|packets|The number of packets in the capture window.|
-|bytes|The number of bytes in the capture window.|
-|start|The start time of the capture window.|
-|end|The end time of the capture window.|
-|log-status|The logging status of the flow log:-   OK: Data is normally recorded.
--   NODATA: There is no traffic to or from the ENI during the capture window.
--   SKIPDATA: Some flow log records were skipped during the capture window.
+|packets|The number of packets monitored in the specified time period.|
+|bytes|The number of bytes monitored in the specified time period.|
+|start|The start time of the monitoring time period.|
+|end|The end time of the monitoring time period.|
+|log-status|The logging status of the flow log: Supported values include:-   OK: Data is normally recorded.
+-   NODATA: There is no traffic recorded going to or coming from the ENI during the monitoring time period.
+-   SKIPDATA: Some flow log records were skipped during the monitoring time period.
 
 |
-|action|The action associated with the traffic:-   ACCEPT: The traffic that security groups allow to record
--   REJECT: The traffic that security groups do not allow to record
+|action|Actions associated with the traffic. Supported values include:-   ACCEPT: Traffic that security groups allow to be recorded
+-   REJECT: Traffic that security groups do not allow to be recorded
 
 |
 
@@ -51,37 +51,37 @@ The following table lists recorded fields of flow log records.
 
 **Note:** Before creating a flow log, make sure that Log Service is activated.
 
-To create a flow log, complete these steps:
+After you have activated Log Service, you can create flow logs. To do so, follow these steps:
 
 1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
-2.  In the left-side navigation pane, click **Flow Logs**.
-3.  If it is the first using flow logs, click **Confirm Authorization Policy** to authorize VPC to write data to your LogStore.
+2.  In the left-side navigation pane, click **FlowLog**.
+3.  If it is the first time that you activate the flow logs function, click **Confirm Authorization Policy** to authorize VPC to write data to your specified LogStore.
 
-    **Note:** The authorization is required only when the primary account uses the flow log function for the first time.
+    **Note:** Authorization is required only when the primary account uses the flow log function for the first time.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/154772092211664_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/155477693211664_en-US.png)
 
-4.  Select a region and then click **Create Flow Log**.
+4.  Select the region in which to monitor flow logs and then click **Create Flow Log**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/15477209229591_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/15547769329591_en-US.png)
 
 5.  On the Create Flow Log page, configure the flow log according to the following information and then click **OK**.
 
     |Configuration|Description |
     |:------------|:-----------|
     |**Name**|Enter a name for the flow log.|
-    |**Resource type**|Select the resource where a flow log is created:    -   ENI: Capture IP traffic for the selected ENI.
-    -   VSwitch: Capture IP traffic for all the ENIs in the selected VSwitch.
-    -   VPC: Capture IP traffic for all the ENIs in the selected VPC.
+    |**Resource Type**|Select the resource where a flow log is created:    -   ENI: Monitor IP traffic for the selected ENI.
+    -   VSwitch: Monitor IP traffic for all ENIs in the selected VSwitch.
+    -   VPC: Monitor IP traffic for all ENIs in the selected VPC.
 |
-    |**Traffic Type**|Select the traffic to capture:    -   All: All traffic is captured.
-    -   Allow: Only capture the traffic that is allowed by the security group rules.
-    -   Drop: Only capture the traffic that is not allowed by the security group rules.
+    |**Traffic Type**|Select the type of traffic to be monitored:    -   All: All traffic is monitored.
+    -   Allow: Only monitor traffic that is allowed by the security group rules.
+    -   Drop: Only monitor traffic that is not allowed by the security group rules.
 |
-    |**LogStore**|Select the LogStore to store the captured traffic information.|
-    |**Turn on FlowLog Analysis Report Function**|After this option is selected, the LogSearch/Analytics \(index\) function will be automatically enabled and a dashboard will be created for the selected LogStore, allowing you to analyze the collected data.You will be billed according to the indexing traffic. For more information, see [Log Service Billing](../../../../../reseller.en-US/Pricing/Billing method.md#).
+    |**LogStore**|Select the LogStore in which to store the monitored traffic information.|
+    |**Turn on FlowLog Analysis Report Function**|If this option is selected, the LogSearch/Analytics \(index\) function is automatically enabled and a dashboard is created for the selected LogStore, so that you can perform SQL and visualized analysis of the collected data.The indexing function of Log Service incurs fees. However, the dashboard is provided free of charge. For more information, see [Log Service Billing](../../../../../reseller.en-US/Pricing/Billing method.md#).
 
-**Note:** This option is available only when the index function of the selected LogStore is not enabled.
+**Note:** This option is available only when the report function of the selected LogStore is not enabled.
 
  |
     |**Description**|Enter a description for the flow log.|
@@ -89,40 +89,37 @@ To create a flow log, complete these steps:
 
 ## View logs {#section_g5l_3f1_v2b .section}
 
-To view the captured traffic information, complete these steps:
+To view the monitored traffic information, follow these steps:
 
 1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  In the left-side navigation pane, click **Flow Log**.
-3.  Select a region, and then click the LogStore link of the flow log.
+3.  Select the target region, and then click the LogStore link of the flow log.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/154772092311665_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/155477693211665_en-US.png)
 
 4.  On the Log Service console, click **Search**.
-5.  View the captured traffic information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/154772092311666_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21266/155477693211666_en-US.png)
 
 
 ## Disable a flow log {#section_wrx_s23_cfb .section}
 
-You can disable a flow log if you do not want to capture the traffic information.
+You can disable a flow log when you no longer need to monitor the corresponding traffic information.
 
-To disable a flow log, complete these steps:
+To disable a flow log, follow these steps:
 
 1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  In the left-side navigation pane, click **Flow Log**.
-3.  Select a region, and find the target flow log and then click **Disable**.
+3.  Select the target region, find the target flow log, and then click **Disable**.
 
 ## Limits {#section_eq4_pb5_cfb .section}
 
-Note the following when you use the flow log function:
+Before you activate the flow log function, note the following:
 
--   The object where a flow log is created: ENI
+-   The object where a flow log is created can only be ENI.
 
--   Resource types that support creating flow logs: VPC, VSwitch and ENI
+-   Only the following resource types support the creation of flow logs: VPC, VSwitch, and ENI.
 
--   The number of flow log instances that can be created per region: 10
-
-    If you need to create more flow log instances, open a ticket.
+-   The maximum number of flow log instances that can be created in each region is 10. If you need to create more flow log instances, open a ticket.
 
 
