@@ -6,7 +6,7 @@ This topic describes how to manage an Alibaba Cloud Virtual Private Cloud \(VPC\
 
 To deploy cloud resources in a VPC, you must create at least one VSwitch. To create a VPC and a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
+1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
 2.  In the top menu bar, select the region to which the VPC will belong.
 
     The VPC and the cloud resources to deploy must be located in the same region.
@@ -79,7 +79,7 @@ For example, for the IP address range 192.168.1.0/24, IP addresses 192.168.1.0, 
 
 ## Enable ClassicLink {#section_jdv_syw_rdb .section}
 
-With ClassicLink enabled, ECS instances of the classic network type can communicate with cloud resources in the connected VPC. For more information, see [ClassicLink overview](reseller.en-US/User Guide/Network connection/ClassicLink/ClassicLink overview.md#).
+With ClassicLink enabled, ECS instances of the classic network type can communicate with cloud resources in the connected VPC. For more information, see [ClassicLink overview](intl.en-US/User Guide/Network connection/ClassicLink/ClassicLink overview.md#).
 
 To enable the ClassicLink function, follow these steps:
 
@@ -87,16 +87,16 @@ To enable the ClassicLink function, follow these steps:
 2.  Select the target region and click the ID of the target VPC.
 3.  In the upper-right corner of the page, click **Enable the ClassicLink**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15547769809786_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15549652259786_en-US.png)
 
 4.  Click **OK**.
 
-    For more information, see [Build a ClassicLink connection](reseller.en-US/User Guide/Network connection/ClassicLink/Establish a ClassicLink connection.md#).
+    For more information, see [Build a ClassicLink connection](intl.en-US/User Guide/Network connection/ClassicLink/Establish a ClassicLink connection.md#).
 
 
 ## Attach a VPC to a CEN instance {#section_l3q_byw_rdb .section}
 
-You can attach a VPC to a CEN instance so that the VPC can communicate with other VPCs or on-premises data centers attached to the CEN instance. For more information, see [What is Cloud Enterprise Network?](../../reseller.en-US/Product Introduction/What is Cloud Enterprise Network?.md#).
+You can attach a VPC to a CEN instance so that the VPC can communicate with other VPCs or on-premises data centers attached to the CEN instance. For more information, see [What is Cloud Enterprise Network?](../../intl.en-US/Product Introduction/What is Cloud Enterprise Network?.md#).
 
 To attach a VPC to a CEN instance in the same account, follow these steps:
 
@@ -104,7 +104,7 @@ To attach a VPC to a CEN instance in the same account, follow these steps:
 2.  Select the target region and click the ID of the target VPC.
 3.  In the upper-right corner of the page, click **Attach to CEN**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15547769809784_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15549652259784_en-US.png)
 
 4.  Select the target CEN instance and click **OK**.
 
@@ -118,7 +118,7 @@ To authorize a CEN instance under a different account to attach your VPC, follow
 2.  Select the target region and click the ID of the target VPC.
 3.  In the CEN cross account authorization information area, click **CEN Cross Account Authorization**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15547769809785_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2435/15549652259785_en-US.png)
 
 4.  In the Attach to CEN dialog box, enter the ID of the account to which the CEN instance belongs and the ID of the CEN Instance, and then click **OK**.
 
@@ -134,11 +134,11 @@ To delete a VPC, follow these steps:
 
 ## Related API actions {#section_es2_lbx_rdb .section}
 
-[CreateVpc](../reseller.en-US/API reference/Virtual Private Cloud (VPC)/CreateVpc.md#)
+[CreateVpc](../intl.en-US/API reference/Virtual Private Cloud (VPC)/CreateVpc.md#)
 
-[DeleteVpc](../reseller.en-US/API reference/Virtual Private Cloud (VPC)/DeleteVpc.md#)
+[DeleteVpc](../intl.en-US/API reference/Virtual Private Cloud (VPC)/DeleteVpc.md#)
 
-[DescribeVpcAttribute](../reseller.en-US/API reference/Virtual Private Cloud (VPC)/DescribeVpcAttribute.md#)
+[DescribeVpcAttribute](../intl.en-US/API reference/Virtual Private Cloud (VPC)/DescribeVpcAttribute.md#)
 
-[DescribeVpcs](../reseller.en-US/API reference/Virtual Private Cloud (VPC)/DescribeVpcs.md#)
+[DescribeVpcs](../intl.en-US/API reference/Virtual Private Cloud (VPC)/DescribeVpcs.md#)
 
