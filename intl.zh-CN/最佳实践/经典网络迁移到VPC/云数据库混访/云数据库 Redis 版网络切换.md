@@ -8,7 +8,7 @@
 
 -   确认当前网络类型是否为经典网络。
 
--   确认在当前数据库实例可用区下是否有可用的VPC和交换机。详情参见[创建专有网络和交换机](../../../../intl.zh-CN/用户指南/管理专有网络.md#section_ufw_rhv_rdb)。
+-   确认在当前数据库实例可用区下是否有可用的VPC和交换机。详情参见[创建专有网络和交换机](../../../../../cn.zh-CN/用户指南/专有网络和子网/管理专有网络.md#section_ufw_rhv_rdb)。
 
 
 ## 通过控制台切换网络类型 {#section_p5v_fw5_sdb .section}
@@ -21,12 +21,12 @@
     1.  选择切换的目标专有网络和交换机。
     2.  选择保留经典网络地址并选择保留时长。
 
-        **说明：** 选择保留经典网络后，经典网络下的ECS仍可访问数据，对业务无影响。当经典网络地址到期后，系统会自动删除经典网络地址，您将无法通过经典网络地址访问数据库。
+        **说明：** 选择保留经典网络地址后，专有网络地址和经典网络地址是两个不同的地址。经典网络下的ECS仍可访问数据，对业务无影响。 当经典网络地址到期后，系统会自动删除经典网络地址，您将无法通过经典网络地址访问数据库。
 
     3.  单击**确定**。
 6.  在实例信息页面，单击**刷新**查看专有网络和经典网的访问地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2462/1543494040843_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2462/1555309471843_zh-CN.png)
 
 
 ## 通过控制台修改经典网络内网地址使用期限 {#section_pnk_cx5_sdb .section}
@@ -52,17 +52,17 @@
 
 2.  调用SwitchNetwork接口进行网络切换。
 
-    **请求参数说明**
+    **请求参数说明** 
 
     |名称|类型|是否必须|说明|
     |:-|:-|:---|:-|
-    |Action|String|是|系统规定参数，取值：SwitchNetwork
+    |Action|String|是|系统规定参数，取值： SwitchNetwork
 
-|
+ |
     |InstanceId|String|是|实例 ID。|
-    |TargetNetworkType|String|是|实例的网络类型：    -   VPC：专有网络
+    |TargetNetworkType|String|是|实例的网络类型：     -   VPC：专有网络
     -   Classic：经典网络
-|
+ |
     |VPCId|String|否|专有网络的ID。|
     |VSwitchId|String|否| 交换机的ID。
 
@@ -80,7 +80,7 @@
 
  |
 
-    **返回参数说明**
+    **返回参数说明** 
 
     |参数|类型|说明|
     |:-|:-|:-|
@@ -135,23 +135,23 @@
 
     |名称|类型|是否必须|说明|
     |:-|:-|:---|:-|
-    |Action|String|是|系统规定参数，取值：DescribeDBInstanceNetInfo
+    |Action|String|是|系统规定参数，取值： DescribeDBInstanceNetInfo
 
-|
+ |
     |InstanceId|String|是|实例ID。|
 
-    **返回参数**
+    **返回参数** 
 
     |参数|类型|说明|
     |:-|:-|:-|
     |NetInfoItems|List|实例的连接信息。|
-    |InstanceNetworkType|String|实例的网络类型：    -   VPC：VPC类型的实例。
+    |InstanceNetworkType|String|实例的网络类型：     -   VPC：VPC类型的实例。
 
     -   Classic：经典网络类型的实例。
 
-|
+ |
 
-    **InstanceNetInfo数据结构**
+    **InstanceNetInfo数据结构** 
 
     |参数|类型|说明|
     |:-|:-|:-|
@@ -167,7 +167,7 @@
     |VSwitchId|String|交换机ID。|
     |ExpiredTime|String|过期时间。|
 
-    **参考代码**
+    **参考代码** 
 
     ```
     import com.aliyuncs.DefaultAcsClient;
@@ -216,13 +216,13 @@
 
 2.  调用ModifyInstanceNetExpireTime接口进行网络切换。
 
-    **请求参数说明**
+    **请求参数说明** 
 
     |名称|类型|是否必须|说明|
     |:-|:-|:---|:-|
-    |Action|String|是|系统规定参数，取值：ModifyInstanceNetExpireTime
+    |Action|String|是|系统规定参数，取值： ModifyInstanceNetExpireTime
 
-。|
+ 。|
     |InstanceId|String|是|实例ID。|
     |ConnectionString|String|是|经典网络的访问域名。|
     |ClassicExpiredDays|Integer|是| 选择保留时长。
@@ -231,7 +231,7 @@
 
  |
 
-    **返回参数**
+    **返回参数** 
 
     |参数|类型|说明|
     |:-|:-|:-|
