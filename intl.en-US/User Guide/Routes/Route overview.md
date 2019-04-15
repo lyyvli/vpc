@@ -55,7 +55,7 @@ If your VPC has enabled IPv6, the following route entries will be automatically 
 
 -   The system route entry \(whose destination CIDR block is the IPv6 CIDR block of the VSwitch\) is used for communication within aVSwitch.
 
-    **说明：** If you have created a custom route table and attached it to a VSwitch with IPv6 CIDR block enabled, you must maunally add a custom route entry whose the destination CIDR block is ::/0 and the next hop is the IPv6 Gateway instance.
+    **Note:** If you have created a custom route table and attached it to a VSwitch with IPv6 CIDR block enabled, you must maunally add a custom route entry whose the destination CIDR block is ::/0 and the next hop is the IPv6 Gateway instance.
 
 
 ## Routing rules {#section_dq3_3ny_rdb .section}
@@ -85,7 +85,7 @@ You can add custom route entries to the route table to control traffic.
     |:---------------------|:------------|:-------|
     |0.0.0.0/0|ECS instance|ECS01|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155479986638745_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155532116338745_en-US.png)
 
 -   Connect VPCs \(Express Connect\)
 
@@ -103,7 +103,7 @@ You can add custom route entries to the route table to control traffic.
         |:---------------------|:------------|:-------|
         |172.16.0.0/12|Router interface \(To VPC\)|VPC1|
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155479986638746_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155532116338746_en-US.png)
 
 
 -   Connect VPCs
@@ -122,7 +122,7 @@ You can add custom route entries to the route table to control traffic.
         |:---------------------|:------------|:-------|
         |172.16.0.0/12|VPN Gateway|VPN Gateway 2|
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155479986638748_en-US.png)
+         ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155532116338748_en-US.png)
 
 -   Connect a VPC to a local data center \(Express Connect\)
 
@@ -147,7 +147,7 @@ You can add custom route entries to the route table to control traffic.
         |:---------------------|:------------|:-------|
         |172.16.0.0/12|—|Local gateway device|
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155479986638749_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155532116338749_en-US.png)
 
 -   Connect a VPC to a local data center \(VPN Gateway\)
 
@@ -157,6 +157,6 @@ You can add custom route entries to the route table to control traffic.
     |:---------------------|:------------|:-------|
     |192.168.0.0/16|VPN Gateway|The created VPN Gateway|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155479986638750_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120612/155532116338750_en-US.png)
 
 
