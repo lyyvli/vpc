@@ -1,68 +1,81 @@
 # ModifyRouteTableAttributes {#reference_i4w_xmt_ndb .reference}
 
-Modify the name and description of a route table.
+Modifies the name and description of a route table.
+
+## Debug {#section_ayr_qdk_pgb .section}
+
+By using [OpenAPI Explorer](https://api.aliyun.com/#product=Slb&api=CreateLoadBalancer), you can easily debug APIs, automatically generate SDK code examples, and quickly search for APIs.
 
 ## Request parameters {#section_cch_pjg_mdb .section}
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-|Action|String |Yes | The action to perform.  Valid value: 
+|Parameter|Type|Required?|Example value|Description|
+|:--------|:---|:--------|-------------|:----------|
+|Action|String |Yes |ModifyRouteTableAttributes| The name of this action.  Value:
 
  ModifyRouteTableAttributes
 
  |
-|RegionId|String |Yes | The region ID of the VPC to which the route table belongs.
+|RegionId|String |Yes |cn-hangzhou| The region ID of the VPC to which the route table belongs.
 
- You can obtain the region ID by calling the DescribeRegions API.
-
- |
-|RouteTableId|String |Yes |The ID of the route table.|
-|RouteTableName|String| No| The name of the route table.
-
- The name can contain from 2 to 128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens, and must start with an English letter. The name cannot start with `http://` or `https://`.
+ To query the region ID, call DescribeRegions.
 
  |
-|Description|String| No| The description of the route table.
+|RouteTableId|String |Yes |vtb-bp145q7glnuzdvzu21pom|The ID of the route table.|
+|Description|String| No|This is my route table.| The description of the route table.
 
- The description can contain from 2 to 256 characters. The description must start with English letters, but cannot start with `http://` or `https://`.
+ The description must be 2 to 256 characters in length. It must start with a letter, but cannot start with `http://` or `https://`.
+
+ |
+|RouteTableName|String| No|doctest| The name of the route table.
+
+ The name must be 2 to 128 characters in length. It can contain letters, numbers, periods \(.\), underlines \(\_\), and hyphens \(-\). It must start with an English letter. The name cannot start with `http://` or `https://`.
 
  |
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
+|Parameter|Type|Example value|Description|
+|:--------|:---|-------------|:----------|
+|RequestId|String|62172DD5-6BAC-45DF-8D44-xxxxxxxx|The ID of the request.|
 
 ## Examples {#section_ix5_h1g_cz .section}
 
 **Request example**
 
 ``` {#createVPCpub}
-https://vpc.aliyuncs.com/?Action=ModifyRouteTableAttributes
-&RegionId=cn-qingdao
-&RouteTableName=myRouteTable
-&RouteTableId=vtb-m5evbtbptnxxxxxxx
-&CommonParameters
+
+http(s)://vpc.aliyuncs.com/?Action=ModifyRouteTableAttributes
+&RegionId=cn-hangzhou
+&RouteTableId=vtb-bp145q7glnuzdvzu21pom
+&<CommonParameters>
+
 ```
 
 **Response example**
 
 -   XML format
 
-    ```
-    <? xml version="1.0" encoding="UTF-8"? >
+    ``` {#xml_return_success_demo}
     <ModifyRouteTableAttributesResponse>
-        <RequestId>62172DD5-6BAC-45DF-8D44-xxxxxxx</RequestId>
+      <RequestId>62172DD5-6BAC-45DF-8D44-xxxxxxx</RequestId>
     </ModifyRouteTableAttributesResponse>
+    
     ```
 
 -   JSON format
 
-    ```
+    ``` {#json_return_success_demo}
     {
-      "RequestId": "62172DD5-6BAC-45DF-8D44-xxxxxxxx"
+    	"RequestId":"62172DD5-6BAC-45DF-8D44-xxxxxxxx"
     }
     ```
 
+
+## Error codes {#section_p4t_jmy_pgb .section}
+
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
+|403|Forbbiden|User not authorized to operate on the specified resource.|You are not authorized to operate this resource.|
+
+[See common error codes](https://error-center.aliyun.com/status/product/Vpc)
 
