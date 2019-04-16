@@ -8,7 +8,7 @@ Before changing the network type, make sure that the following conditions are me
 
 -   Make sure the network type of the instance is the classic network.
 
--   There are available VPC and VSwitches in the zone where the Redis instance is located. For more information, see [Create a VPC and a VSwitch](../../../../reseller.en-US/User Guide/Manage a VPC.md#section_ufw_rhv_rdb).
+-   There are available VPC and VSwitches in the zone where the Redis instance is located. For more information, see [Create a VPC and a VSwitch](../../../../reseller.en-US/User Guide/VPC and subnets/Manage a VPC.md#section_ufw_rhv_rdb).
 
 
 ## Change the network type on the console {#section_p5v_fw5_sdb .section}
@@ -21,7 +21,7 @@ Before changing the network type, make sure that the following conditions are me
     1.  Select the target VPC and VSwitch.
     2.  Select to retain the classic network endpoint and select the retention time.
 
-        **Note:** When retaining the classic network endpoint is selected, ECS instances of the classic network can still access the database and there is no impact on the service. When the classic network endpoint expires, the system automatically deletes the classic network endpoint and you cannot access the database through the classic network endpoint.
+        **Note:** After you select to retain the classic network endpoint, the classic network endpoint and the VPC endpoint remain as two independent endpoints. As a result, ECS instances of the classic network can still access the database and the service is not affected. When the classic network endpoint expires, the system automatically deletes the classic network endpoint and you cannot access the database through the classic network endpoint.
 
     3.  Click **OK**.
 6.  On the Instance Information page, click **Refresh** to view the VPC endpoint and classic network endpoint.
@@ -49,39 +49,39 @@ During the hybrid access period, you can change the retention time of the classi
 
 2.  Call the SwitchNetwork API to change the network type.
 
-    **Request parameters**
+    **Request parameters** 
 
     |Name|Type|Required|Description|
     |:---|:---|:-------|:----------|
-    |Action|String|Yes|The action to perform. Valid value:SwitchNetwork
+    |Action|String|Yes|The action to perform. Valid value: SwitchNetwork
 
-|
+ |
     |InstanceId|String|Yes|The ID of the instance.|
-    |TargetNetworkType|String| Yes|The network type of the instance.    -   VPC: VPC
+    |TargetNetworkType|String|Yes|The network type of the instance.     -   VPC: VPC
     -   Classic: Classic network
-|
-    |VPCId|String| No|The ID of the VPC.|
-    |VSwitchId|String| No| The ID of the VSwitch.
+ |
+    |VPCId|String|No|The ID of the VPC.|
+    |VSwitchId|String|No| The ID of the VSwitch.
 
  This parameter must be specified if VPC ID is specified.
 
  |
-    |RetainClassic|String| No| Whether to retain the classic network endpoint. The default value is False:
+    |RetainClassic|String|No| Whether to retain the classic network endpoint. The default value is False:
 
     -   True: Retain
     -   False: Do not retain
  |
-    |ClassicExpiredDays|String| No| The retention time of the classic network endpoint. The shortest time is 1 day, the longest time is 120 days, and the default value is 7 days.
+    |ClassicExpiredDays|String|No| The retention time of the classic network endpoint. The shortest time is 1 day, the longest time is 120 days, and the default value is 7 days.
 
  This parameter must be specified if RetainClassic is set to True.
 
  |
 
-    **Response parameters**
+    **Response parameters** 
 
     |Name|Type|Description|
     |:---|:---|:----------|
-    |RequestId|String |The ID of the request.|
+    |RequestId|String|The ID of the request.|
     |TaskId|String|The ID of the task.|
 
     **Example code**
@@ -132,23 +132,23 @@ During the hybrid access period, you can change the retention time of the classi
 
     |Name|Type|Required|Description|
     |:---|:---|:-------|:----------|
-    |Action|String| Yes|The action to perform. Valid value:DescribeDBInstanceNetInfo
+    |Action|String|Yes|The action to perform. Valid value: DescribeDBInstanceNetInfo
 
-|
-    |InstanceId|String| Yes|The ID of the instance.|
+ |
+    |InstanceId|String|Yes|The ID of the instance.|
 
-    **Response parameters**
+    **Response parameters** 
 
     |Name|Type|Description|
     |:---|:---|:----------|
     |NetInfoItems|List|The connection information of the instance.|
-    |InstanceNetworkType|String|The network type of the instance.    -   VPC: An instance of the VPC network.
+    |InstanceNetworkType|String|The network type of the instance.     -   VPC: An instance of the VPC network.
 
     -   Classic: An instance of the classic network.
 
-|
+ |
 
-    **InstanceNetInfo**
+    **InstanceNetInfo** 
 
     |Name|Type|Description|
     |:---|:---|:----------|
@@ -164,7 +164,7 @@ During the hybrid access period, you can change the retention time of the classi
     |VSwitchId|String|The ID of the VSwitch.|
     |ExpiredTime|String|The time of expiration.|
 
-    **Example code**
+    **Example code** 
 
     ```
     import com.aliyuncs.DefaultAcsClient;
@@ -213,26 +213,26 @@ During the hybrid access period, you can change the retention time of the classi
 
 2.  Call the ModifyInstanceNetExpireTime API to change the network type.
 
-    **Request parameters**
+    **Request parameters** 
 
     |Name|Type|Required|Description|
     |:---|:---|:-------|:----------|
-    |Action|String| Yes|The action to perform. Valid value:ModifyInstanceNetExpireTime
+    |Action|String|Yes|The action to perform. Valid value: ModifyInstanceNetExpireTime
 
-.|
-    |InstanceId|String| Yes|The ID of the instance.|
-    |ConnectionString|String| Yes|The classic network endpoint.|
-    |ClassicExpiredDays|Interger| Yes| Select the retention time.
+ .|
+    |InstanceId|String|Yes|The ID of the instance.|
+    |ConnectionString|String|Yes|The classic network endpoint.|
+    |ClassicExpiredDays|Interger|Yes| Select the retention time.
 
  Valid values: 14, 30, 60, or 120.
 
  |
 
-    **Response parameters**
+    **Response parameters** 
 
     |Name|Type|Description|
     |:---|:---|:----------|
-    |RequestId|String |The ID of the request.|
+    |RequestId|String|The ID of the request.|
 
     **Example code**
 
