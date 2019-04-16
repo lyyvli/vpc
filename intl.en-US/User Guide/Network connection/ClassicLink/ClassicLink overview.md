@@ -6,9 +6,9 @@ VPC provides the ClassicLink function so that ECS instances of the classic netwo
 
 The basic implementation for the connection of classic networks with VPCs is the same as that of two classic networks. Therefore, when connecting a classic network to a VPC, the intranet latency and bandwidth limits remain unchanged. Moreover, operations, such as downtime migration, hot migration, stopping, starting, restarting, and system disk replacement will not change the link of a previously established ClassicLink.
 
-The classic network and VPC network are two different network planes. ClassicLink establishes a private communication channel between these two network planes through routing.  Therefore, to use the ClassicLink function, you must plan IP addresses properly to avoid IP address conflicts.
+The classic network and VPC network are two different network planes. ClassicLink establishes a private communication channel between these two network planes through routing. Therefore, to use the ClassicLink function, you must plan IP addresses properly to avoid IP address conflicts.
 
-The IP address range used by classic networks in Alibaba Cloud is 10.0.0.0/8 \(excluding 10.111.0.0/16\). As long as the IP address range of a VPC does not conflict with 10.0.0.0/8, you can use ClassicLink to establish a private communication. VPC IP address ranges that can communicate with the classic network are 172.16.0.0/12, 10.111.0.0/16 and 192.168.0.0/16.
+The IP address range used by classic networks in Alibaba Cloud is 10.0.0.0/8 \(excluding 10.111.0.0/16\). As long as the IP address range of a VPC does not conflict with 10.0.0.0/8, you can use ClassicLink to establish a private communication. VPC IP address ranges that can communicate with the classic network are 172.16.0.0/12, 10.111.0.0/16 and 192.168.0.0/16.
 
 ## Limits {#section_bbp_dzl_g2b .section}
 
@@ -32,7 +32,7 @@ Note the following before you use the ClassicLink function:
  |
 |192.168.0.0/16| -   There is no custom route entry destined for 10.0.0.0/8 in the VPC.
 
--   Add a route entry, of which the destination CIDR block is 192.168.0.0/16 and the next hop is the private NIC, to the ECS instance of the classic network. Download the [Route script](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/58095/cn_zh/1502878832385/route192.zip).
+-   Add a route entry, of which the destination CIDR block is 192.168.0.0/16 and the next hop is the private NIC, to the ECS instance of the classic network. Download the [Route script](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/65402/jp_ja/1555405679409/route192.zip).
 
 **Note:** Before running the script, read the readme file in the script carefully.
 
