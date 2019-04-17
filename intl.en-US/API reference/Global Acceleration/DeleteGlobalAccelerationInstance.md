@@ -1,64 +1,80 @@
 # DeleteGlobalAccelerationInstance {#reference_i4w_xmt_ndb .reference}
 
-Delete a Global Acceleration instance.
+Deletes a Global Acceleration instance.
 
-Note the following before calling this API:
+Note the following before you call this action:
 
--   Only Pay-As-You-Go instances are supported.
--   If you want to delete a dedicated-bandwidth instance, unbind the backend server before deleting the instance.
--   If you want to delete a shared-bandwidth instance, remove the EIPs before deleting the instance.
+-   Only Pay-As-You-Go instances can be deleted.
+-   If you want to delete a dedicated-bandwidth instance, you must first detach the backend server before deleting the instance.
+-   If you want to delete a shared-bandwidth instance, you must first disassociate the EIP or EIPs before deleting the instance.
+
+## Debug {#apiExplorer .section}
+
+By using [API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeVpcAttribute), you can easily debug APIs, automatically generate SDK code examples, and quickly search for APIs.
 
 ## Request parameters {#section_cch_pjg_mdb .section}
 
-|Name |Type|Required|Description |
-|:----|:---|:-------|:-----------|
-|Action|String|Yes| The action to perform.  Valid value: 
+|Parameter|Type|Required?|Example value|Description |
+|:--------|:---|:--------|:------------|:-----------|
+|Action|String|Yes|DeleteGlobalAccelerationInstance| The name of this action.  Value: 
 
  DeleteGlobalAccelerationInstance
 
  |
-|RegionId|String|Yes| The ID of the region where the Global Acceleration instance is located.
-
- Call the DescribeRegions API to obtain the region ID.
+|GlobalAccelerationInstanceId|String|Yes|ga-asdfsl22sxxxxx| The ID of the Global Acceleration instance.
 
  |
-|GlobalAccelerationInstanceId|String|Yes| The ID of the Global Acceleration instance.
+|RegionId|String|Yes|cn-hangzhou| The ID of the region where the Global Acceleration instance is located.
+
+ To query the region ID, call DescribeRegions.
 
  |
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
+|Parameter|Type|Example value|Description|
+|:--------|:---|:------------|:----------|
+|RequestId|String|E6E63B2A-9820-44A8-A359-9BB2DAEE6424|The ID of the request.|
 
 ## Examples {#section_ix5_h1g_cz .section}
 
 **Request example**
 
 ``` {#createVPCpub}
-https://vpc.aliyuncs.com/?Action=DeleteGlobalAccelerationInstance 
-&amp;RegionId=ap-southeast-1
-&amp;GlobalAccelerationInstanceId=ga-aabbccddaabb
-&amp;CommonRequestParameters
+
+https://vpc.aliyuncs.com/?Action=DeleteGlobalAccelerationInstance
+&GlobalAccelerationInstanceId=ga-asdfsl22sxxxxx
+&RegionId=cn-hangzhou
+&<CommonParameters>
+
 ```
 
 **Response example**
+
+XML format
+
+```
+<DeleteGlobalAccelerationInstanceResponse>
+  <RequestId>E6E63B2A-9820-44A8-A359-9BB2DAEE6424</RequestId>
+</DeleteGlobalAccelerationInstanceResponse>
+
+```
 
 JSON format
 
 ```
 {
-    "RequestId": "E6E63B2A-9820-44A8-A359-9BB2DAEE6424"
+	"RequestId":"E6E63B2A-9820-44A8-A359-9BB2DAEE6424"
 }
 ```
 
-XML format
+## Error codes {#section_lwx_dh3_wgb .section}
 
-```
-&lt;? xml version="1.0" encoding="UTF-8" ? >
-&lt;DeleteGlobalAccelerationInstanceResponse>
-    &lt;RequestId>BD5BCEE8-F62C-40C2-9AC3-89XXXXXXXXX&lt;/RequestId>
-&lt;/DeleteGlobalAccelerationInstanceResponse>
-```
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
+|400|IncorrectGlobalAccelerationInstanceIdStatus|Current GlobalAccelerationInstance status does not support this operation.|The specified Global Acceleration instance does not support this operation.|
+|400|InvalidGlobalAccelerationInstanceId.NotFound|The specified GlobalAccelerationInstanceId is not found.|The specified Global Acceleration instance does not exist.|
+|400|IncorrectStatus|This openeration would be allowed only when status of this RouterInterface is Idle/Inactive.|This operation is not permitted because the associated router interface is not in the Idle or Inactive state.|
+
+[See common error codes](https://error-center.aliyun.com/status/product/Vpc)
 
