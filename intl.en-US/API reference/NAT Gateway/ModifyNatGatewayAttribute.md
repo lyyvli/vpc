@@ -1,70 +1,86 @@
 # ModifyNatGatewayAttribute {#reference_i4w_xm3t_ndb .reference}
 
-Modify the name and description of a NAT gateway.
+Modifies the name and description of a NAT Gateway.
+
+## Debug {#apiExplorer .section}
+
+By using [API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeVpcAttribute), you can easily debug APIs, automatically generate SDK code examples, and quickly search for APIs.
 
 ## Request parameters {#section_cch_pjg_mdb .section}
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-|Action|String|Yes| The action to perform. Valid value: 
+|Parameter|Type|Required?|Example value|Description|
+|:--------|:---|:--------|-------------|:----------|
+|Action|String|Yes|ModifyNatGatewayAttribute| The name of this action. Value:
 
  ModifyNatGatewayAttribute
 
  |
-|RegionId|String|Yes|  The region of the NAT gateway.
-
- You can obtain the region ID by calling the DescribeRegions API.
+|NatGatewayId|String|Yes|ngw-xxoo123| The ID of the NAT Gateway.
 
  |
-|NatGatewayId|String|Yes| The ID of the NAT gateway.
+|RegionId|String|Yes|cn-hangzhou| The region to which the NAT Gateway belongs.
+
+ To query the region ID, call DescribeRegions.
 
  |
-|Name|String|No| The name of the NAT gateway.
+|Description|String|No|fortest| The description of the NAT Gateway.
 
- The name  can contain from 2 to 128 characters including a-z, A-Z, 0-9, underlines, and hyphens. The name must start with an English letter, but cannot start with `http://` or `https://`.
+ The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with `http://` or `https://`.
 
  |
-|Description|String|No| The description of the NAT gateway.
+|Name|String|No|nat123| The name of the NAT Gateway.
 
- The description can contain from 2 to 256 characters. The description must start with English letters, but cannot start with `http://` or `https://`.
+ The name must be 2 to 128 characters in length and can contain letters, numbers, periods \(.\), underscores \(\_\), or hyphens \(-\). The name must start with a letter. It cannot start with `http://` or `https://`.
 
  |
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
+|Parameter|Type|Example value|Description|
+|:--------|:---|-------------|:----------|
+|RequestId|String|AB5F62CF-2B60-4458-A756-42C9DFE108D1|The ID of the request.|
 
 ## Examples {#section_ix5_h1g_cz .section}
 
 **Request example**
 
 ``` {#createVPCpub}
+
 https://vpc.aliyuncs.com/?Action=ModifyNatGatewayAttribute
-&RegionId=cn-shanghai
-&NatGatewayId=ngw-7mwb327j1
-&Name=test
-&CommonParameters
+&NatGatewayId=ngw-xxoo123
+&RegionId=cn-hangzhou
+&<CommonParameters>
+			
 ```
 
-**Response example **
+ **Response example** 
 
 -   XML format
 
     ```
-    <? xml version="1.0" encoding="UTF-8" ? >
     <ModifyNatGatewayAttributeResponse>
-    	<RequestId>2315DEB7-5E92-423A-91F7-4C1EC9AD97C3</RequestId>
+      <RequestId>2315DEB7-5E92-423A-91F7-4C1EC9AD97C3</RequestId>
     </ModifyNatGatewayAttributeResponse>
+    					
     ```
 
 -   JSON format
 
     ```
-    
-      "RequestId": "2315DEB7-5E92-423A-91F7-4C1EC9AD97C3"
-    
+    {
+    	"RequestId":"2315DEB7-5E92-423A-91F7-4C1EC9AD97C3"
+    }
     ```
 
+
+## Error codes {#section_kqy_2qv_vgb .section}
+
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
+|404|InvalidRegionId.NotFound|The specified RegionId does not exist in our records.|The specified region ID does not exist.|
+|404|InvalidNatGatewayId.NotFound|The specified NatGatewayId does not exist in our records.|The specified NatGatewayId does not exist.|
+|400|InvalidParameter.Name.Malformed|The specified Name is not valid.|The name is invalid.|
+|400|InvalidParameter.Description.Malformed|The specified Description is not valid.|The description is invalid.|
+
+[See common error codes](https://error-center.aliyun.com/status/product/Vpc)
 
