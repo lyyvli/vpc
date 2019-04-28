@@ -55,7 +55,7 @@
     
         def create_nat_gateway(self, params):
             """
-            create_nat_gateway: 创建nat gateway
+            create_nat_gateway: 创建Nat网关
             官网API参考: https://help.aliyun.com/document_detail/36048.html
             """
             try:
@@ -63,7 +63,7 @@
                 request.set_VpcId(params['vpc_id'])
                 response = client.do_action_with_exception(request)
                 response_json = json.loads(response)
-                # 判断Nat Gateway状态是否可用
+                # 判断Nat网关状态是否可用
                 if CheckStatus.check_status(TIME_DEFAULT_OUT, DEFAULT_TIME,
                                             self.describe_nat_gateway_status,
                                             AVAILABLE, response_json['NatGatewayId']):
@@ -75,7 +75,7 @@
     
         def describe_nat_gateway(self, nat_gateway_id):
             """
-            describe_nat_gateway: 查询指定地域已创建的nat gateway的信息
+            describe_nat_gateway: 查询指定地域已创建的Nat网关的信息
             官网API参考: https://help.aliyun.com/document_detail/36054.html
             """
             try:
@@ -91,7 +91,7 @@
     
         def delete_nat_gateway(self, params):
             """
-            delete_nat_gateway: 删除nat gateway
+            delete_nat_gateway: 删除Nat网关
             官网API参考: https://help.aliyun.com/document_detail/36051.html
             """
             try:
@@ -99,7 +99,7 @@
                 request.set_NatGatewayId(params['nat_gateway_id'])
                 response = client.do_action_with_exception(request)
                 response_json = json.loads(response)
-                # 判断Nat Gateway状态是否可用
+                # 判断Nat网关状态是否可用
                 if CheckStatus.check_status(TIME_DEFAULT_OUT, DEFAULT_TIME * 5,
                                             self.describe_nat_gateway_status,
                                             '', params['nat_gateway_id']):
@@ -111,7 +111,7 @@
     
         def describe_nat_gateway_status(self, nat_gateway_id):
             """
-            describe_nat_gateway_status: 查询指定地域已创建的nat gateway的状态
+            describe_nat_gateway_status: 查询指定地域已创建的Nat网关的状态
             官网API参考: https://help.aliyun.com/document_detail/36054.html
             """
             response = self.describe_nat_gateway(nat_gateway_id)
@@ -210,7 +210,7 @@
         CommonUtil.log("create_vswitch", vswitch_json)
         params['vswitch_id'] = vswitch_json['VSwitchId']
     
-        # 创建natgw
+        # 创建Nat网关
         nat_gateway_json = nat_gateway.create_nat_gateway(params)
         CommonUtil.log("create_nat_gateway", nat_gateway_json)
     
@@ -227,7 +227,7 @@
         eip_response_json = eip.associate_eip_address(params)
         CommonUtil.log("associate_eip_address eip", eip_response_json)
     
-        # 创建snat entry
+        # 创建SNAT条目
         params['snat_table_id'] = nat_gateway_json['SnatTableIds']['SnatTableId'][0]
         snat_entry_json = nat_gateway.create_snat_entry(params)
         CommonUtil.log("create_snat_entry", snat_entry_json)
@@ -236,12 +236,12 @@
         eip_response_json = eip.describe_eip_address(params['allocation_id'])
         CommonUtil.log("describe_eip_address", eip_response_json)
     
-        # 查询natgw
+        # 查询Nat网关
         params['nat_gateway_id'] = nat_gateway_json['NatGatewayId']
         nat_gateway_json = nat_gateway.describe_nat_gateway(params['nat_gateway_id'])
         CommonUtil.log("describe_nat_gateway", nat_gateway_json)
     
-        # 删除snat entry
+        # 删除SNAT条目
         params['snat_entry_id'] = snat_entry_json['SnatEntryId']
         snat_entry_json = nat_gateway.delete_snat_entry(params)
         CommonUtil.log("delete_snat_entry", snat_entry_json)
@@ -250,7 +250,7 @@
         eip_response_json = eip.unassociate_eip_address(params)
         CommonUtil.log("unassociate_eip_address nat", eip_response_json)
     
-        # 删除natgw
+        # 删除Nat网关
         nat_gateway_json = nat_gateway.delete_nat_gateway(params)
         CommonUtil.log("delete_nat_gateway", nat_gateway_json)
     
