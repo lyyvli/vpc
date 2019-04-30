@@ -19,7 +19,7 @@ To create a custom route table, the procedure described in this tutorial is as f
 3.  In the downloaded SDK directory, open the $aliyun-openapi-python-sdk-examples\\sdk\_examples\\examples\\vpc folder.
 4.  Open the vpc\_quick\_start.py file in your text editor and configure your required parameters. Then, save the configurations and exit the editor. 
 
-    ``` {#codeblock_obc_m98_358}
+    ``` {#codeblock_pw2_1yi_k6u}
     #encoding=utf-8
     import sys
     import json
@@ -46,7 +46,7 @@ To create a custom route table, the procedure described in this tutorial is as f
         def create_route_table(self, params):
             """
             create_route_table: 
-            API reference link: https://help.aliyun.com/document_detail/87586.html
+            API reference link: https://partners-intl.aliyun.com/help/doc-detail/87586.htm
             """
             try:
                 request = CreateRouteEntryRequest.CreateRouteEntryRequest()
@@ -71,7 +71,7 @@ To create a custom route table, the procedure described in this tutorial is as f
         def associate_route_table(self, params):
             """
             associate_route_table: Associate the custom route table with the VSwitch in the same VPC
-            API reference link: https://help.aliyun.com/document_detail/87599.html
+            API reference link: https://partners-intl.aliyun.com/help/doc-detail/87599.htm
             """
             try:
                 request = AssociateEipAddressRequest.AssociateEipAddressRequest()
@@ -92,7 +92,7 @@ To create a custom route table, the procedure described in this tutorial is as f
         def unassociate_route_table(self, params):
             """
             unassociate_route_table: Dissociate the route table from the VSwitch
-            API reference link: https://help.aliyun.com/document_detail/87628.html
+            API reference link: https://partners-intl.aliyun.com/help/doc-detail/87628.htm
             """
             try:
                 request = UnassociateEipAddressRequest.UnassociateEipAddressRequest()
@@ -113,7 +113,7 @@ To create a custom route table, the procedure described in this tutorial is as f
         def delete_route_table(self, params):
             """
             delete_route_table: Delete the custom route table
-            API reference link: https://help.aliyun.com/document_detail/87601.html
+            API reference link: https://partners-intl.aliyun.com/help/doc-detail/87601.htm
             """
             try:
                 request = DeleteRouteEntryRequest.DeleteRouteEntryRequest()
@@ -135,7 +135,7 @@ To create a custom route table, the procedure described in this tutorial is as f
         def describe_route_table(self, route_table_id):
             """
             describe_route_table: Query the route table
-            API reference link: https://help.aliyun.com/document_detail/36014.html
+            API reference link: https://partners-intl.aliyun.com/help/doc-detail/36014.htm
             """
             try:
                 request = DescribeRouteTablesRequest.DescribeRouteTablesRequest()
