@@ -1,6 +1,6 @@
 # 安装Alibaba Cloud SDK for Python {#task_dln_nvy_3hb .task}
 
-本文为您介绍如何在本地搭建可以运行专有网络Python SDK示例的Python开发环境，Alibaba Cloud SDK for Python支持Python 2.7，要运行专有网络的Python SDK示例，您需要安装Alibaba Cloud SDK for Python的核心库和VPC Python SDK。
+本文为您介绍如何在本地搭建可以运行专有网络Python SDK示例的Python开发环境，Alibaba Cloud SDK for Python支持Python 2.7，要运行专有网络的Python SDK示例，您需要安装Alibaba Cloud SDK for Python的核心库和VPC Python SDK。Python SDK支持Windows、Linux和Mac操作系统，所有专有网络Python SDK示例均在Windows系统下运行。
 
 1.  安装Python。 
     1.  登录[Python下载地址](https://www.python.org/downloads/)。
