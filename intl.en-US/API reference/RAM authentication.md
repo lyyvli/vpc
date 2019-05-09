@@ -62,106 +62,110 @@ Where `$regionid/accoutid/vrouterid` is the resource ID, and `*` represents the 
 
 |API|ARN format|
 |---|----------|
-|vpc:CreateVpc|`acs:vpc:$regionid:$accountid:vpc/*`|
-|vpc:DeleteVpc|`acs:vpc:$regionid:$accountid:vpc/$vpcid`|
-|vpc:DescribeVpcs|`vpc:$regionid:$accountid:vpc/*`|
-|vpc:ModifyVpcAttribute|`acs:vpc:$regionid:$accountid:vpc/$vpcid`|
-|vpc:DescribeVRouters|`acs:vpc:$regionid:$accountid:vrouter/*`|
-|Specify the VRouterId to query: `"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/$vpcid"`|
-|The VRouterId is not specified: `"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/*"`|
-|vpc:ModifyVRouterAttribute|`acs:slb:*:$accountid:*`|
-|vpc:CreateVSwitch|`acs:vpc:$regionid:$accountid:vswitch/*`|
+|CreateVpc|`acs:vpc:$regionid:$accountid:vpc/*`|
+|DeleteVpc|`acs:vpc:$regionid:$accountid:vpc/$vpcid`|
+|DescribeVpcs|`acs:vpc:$regionid:$accountid:vpc/*`|
+|ModifyVpcAttribute|`acs:vpc:$regionid:$accountid:vpc/$vpcid`|
+|DescribeVRouters|`acs:vpc:$regionid:$accountid:vrouter/*`|
+|Specify the VRouterId to query: `"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/$vpcid"`
+
+ |
+|The VRouterId is not specified: `"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/*"`
+
+ |
+|ModifyVRouterAttribute|`acs:vpc:*:$accountid:*`|
+|CreateVSwitch|`acs:vpc:$regionid:$accountid:vswitch/*`|
 | |`acs:vpc:$regionid:$accountid:vpc/$vpcid`|
-|vpc:DeleteVSwitch|`acs:vpc:$regionid:$accountid:vswitch/$vswitchid`|
-|vpc:DescribeVSwitches|`acs:vpc:$regionid:$accountid:vswitch/*`|
+|DeleteVSwitch|`acs:vpc:$regionid:$accountid:vswitch/$vswitchid`|
+|DescribeVSwitches|`acs:vpc:$regionid:$accountid:vswitch/*`|
 |`"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/$vpcid"`|
-|vpc:ModifyVSwitchAttribute|`acs:vpc:$regionid:$accountid:vswitch/$vswitchId`|
-|vpc:CreateRouteEntry|`acs:vpc:$regionid:$accountid:routetable/$routetableid`|
-|vpc:DeleteRouteEntry|`acs:vpc:$regionid:$accountid:routetable/$routetableid`|
-|vpc:DescribeRouteTables|`acs:vpc:$regionid:$accountid:routetable/*`|
+|ModifyVSwitchAttribute|`acs:vpc:$regionid:$accountid:vswitch/$vswitchId`|
+|CreateRouteEntry|`acs:vpc:$regionid:$accountid:routetable/$routetableid`|
+|DeleteRouteEntry|`acs:vpc:$regionid:$accountid:routetable/$routetableid`|
+|DescribeRouteTables|`acs:vpc:$regionid:$accountid:routetable/*`|
 |`"vpc:VRouter":"acs:vpc$regionid:$accountid:vrouter/$vrouterid"`|
 |CreateHaVip|`acs:vpc:$regionid:$accountid:havip/*`|
 |`acs:vpc:$regionid:$accountid:vswitch/$vswitchid`|
 |DeleteHaVip|`acs:vpc:$regionid:$accountid:havip/$havipid`|
 |AssociateHaVip|`acs:vpc:$regionid:$accountid:havip/$havipid`|
-|`acs:slb:%s:%s:certificate/%`|
+|`acs:vpc:%s:%s:certificate/%`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 |UnassociateHaVip|`acs:vpc:$regionid:$accountid:havip/$havipid`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 |DescribeHaVips|`acs:vpc:$regionid:$accountid:havip/*`|
-|vpc:AllocateEipAddress|`acs:vpc:$regionid:$accountid:eip/*`|
+|AllocateEipAddress|`acs:vpc:$regionid:$accountid:eip/*`|
 |AssociateEipAddres|`acs:vpc:$regionid:$accountid:eip/*`|
-|Bind an ECS instance`acs:vpc:$regionid:$accountid:eip/$allocationid`
+|Attach an ECS instance `acs:vpc:$regionid:$accountid:eip/$allocationid`
 
-`acs:ecs:$regionid:$accountid:instance/$instanceid`
+ `acs:ecs:$regionid:$accountid:instance/$instanceid`
 
-|
-|Bind an HAVIP`acs:vpc:$regionid:$accountid:eip/$allocationid`
+ |
+|Attach an HaVip `acs:vpc:$regionid:$accountid:eip/$allocationid`
 
-`acs:vpc:$regionid:$accountid:havip/$havipid`
+ `acs:vpc:$regionid:$accountid:havip/$havipid`
 
-|
-|vpc:DescribeEipAddresses|`acs:vpc:$regionid:$accountid:eip/*`|
-|vpc:UnassociateEipAddress|Bind an ECS instance`acs:vpc:$regionid:$accountid:eip/$allocationid`
+ |
+|DescribeEipAddresses|`acs:vpc:$regionid:$accountid:eip/*`|
+|UnassociateEipAddress|Attach an ECS instance `acs:vpc:$regionid:$accountid:eip/$allocationid`
 
-`acs:ecs:$regionid:$accountid:instance/$instanceid`
+ `acs:ecs:$regionid:$accountid:instance/$instanceid`
 
-|
-|Bind an HAVIP`acs:vpc:$regionid:$accountid:eip/$allocationid`
+ |
+|Attach an HaVip `acs:vpc:$regionid:$accountid:eip/$allocationid`
 
-`acs:vpc:$regionid:$accountid:havip/$havipid`
+ `acs:vpc:$regionid:$accountid:havip/$havipid`
 
-|
-|vpc:ReleaseEipAddress|`acs:vpc:$regionid:$accountid:eip/$allocationid`|
-|vpc:DescribeEipMonitorData|`acs:vpc:$regionid:$accountid:eip/$allocationid`|
+ |
+|ReleaseEipAddress|`acs:vpc:$regionid:$accountid:eip/$allocationid`|
+|DescribeEipMonitorData|`acs:vpc:$regionid:$accountid:eip/$allocationid`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 |CreateNatGateway|`acs:vpc:$regionid:$accountid:natgateway/*`|
-|vpc:DescribeNatGateways|`acs:vpc:$regionid:$accountid:natgateway/$natgatewayid`|
+|DescribeNatGateways|`acs:vpc:$regionid:$accountid:natgateway/$natgatewayid`|
 |`acs:vpc:$regionid:$accountid:natgateway/*`|
 |ModifyNatGatewaySpec|`acs:vpc:$regionid:$accountid:natgateway/$natgatewayid`|
-|vpc:ModifyNatGatewayAttribute|`acs:vpc:$regionid:$accountid:natgateway/$natgatewayid`|
+|ModifyNatGatewayAttribute|`acs:vpc:$regionid:$accountid:natgateway/$natgatewayid`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
-|vpc:DeleteNatGateway|`acs:vpc:$regionid:$accountid:natgateway/$natgatewayid`|
+|DeleteNatGateway|`acs:vpc:$regionid:$accountid:natgateway/$natgatewayid`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
-|vpc:CreateBandwidthPackage|`acs:vpc:$regionid:$accountid:bandwidthpackage/*`|
-|vpc:DescribeBandwidthPackages|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
+|CreateBandwidthPackage|`acs:vpc:$regionid:$accountid:bandwidthpackage/*`|
+|DescribeBandwidthPackages|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
 |`acs:vpc:$regionid:$accountid:bandwidthpackage/*`|
-|vpc:ModifyBandwidthPackageSpec|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
-|vpc:ModifyBandwidthPackageAttribute|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
-|vpc:AddBandwidthPackageIps|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
-|vpc:RemoveBandwidthPackageIps|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
-|vpc:DeleteBandwidthPackage|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
-|vpc:CreateForwardEntry|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
-|vpc:DeleteForwardEntry|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
-|vpc:ModifyForwardEntry|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
-|vpc:DescribeForwardTableEntries|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
-|vpc:CreateSnatEntry|`acs:vpc:$regionid:$accountid:snattable/*`|
-|vpc:ModifySnatEntry|`acs:vpc:$regionid:$accountid:snattable/$snattableid`|
-|vpc:DescribeSnatTableEntries|`acs:vpc:$regionid:$accountid:snattable/$snattableid`|
-|vpc:DeleteSnatEntry|`acs:vpc:$regionid:$accountid:snattable/$snattableid`|
-|vpc:CreateCustomerGateway|`acs:vpc:$regionid:$accountid:customergateway/*`|
-|vpc:DeleteCustomerGateway|`acs:vpc:$regionid:$accountid:customergateway/$customergatewayid`|
-|vpc:DescribeCustomerGateway|`acs:vpc:$regionid:$accountid:customergateway/$customergatewayid`|
-|vpc:DescribeCustomerGateways|`acs:vpc:$regionid:$accountid:customergateway/*`|
-|vpc:ModifyCustomerGatewayAttribute|`acs:vpc:$regionid:$accountid:customergateway/$customergatewayid`|
-|vpc:CreateVpnConnection|`acs:vpc:$regionid:$accountid:vpnconnection/*`|
-|vpc:DeleteVpnConnection|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
-|vpc:DescribeVpnConnection|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
-|vpc:DescribeVpnConnections|`acs:vpc:$regionid:$accountid:vpnconnection/*`|
-|vpc:ModifyVpnConnectionAttribute|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
-|vpc:Downloadvpnconnectionconfig|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
-|vpc:DeleteVpnGateway|`acs:vpc:$regionid:$accountid:vpngateway/$vpngatewayid`|
-|vpc:DescribeVpnGateway|`acs:vpc:$regionid:$accountid:vpngateway/$vpngatewayid`|
-|vpc:DescribeVpnGateways|`acs:vpc:$regionid:$accountid:vpngateway/*`|
-|vpc:ModifyVpnGatewayAttribute|`acs:vpc:$regionid:$accountid:vpngateway/$vpngatewayid`|
-|vpc:CreateGlobalAccelerationInstance|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
-|vpc:AssociateGlobalAccelerationInstance|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/$globalaccelerationinstanceid`|
+|ModifyBandwidthPackageSpec|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
+|ModifyBandwidthPackageAttribute|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
+|AddBandwidthPackageIps|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
+|RemoveBandwidthPackageIps|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
+|DeleteBandwidthPackage|`acs:vpc:$regionid:$accountid:bandwidthpackage/$bandwidthpackageid`|
+|CreateForwardEntry|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
+|DeleteForwardEntry|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
+|ModifyForwardEntry|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
+|DescribeForwardTableEntries|`acs:vpc:$regionid:$accountid:forwardtable/$forwardtableid`|
+|CreateSnatEntry|`acs:vpc:$regionid:$accountid:snattable/*`|
+|ModifySnatEntry|`acs:vpc:$regionid:$accountid:snattable/$snattableid`|
+|DescribeSnatTableEntries|`acs:vpc:$regionid:$accountid:snattable/$snattableid`|
+|DeleteSnatEntry|`acs:vpc:$regionid:$accountid:snattable/$snattableid`|
+|CreateCustomerGateway|`acs:vpc:$regionid:$accountid:customergateway/*`|
+|DeleteCustomerGateway|`acs:vpc:$regionid:$accountid:customergateway/$customergatewayid`|
+|DescribeCustomerGateway|`acs:vpc:$regionid:$accountid:customergateway/$customergatewayid`|
+|DescribeCustomerGateways|`acs:vpc:$regionid:$accountid:customergateway/*`|
+|ModifyCustomerGatewayAttribute|`acs:vpc:$regionid:$accountid:customergateway/$customergatewayid`|
+|CreateVpnConnection|`acs:vpc:$regionid:$accountid:vpnconnection/*`|
+|DeleteVpnConnection|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
+|DescribeVpnConnection|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
+|DescribeVpnConnections|`acs:vpc:$regionid:$accountid:vpnconnection/*`|
+|ModifyVpnConnectionAttribute|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
+|Downloadvpnconnectionconfig|`acs:vpc:$regionid:$accountid:vpnconnection/$vpnconnectionid`|
+|DeleteVpnGateway|`acs:vpc:$regionid:$accountid:vpngateway/$vpngatewayid`|
+|DescribeVpnGateway|`acs:vpc:$regionid:$accountid:vpngateway/$vpngatewayid`|
+|DescribeVpnGateways|`acs:vpc:$regionid:$accountid:vpngateway/*`|
+|ModifyVpnGatewayAttribute|`acs:vpc:$regionid:$accountid:vpngateway/$vpngatewayid`|
+|CreateGlobalAccelerationInstance|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
+|AssociateGlobalAccelerationInstance|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/$globalaccelerationinstanceid`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
-|vpc:UnassociateGlobalAccelerationInstance|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
+|UnassociateGlobalAccelerationInstance|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 |ModifyGlobalAccerlationInstanceSpec|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 |ModifyGlobalAccerlationInstanceAttributes|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
-|vpc:DeleteGlobalAccelerationInstance|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
-|vpc:DescribeGlobalAccelerationInstances|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
+|DeleteGlobalAccelerationInstance|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
+|DescribeGlobalAccelerationInstances|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
 |AddGlobalAccelerationInstanceIp| `acs:vpc:$regionid:$accountid:globalaccelerationinstance/$globalaccelerationinstanceid`
 
  `acs:vpc:$regionid:$accountid:eip/$allocationid`
@@ -172,6 +176,6 @@ Where `$regionid/accoutid/vrouterid` is the resource ID, and `*` represents the 
  `acs:vpc:$regionid:$accountid:eip/$allocationid`
 
  |
-|vpc:DescribeServerRelatedGlobalAccelerationInstances|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
+|DescribeServerRelatedGlobalAccelerationInstances|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 
