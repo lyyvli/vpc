@@ -1,17 +1,44 @@
 # DescribeRouteTableList {#reference_o4n_ymk_qdb .reference}
 
-Query a route table.
+Queries a route table.
+
+## Debug {#section_ayr_qdk_pgb .section}
+
+By using [API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeVpcAttribute), you can easily debug APIs, automatically generate SDK code examples, and quickly search for APIs.
 
 ## Request parameters {#section_p4n_ymk_qdb .section}
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-|Action|String |Yes | The action to perform.  Valid value: 
+|Parameter|Type|Required?|Example value|Description|
+|:--------|:---|:--------|-------------|:----------|
+|Action|String |Yes |DescribeRouteTableList| The name of this action.  Value: 
 
  DescribeRouteTableList
 
  |
-|RouterType|String| No| The type of the router to which the route table belongs. Valid value:
+|RegionId|String|Yes|cn-hangzhou| The region ID of the VPC to which the route table belongs.
+
+ To query the region ID, call [DescribeRegions](~~36063~~).
+
+ |
+|PageNumber|Integer|No |1| The number of pages to return. Default value: 1.
+
+ |
+|PageSize |Integer|No |12| The number of rows per page. Maximum value: 50. Default value: 10.
+
+ |
+|ResourceGroupId|String|No|rg-acfmxazb4ph6aiy| The ID of the resource group.
+
+ |
+|RouteTableId|String| No|vtb-bp145q7glnuzdvzu21pom| The ID of the route table.
+
+ |
+|RouteTableName|String|No|doctest| The name of the route table.
+
+ |
+|RouterId|String|No|vrt-bp1lhl0taikrteen80oxx| The ID of the router to which the route table belongs.
+
+ |
+|RouterType|String| No|VBR| The type of the router to which the route table belongs. Valid values:
 
  -   VRouter \(default\): VRouter
 
@@ -19,52 +46,74 @@ Query a route table.
 
 
  |
-|VpcId|String| No| The ID of the VRouter to which the route table belongs. The value of the RouterType parameter is set to VRouter automatically when this parameter is specified.
-
- |
-|RouteTableId|String| No| The ID of the route table.
-
- |
-|PageNumber|Integer|No | The number of pages to return. The default value is 1.
-
- |
-|PageSize |Integer|No | The number of rows per page. The maximum value is 50 and the default value is 10.
+|VpcId|String| No|vpc-bp15zckdt37pq72zvw3| The ID of the VRouter to which the route table belongs. The value of the RouterType parameter is set to VRouter automatically when this parameter is specified.
 
  |
 
 ## Response parameters {#section_fpn_ymk_qdb .section}
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
-|TotalCount|String|The number of queried entries.|
-|PageNumber|Integer|The current page number.|
-|PageSize|String|The number of rows per page. |
-|RouteTableList|List|The detailed information of the route table.|
+|Parameter|Type|Example value|Description|
+|---------|----|-------------|-----------|
+|PageNumber|Integer|12| The current page number.
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RouterType|String| The type of the router to which the route table belongs. Valid value:
+ |
+|PageSize|Integer|1| The number of rows per page.
+
+ |
+|RequestId|String|DC668356-BCB4-42FD-9BC3-FA2B2E04B634| The ID of the request.
+
+ |
+|RouterTableList|N/A|N/A| A list of route tables.
+
+ |
+|└CreationTime|String|2017-08-22T10:40:25Z| The time at which the route table was created. The format is **YYYY-MM-DDThh:mmZ**.
+
+ |
+|└Description|String|This is Route Table.| The description of the route table.
+
+ |
+|└ResourceGroupId|String|rg-acfmxazb4ph6aiy| The ID of the resource group.
+
+ |
+|└RouteTableId|String|vtb-bp145q7glnuzdvzu21pom| The ID of route table.
+
+ |
+|└RouteTableName|String|doctest| The name of the route table.
+
+ |
+|└RouteTableType|String|System|  
+
+ The type of route table. Valid values:
+
+ -   Custom: a custom route table
+-   System: a system route table
+
+ |
+|└RouterId|String|vrt-bp1lhl0taikrteen80oxx| The ID of the router to which the route table belongs.
+
+ |
+|└RouterType|String|VBR|  
+
+ The type of the router to which the route table belongs. Valid values:
 
  -   VRouter: VRouter
-
 -   VBR: VBR
 
+ |
+|└Tags| | | A list of route table tags.
 
  |
-|RouterId|String|The ID of the VRouter to which the route table belongs.|
-|RouteTableId|String|The ID of the route table.|
-|RouteTableType|String| The type of route table. Valid value:
-
- -   Custom: A custom route table
-
--   System: A system route table
-
+|└VSwitchIds| |vsw-bp12mw1f8k3jgygk9bmlj| A list of VSwitches under the VPC.
 
  |
-|CreationTime|String|The time when the route table was created. The form is YYYY-MM-DDThh:mmZ.|
-|RouteTableName|String|The name of the route table.|
-|Description|String|The description of the route table.|
+|└VpcId|String|vpc-bp15zckdt37pq72zvw3| The ID of the VRouter to which the route table belongs.
+
+ The value of the **RouterType** parameter is set to **VRouter** automatically when this parameter is specified.
+
+ |
+|TotalCount|Integer|12| The number of rows per page.
+
+ |
 
 ## Examples {#section_fqn_ymk_qdb .section}
 
@@ -144,4 +193,12 @@ https://vpc.aliyuncs.com/?Action=DescribeRouteTableList
     }
     ```
 
+
+## Error codes {#section_t5d_ysb_fhb .section}
+
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
+|403|Forbbiden|User not authorized to operate on the specified resource.|You are not authorized to operate on this resource. Please apply for the permission and try again later.|
+
+[See common error codes](https://error-center.aliyun.com/status/product/Vpc)
 
