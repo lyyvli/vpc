@@ -371,7 +371,7 @@
         params['opposite_router_type'] = "VRouter"
         params['access_point_id'] = "ap-cn-hangzhou-xx-x"
     
-        # 创建边界路由器边界路由器
+        # 创建边界路由器
         params['physical_connection_id'] = PC_ID
         params['local_gateway_ip'] = "116.xx.xx.254"
         params['peer_gateway_ip'] = "116.xx.xx.254"
@@ -476,7 +476,7 @@
         router_interface_json2 = router_interface.delete_router_interface(params)
         CommonUtil.log("delete_router_interface", router_interface_json2)
     
-        # 删除边界路由器边界路由器
+        # 删除边界路由器
         params['vbr_id'] = vbr_json['VbrId']
         vbr_json = router_interface.delete_virtual_border_router(params)
         CommonUtil.log("delete_virtual_border_router", vbr_json)
