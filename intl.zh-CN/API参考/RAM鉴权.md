@@ -71,7 +71,7 @@
 |指定要查询的VRouterId： `"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/$vpcid"`
 
  |
-|未定要查询的VRouterId： `"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/*"`
+|指定要查询的VRouterId： `"vpc:Vpc":"acs:vpc:$regionid:$accountid:vpc/*"`
 
  |
 |ModifyVRouterAttribute|`acs:vpc:*:$accountid:*`|
@@ -167,16 +167,10 @@
 |ModifyGlobalAccerlationInstanceAttributes|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 |DeleteGlobalAccelerationInstance|`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 |DescribeGlobalAccelerationInstances|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
-|AddGlobalAccelerationInstanceIp| `acs:vpc:$regionid:$accountid:globalaccelerationinstance/$globalaccelerationinstanceid`
-
- `acs:vpc:$regionid:$accountid:eip/$allocationid`
-
- |
-|RemoveGlobalAccelerationInstanceIp| `acs:vpc:$regionid:$accountid:globalaccelerationinstance/$globalaccelerationinstanceid`
-
- `acs:vpc:$regionid:$accountid:eip/$allocationid`
-
- |
+|AddGlobalAccelerationInstanceIp|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/$globalaccelerationinstanceid`|
+|`acs:vpc:$regionid:$accountid:eip/$allocationid`|
+|RemoveGlobalAccelerationInstanceIp|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/$globalaccelerationinstanceid`|
+|`acs:vpc:$regionid:$accountid:eip/$allocationid`|
 |DescribeServerRelatedGlobalAccelerationInstances|`acs:vpc:$regionid:$accountid:globalaccelerationinstance/*`|
 |`acs:ecs:$regionid:$accountid:instance/$instanceid`|
 
