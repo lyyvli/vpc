@@ -1,6 +1,6 @@
 # Install Alibaba Cloud SDK for Python {#task_dln_nvy_3hb .task}
 
-This topic describes how to build a Python development environment on a local PC so you can run VPC Python SDK examples. Alibaba Cloud SDK for Python supports Python 2.7. To run VPC Python SDK examples, you first need to install the core library of Alibaba Cloud SDK for Python and then install VPC Python SDK.
+This topic describes how to build a Python development environment on a local PC so you can run VPC Python SDK examples. Alibaba Cloud SDK for Python supports Python 2.7. To run VPC Python SDK examples, you first need to install the core library of Alibaba Cloud SDK for Python and then install VPC Python SDK. Python SDK supports Windows, Linux, and Mac operating systems, and all VPC Python SDK examples can run in a Windows system.
 
 1.  Install Python. 
     1.  [Download Python 2.7](https://www.python.org/downloads/). 
@@ -31,7 +31,7 @@ This topic describes how to build a Python development environment on a local PC
     pip install aliyun-python-sdk-core
     ```
 
-    For more information about Python and PIP, see [Python document](https://docs.python.org/3/).
+    For more information about Python and PIP, see [Python document](https://docs.python.org/3/) and [PIP document](https://pip.pypa.io/en/stable/user_guide/).
 
 3.  Run the following command to install VPC SDK. 
 
