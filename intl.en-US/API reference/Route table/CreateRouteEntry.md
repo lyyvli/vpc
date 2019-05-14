@@ -1,167 +1,170 @@
-# CreateRouteEntry {#reference_i4w_xmt_ndb .reference}
+# CreateRouteEntry {#doc_api_Vpc_CreateRouteEntry .reference}
 
-Create a route entry for a VRouter or VBR.
+Creates a custom route entry on a VRouter or VBR.
 
-Note the following before creating a route entry for a VRouter:
+Note the following before you call this action to add custom route entries for a VRouter:
 
--   Up to 48 route entries can be created for a VPC or VBR.
+-   Up to 48 custom route entries can be created in a route table.
+-   The destination CIDR block of each custom route entry cannot be the same as the CIDR block of the VSwitch, and it cannot include or be included by the CIDR block of the VSwitch.
+-   The destination CIDR block of each custom route entry cannot be 100.64.0.0/10 or be included by 100.64.0.0/10.
+-   The destination CIDR blocks of route entries in the same route table cannot be the same.
+-   If the destination CIDR block is an IP address, the mask /32 is used.
+-   Multiple route entries can point to the same next hop.
+-   The next hop of each custom route entry and the route table must be in the same VPC.
+-   ECMP can be configured by using the NextHopList parameter.
+    -   When adding a normal custom route entry \(non-ECMP\), you must specify the DestinationCidrBlock, NextHopType and NextHopId parameters, and you cannot specify the NextHopList parameter.
+    -   When adding an ECMP route entry, you must specify the DestinationCidrBlock and NextHopList parameters, and you cannot specify the NextHopType and NextHopId parameters.
 
--   The destination CIDR block \(DestinationCidrBlock\) of the custom route entry cannot be the same as the CIDR block of the VSwitch, and cannot include or be included by the CIDR block of the VSwitch.
+        Note the following when you call this action to add route entries for a VBR:
 
--   The destination CIDR block \(DestinationCidrBlock\) of the custom route entry cannot be 100.64.0.0/10 or be included in 100.64.0.0/10.
-
--   The destination CIDR blocks of \(DestinationCidrBlock\) of the route entries in the same route table cannot be the same.
-
--   If the destination CIDR block \(DestinationCidrBlock\) is an IP address, it is processed by a 32-bit mask.
-
--   Multiple route entries can point to the same next hop \(NextHopId\).
--   The next hop \(NextHopId\) of the custom route entry and the route table must be in the same VPC.
--   The ECMP route can be configured by using the NextHopList parameter:
-    -   When adding a normal custom route entry \(non-ECMP routing\), you must specify theDestinationCidrBlock, NextHopType and NextHopId parameters but do not need to add the NextHopList parameter.
-
-    -   When adding an ECMP route entry, you must specify the DestinationCidrBlock and NextHopList parameters, and do not need to specifiy the NextHopType and NextHopId parameters.
-
-
-Note the following when calling this API to add route entries for a VBR:
-
--   Up to 48 route entries can be created for a route table.
-
+-   Up to 48 route entries can be created in a route table.
 -   The NextHopList parameter is not supported.
-
--   The destination CIDR block \(DestinationCidrBlock\) of the custom route entry cannot be 100.64.0.0/10 or be included in 100.64.0.0/10.
-
--   The destination CIDR blocks of \(DestinationCidrBlock\) of the route entries in the same route table cannot be the same.
-
--   If the destination CIDR block \(DestinationCidrBlock\) is an IP address, it is processed by a 32-bit mask.
-
+-   The destination CIDR block of each custom route entry cannot be 100.64.0.0/10 or be included in 100.64.0.0/10.
+-   The destination CIDR blocks of route entries in the same route table cannot be the same.
+-   If the destination CIDR block is an IP address, the mask /32 is used.
 -   Multiple route entries can point to the same next hop \(NextHopId\).
--   The next hop \(NextHopId\) of the route entry must be a router interface associated with the VBR.
--   The route entry can only be added when the status of VBR is Active and the status of the corresponding physical connection is Enabled and not financially locked. 
+-   The next hop \(NextHopId\) of each route entry must be a router interface associated with the VBR.
+-   The route entry can only be added when the VBR is in the Active status and the corresponding physical connection is in the Enabled status and not financially locked.
+-   Only common route entries \(non- ECMP\) can be added. You must specify the DestinationCidrBlock, NextHopType, and NextHopId parameters, and you cannot specify the HopList parameter.
 
--   Only common route entries \(non- ECMP\) can be added. You must specify the DestinationCidrBlock, NextHopType, and NextHopId parameters, and do not need to specify the  HopList parameter.
+## Debug {#apiExplorer .section}
 
-## Request parameters {#section_cch_pjg_mdb .section}
+Use [OpenAPI Explorer](https://api.aliyun.com/#product=Vpc&api=CreateRouteEntry) to perform debug operations and generate code examples.
 
-|name|Parameters|Required|Description|
-|:---|:---------|:-------|:----------|
-|Action|String|Yes| The action to perform. Valid value: 
+## Request parameters {#parameters .section}
 
- vpc:CreateRouteEntry
+|Parameter|Type|Required?|Example value|Description|
+|---------|----|---------|-------------|-----------|
+|Action|String|Yes|CreateRouteEntry|The name of this action.
+
+ Value: **CreateRouteEntry**.
 
  |
-|RouteTableId|String|Yes | The ID of the route table.
-
- |
-|DestinationCidrBlock|String|Yes| The destination CIDR block of the route entry, which must meet the following requirements:
+|DestinationCidrBlock|String|Yes|192.168.0.1/24|The destination CIDR block of the custom route entry. Both IPv4 and IPv6 destination CIDR blocks are supported. The destination CIDR block must meet the following requirements:
 
  -   The destination CIDR block cannot be 100.64.0.0/10 or any of its subnets.
-
 -   Different route entries in a route table cannot use the same destination CIDR block.
-
-\(Default\)
-
--   If the destination CIDR block is an IP address, the netmask /32 is used by default.
-
+-   If the destination CIDR block is an IP address, the mask /32 is used by default.
+-   If the destination CIDR block is an IPv6 address, the mask /128 is used.
 
  |
-|NextHopType|String|No| The type of the next hop. Valid value: 
-
- -   Instance: ECS instance \(Default\)
-
-VpnGateway: VPN Gateway
-
--   HaVip: High Availability Virtual IP \(HaVip\)
-
--   RouterInterface: Router interface
-
--   NetworkInterface: Elastic Network Interface
-
-
- **Note:** This parameter must be specified when creating a common \(non-ECMP\) route entry.
+|RegionId|String|Yes|cn-hangzhou|The ID of the region to which the route table belongs.
 
  |
-|NextHopId|String|No| The ID of the next hop.
-
- The next hop must be in the VPC or VBR to which the router table belongs.
-
- **Note:** This parameter must be specified when creating a common \(non-ECMP\) route entry.
+|RouteTableId|String|Yes|Vtb-bp145q7glnuzdxxxxxxxx|The ID of the route table.
 
  |
-|NextHopList|List|No| The list of the next hops. The next hop must meet the following requirements:
-
- -   ECMP route entries are only supported for the VPC route table.
-
--   You must specify 2 next hops at least and 4 at most.
-
--   The next hops must be the route interfaces pointing to the connected VBRs.
-
-
- **Note:** Specify this parameter when you create an ECMP route entry.
+|ClientToken|String|No|02fb3da4-130e-11e9-8e44-001xxxxxxxx|A client token used to guarantee the idempotence of requests. This parameter value is generated by the client and must be unique. It must be 1 to 64 ASCII characters in length.
 
  |
-|ClientToken|String|No| A client token used to guarantee the idempotence of requests.
-
- This parameter value is generated by the client and must be unique. It cannot exceed 64 ASCII characters.
+|NextHopId|String|No|ri-2zeo3xzyf38r4xxxxxxxx|The ID of the instance used as the next hop.
 
  |
+|NextHopList.N.NextHopId|String|No|ri-2zeo3xzyf38r4xxxxxxxx|The ID of the instance used as the next hop.
 
-|Parameter|Parameters|Required|Description|
-|:--------|:---------|--------|:----------|
-|NextHopType|String|No| The type of the next hop. Valid value:
+ |
+|NextHopList.N.NextHopType|String|No|RouterInterface|The type of the next hop. Valid values:
+
+ RouterInterface: router interface
+
+ |
+|NextHopList.N.Weight|Integer  |No|10|The routing weight of the next hop.
+
+ |
+|NextHopType|String|No|RouterInterface|The type of the next hop. Valid values:
 
  -   Instance: ECS instance \(default\)
-
-HaVip: High Availability Virtual IP \(HaVip\)
-
-RouterInterface: router interface
-
+-   HaVip: HaVip
+-   RouterInterface: router interface
+-   NetworkInterface: Elastic Network Interface \(ENI\)
+-   VpnGateway: VPN Gateway
+-   IPv6Gateway: IPv6 Gateway
 
  |
-|NextHopId|String|No|The ID of the next-hop instance.|
-|Enabled|String|Optional|Whether the next hop is available:-   0: unavailable
 
--   1: available
+## Response parameters {#resultMapping .section}
 
+|Parameter|Type|Example value|Description|
+|---------|----|-------------|-----------|
+|RequestId|String|0ED8D006-F706-4D23-88ED-E11ED28DCAC0|The ID of the request. 
 
-|
-|Weight|Default value: 1.|Optional|The routing weight of the next hop.|
+ |
 
-## Response example {#section_ugs_f1g_cz .section}
+## Examples {#demo .section}
 
-|Name |Type|Required|
-|:----|:---|:-------|
-|RequestId|String|The ID of the request.|
+Request example
 
-## Examples {#section_ix5_h1g_cz .section}
+``` {#request_demo}
 
-**Request example**
-
-``` {#createVPCpub}
 https://vpc.aliyuncs.com/?Action=CreateRouteEntry
-&VpcId=vpc-257gq642n
-&RouteTableId=vrt-5citwfp6a
-&DestinationCidrBlock=0.0.0.0/0
-&NextHopId=i-25skktcp4
-&CommonParameters
+&DestinationCidrBlock=192.168.0.1/24
+&RouteTableId=vtb-bp145q7glnuzdxxxxxxxx
+&<CommonParameters>
+
 ```
 
-**Response parameter**
+Response example
 
--   XML format
+`XML` format
 
-    ```
-    &amp;lt;? xml version="1.0" encoding="UTF-8"? >
-    <CreateRouteEntryResponse>
-        <RequestId>12D086F6-8F31-4658-84C1-006DED011A85</RequestId>
-    </CreateRouteEntryResponse>
-    ```
+``` {#xml_return_success_demo}
+<CreateRouteEntryResponse>
+  <RequestId>12D086F6-8F31-4658-84C1-006DED011A85</RequestId>
+</CreateRouteEntryResponse>
 
--   JSON format
+```
 
-    ```
-    { 
-        "RequestId": "12D086F6-8F31-4658-84C1-006DED011A85"
-    }
-    ```
+`JSON` format
 
+``` {#json_return_success_demo}
+{
+	"RequestId":"12D086F6-8F31-4658-84C1-006DED011A85"
+}
+```
+
+## Error codes { .section}
+
+|HTTP status code|Error code|Error message |Description|
+|----------------|----------|--------------|-----------|
+|404|InvalidInstanId.NotFound|Specified instance does not exist.|The specified instance does not exist.|
+|400|MissingParameter|Miss mandatory parameter.|The required parameters are missing.|
+|400|InvalidCidrBlock.Malformed|Specified CIDR block is not valid.|The format of the specified CIDR block is invalid.|
+|404|InvalidNextHopId.NotFound|Specified next hop does not exist.|The specified next hop does not exist.|
+|404|InvalidRouteTableId.NotFound|Specified route table does not exist.|The specified VRouter does not exist.|
+|400|InvalidCIDRBlock.Duplicate|Specified CIDR block is already exists.|The specified CIDR block already exists in this route table.|
+|400|IncorrectVpcStatus|Current VPC status does not support this operation.|The current VPC status does not support this operation.|
+|400|IncorrectInstanceStatus|Current instance status does not support this operation.|The current instance status does not support this operation.|
+|400|QuotaExceeded|Route entry quota exceeded in this route table.|The route entry quota is exceeded.|
+|400|IncorrectRouteEntryStatus|Some route entry status blocked this operation.|The route table includes entries in the Pending or Modifying status.|
+|400|InvalidCidrBlock|Specified CIDR block is not valid.|The following are possible causes: 1. You cannot use this CIDR block because it is not configured in the whitelist of IP address 10.0.0.0/8. 2. The destination CIDR block of the added route entry cannot belong to any of the CIDR blocks of VSwitches in the same VPC. 3. The CIDR block cannot be 100.64.0.0/10.|
+|400|InvalidNextHopType|Specified parameter "NextHopType" is not valid|The specified next hop type is invalid.|
+|400|InvalidNextHop.NotFound|Specified next hop does not exist.|The specified next hop does not exist.|
+|400|InvalidVRouter.NotFound|vRouter not exists.|The VRouter does not exist.|
+|400|InvalidVpc.NotFound|Vpc not exists.|The specified VPC does not exist. Check whether you have entered the correct VPC.|
+|400|InvalidNexthopTypeAndList.BothNull|both nexthopType and nextHopList are null.|The next hop type and next hop list are empty.|
+|400|InvalidNexthopTypeAndList.BothNotNull|both nexthopType and nextHopList are not null.|The next hop type and next hop list cannot be empty at the same time.|
+|400|InvalidRouterInterface|invalid router interface.|The specified router interface does not exist.|
+|400|InvalidOppositeRouterType|nexthop list cannot only contain router interface whose opposite router interface is on vbr.|The type of the peer router of the router interface used as the next hop must be a VBR.|
+|400|InvalidNexthopListSize|nexthop size is illegal. Must be between 2 and 4.|You must specify 2 to 4 router interfaces as the next hops.|
+|400|InvalidEntryRuleQuota.NotFound|Route entry quota rule not exists.|The specified route entry quota rule does not exist.|
+|400|Forbidden.CheckEntryRuleQuota|Route entry quota rule check error.|An error occurred while the route entry quota is being checked.|
+|400|InvalidVBRStatus|invalid virtual border router status.|The status of the VBR is invalid.|
+|400|InvalidPhysicalConnectionBusinessStatus|invalid physical connection business status.|The status of the physical connection is invalid.|
+|404|InvalidHaVipId.NotFound|The specified HaVip does not exist in the specified VPC.|The specified HAVIP does not exist in the specified VPC.|
+|400|IncorrectHaVipStatus|This operation is denied because satus of the specified HaVip is neither Available nor InUse.|This operation is not allowed because the status of the HAVIP is Available or InUse.|
+|400|CountLimitExceed.HaVipRouteEntry|There can be 5 route entry to HaVip at most in one route table.|The number of custom route entries pointing to the specified HaVip instance has reached the limit.|
+|400|InvalidRouteEntry.Duplicate|The route entry already exist.|The specified route entry already exists.|
+|403|IncorrectInstanceStatus|The current status of the resource does not support this operation.|The current resource status does not support this operation.|
+|400|InvalidCidrBlock|Specified CIDR block is already exists.|The specified CIDR block overlaps the CIDR block of another VSwitch or the destination CIDR block of an existing custom route entry. Select a CIDR block that is not used.|
+|400|IncorrectRouteEntryStatus|Specified routeEntry status error.|The route table includes entries in the Pending or Modifying status.|
+|400|IncorrectRouteEntryStatus|The vpc has NotStable routeEntry status.|This operation is not allowed because the route table includes entries in the Pending or Modifying status.|
+|400|IncorrectRouteEntryStatus|VBR has NotStable route entry.|This operation is not allowed because the route table includes entries in the Pending or Modifying status.|
+|400|InvalidParam|The Ecmp routerEntry with router interfaces local vgw vip not match.|The route entry does not match the VIP of the local video gateway of the router interface.|
+|400|INVALID\_WEIGHT\_PARAM|Specified value of weight invalid|The specified weight is invalid.|
+|400|FORBIDDEN\_USE\_VPC\_AS\_INTERNET\_GATEWAY|The Specified CIDR must be in vpc CIDR.|The specified CIDR block must be a subset of the VPC CIDR block.|
+|400|INVALID\_VPC\_ID|The Specified VpcId not match.|The specified VPC does not exist.|
+|400|InvalidRouteEntrySize|The Specified routerEntry size not legal.|To configure ECMP, you must configure 2 to 4 router interfaces as the next hops.|
+|400|InvalidRouteEntry|Specified routeEntry not exist.|The specified route entry does not exist.|
+
+[See common error codes](https://error-center.aliyun.com/status/product/Vpc)
 
