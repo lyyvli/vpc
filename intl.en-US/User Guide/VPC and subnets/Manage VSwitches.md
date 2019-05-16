@@ -10,54 +10,51 @@ After creating a VPC, you can further your virtual private network to one or mor
 
 To create a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
+1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
 2.  Select the region of the VPC to which the VSwitch will belong.
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Click **Create VSwitch** and then click **OK**. Descriptions about the configuration items are provided in the following table.
 
     **Note:** Currently, only the China \(Hohhot\) region supports enabling IPv6. After IPv6 is enabled, the system creates an IPv6 Gateway.
 
-    |配置|说明|
-    |:-|:-|
-    |**资源组**|选择交换机的所属资源组。|
-    |**专有网络**|选择交换机的所属专有网络。|
-    |**IPv4网段**|所选专有网络的IPv4网段。|
-    |**IPv6网段**|所选专有网络的IPv6网段。**Note:** 如果选择的专有网络未开启IPv6网段，单击**开通IPv6网段**。开通后，系统将为您创建免费版IPv6网关。
+    |Configuration|Description|
+    |:------------|:----------|
+    |**Resource Group**|Optional. Select a resource group to which the VSwitch to be created belongs.|
+    |**VPC**|Select a VPC to which the VSwitch to be created belongs.|
+    |**IPv4 CIDR Block**|The IPv4 CIDR block of the selected VPC.|
+    |**IPv6 CIDR Block**|The IPv6 CIDR block of the selected VPC.**Note:** If an IPv6 CIDR block is not enabled for the VPC you selected, click **Enable IPv6 CIDR Block**. After the IPv6 CIDR block is enabled, the system automatically creates an IPv6 Gateway of the Free Version specification for the VPC.
 
 |
-    |**描述**|输入VPC的描述信息。描述可包含2-256个中英文字符，不能以http://和https://开头。
+    |**Name**|Enter a name for the VSwitch to be created.The name must be 2 to 128 characters in length and can contain letters, numbers, underscores \(\_\), and hyphens \(-\). The name must start with a letter.
 
 |
-    |**名称**|交换机的名称。长度为2-128个字符，以英文字母或中文开头，可包含数字，下划线（\_）和短横线（-）。
+    |**Zone**|The zone of the VSwitch to be created. VSwitches that belong to the same VPC, but different zones, can communicate with each other through the intranet.|
+    |**IPv4 CIDR Block**|The IPv4 CIDR block of the VSwitch.    -   The IPv4 CIDR block of the VSwitch can be the same as the CIDR block of the VPC that the VSwitch belongs. It can also be a subnet of the VPC CIDR block.
+
+For example, if the CIDR block of the VPC is 192.168.0.0/16, the CIDR block of the VSwitch can be 192.168.0.0/16, or any CIDR block between 192.168.0.0/17 and 192.168.0.0/29.
+
+**Note:** If the CIDR block of the VSwitch is the same as the CIDR block of the VPC, you can only create one VSwitch.
+
+    -   The subnet mask of the VSwitch CIDR block can be 16 to 29 bits, which means the VSwitch can provide 8 to 65536 IP addresses.
+
+    -   The first IP address and the last three IP addresses in the VSwitch CIDR block are reserved.
+
+For example, if the VSwitch CIDR block is 192.168.1.0/24, the IP addresses 192.168.1.0, 192.168.1.253, 192.168.1.254, and 192.168.1.255 are reserved.
+
+    -   If the VSwitch needs to communicate with other VSwitches of other VPCs or on-premises data centers, you need to make sure that the CIDR blocks involved do not conflict with each other.
+
+**Note:** You cannot modify the CIDR block of the VSwitch after the VSwitch is created.
 
 |
-    |**可用区**|交换机的可用区。同一VPC内不同可用区的交换机内网互通。|
-    |**IPv4网段**|交换机的IPv4网段。交换机的网段限制如下：    -   交换机的网段可以和其所属的VPC网段相同或者是其VPC网段的子集。
+    |**Number of Available Private IPs**|The number of available IPv4 addresses provided by the VSwitch.|
+    |**IPv6 CIDR Block**| The IPv6 CIDR block of the VSwitch.
 
-例如，VPC的网段是192.168.0.0/16，那么该VPC内的交换机的网段可以是192.168.0.0/16，也可以是192.168.0.0/17，一直到192.168.0.0/29。
+ The mask of the IPv6 CIDR block of the VSwitch is set to /64 by default. You can enter 0 to 255 to customize the last eight bits of the IPv6 CIDR block.
 
-**Note:** 如果交换机的网段和专有网络的网段相同，您只能创建一个交换机。
-
-    -   交换机的网段的大小在16位网络掩码与29位网络掩码之间，可提供8-65536个地址。
-
-    -   每个交换机的第一个和最后三个IP地址为系统保留地址。
-
-以192.168.1.0/24为例，192.168.1.0、 192.168.1.253、 192.168.1.254和192.168.1.255这些地址是系统保留地址。
-
-    -   如果该交换机有和其他专有网络的交换机，或本地数据中心通信的需求，确保交换机的网段和要通信的网段不冲突。
-
-**Note:** 交换机创建后，不能再修改网段。
-
-|
-    |**可用IP数量**|显示交换机可用的IPv4地址数量。|
-    |**IPv6网段**| 交换机的IPv6网段。
-
- 交换机的IPv6网段的掩码默认为/64，您可以输入十进制数字0-255，来自定义交换机IPv6网段的最后8比特位。
-
- 如VPC的IPv6网段为2001:db8::/64，在交换机的IPv6网段输入十进制数字255（对应十六进制为ff），则交换机的IPv6网段将为2001:db8::ff/64。
+ For example, if the IPv6 CIDR block of the selected VPC is 2001:db8::/64, you can enter 255 \(ff in hexadeciaml notation\). Then, the IPv6 CIDR block of the VSwitch is 2001:db8:ff::/64.
 
  |
-    |**描述**|输入交换机的描述信息。描述可包含2-256个中英文字符，不能以http://和https://开头。
+    |**Description**|Optional. Enter a description for the VSwitch.The description must be 2 to 256 characters in length and can contain letters, numbers, and special characters. The description cannot start with http:// or https://.
 
 |
 
@@ -66,14 +63,14 @@ To create a VSwitch, follow these steps:
 
 To create cloud resources in a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
+1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
 2.  Select the region of the VPC.
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Locate the target VSwitch, click **Purchase** and select the cloud resource to create.
 
     **Note:** Currently, you can create the following cloud resources in a VSwitch: ECS instances, SLB instances, and RDS instances.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15547980769789_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579974799789_en-US.png)
 
 
 ## Delete a VSwitch {#section_ztp_pwx_rdb .section}
@@ -87,22 +84,22 @@ Before deleting a VSwitch, make sure the following conditions are met:
 
 To delete a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
+1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
 2.  Select the region of the VPC.
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Locate the target VSwitch, and click **Delete**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15547980769788_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579974799788_en-US.png)
 
 5.  In the displayed dialog box, click **OK**.
 
 ## Related APIs {#section_vhd_xwx_rdb .section}
 
-[CreateVSwitch](../reseller.en-US/API reference/VSwitch/CreateVSwitch.md#)
+[CreateVSwitch](../intl.en-US/API reference/VSwitch/CreateVSwitch.md#)
 
-[DescribeVSwitches](../reseller.en-US/API reference/VSwitch/DescribeVSwitches.md#)
+[DescribeVSwitches](../intl.en-US/API reference/VSwitch/DescribeVSwitches.md#)
 
-[DeleteVSwitch](../reseller.en-US/API reference/VSwitch/DeleteVSwitch.md#)
+[DeleteVSwitch](../intl.en-US/API reference/VSwitch/DeleteVSwitch.md#)
 
-[DescribeVSwitchAttributes](../reseller.en-US/API reference/VSwitch/DescribeVSwitchAttributes.md#)
+[DescribeVSwitchAttributes](../intl.en-US/API reference/VSwitch/DescribeVSwitchAttributes.md#)
 
