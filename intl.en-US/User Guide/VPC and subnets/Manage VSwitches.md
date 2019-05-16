@@ -70,7 +70,7 @@ To create cloud resources in a VSwitch, follow these steps:
 
     **Note:** Currently, you can create the following cloud resources in a VSwitch: ECS instances, SLB instances, and RDS instances.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579974799789_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579975049789_en-US.png)
 
 
 ## Delete a VSwitch {#section_ztp_pwx_rdb .section}
@@ -89,7 +89,7 @@ To delete a VSwitch, follow these steps:
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Locate the target VSwitch, and click **Delete**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579974799788_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579975049788_en-US.png)
 
 5.  In the displayed dialog box, click **OK**.
 
