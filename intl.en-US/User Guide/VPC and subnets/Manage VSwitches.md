@@ -10,7 +10,7 @@ After creating a VPC, you can further your virtual private network to one or mor
 
 To create a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
+1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  Select the region of the VPC to which the VSwitch will belong.
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Click **Create VSwitch** and then click **OK**. Descriptions about the configuration items are provided in the following table.
@@ -63,14 +63,14 @@ For example, if the VSwitch CIDR block is 192.168.1.0/24, the IP addresses 192.1
 
 To create cloud resources in a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
+1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  Select the region of the VPC.
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Locate the target VSwitch, click **Purchase** and select the cloud resource to create.
 
     **Note:** Currently, you can create the following cloud resources in a VSwitch: ECS instances, SLB instances, and RDS instances.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579975049789_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15580106179789_en-US.png)
 
 
 ## Delete a VSwitch {#section_ztp_pwx_rdb .section}
@@ -84,22 +84,22 @@ Before deleting a VSwitch, make sure the following conditions are met:
 
 To delete a VSwitch, follow these steps:
 
-1.  Log on to the [VPC console](https://vpcnext.console.aliyun.com).
+1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  Select the region of the VPC.
 3.  In the left-side navigation pane, click **VSwitches**.
 4.  Locate the target VSwitch, and click **Delete**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15579975049788_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2436/15580106179788_en-US.png)
 
 5.  In the displayed dialog box, click **OK**.
 
 ## Related APIs {#section_vhd_xwx_rdb .section}
 
-[CreateVSwitch](../intl.en-US/API reference/VSwitch/CreateVSwitch.md#)
+[CreateVSwitch](../reseller.en-US/API reference/VSwitch/CreateVSwitch.md#)
 
-[DescribeVSwitches](../intl.en-US/API reference/VSwitch/DescribeVSwitches.md#)
+[DescribeVSwitches](../reseller.en-US/API reference/VSwitch/DescribeVSwitches.md#)
 
-[DeleteVSwitch](../intl.en-US/API reference/VSwitch/DeleteVSwitch.md#)
+[DeleteVSwitch](../reseller.en-US/API reference/VSwitch/DeleteVSwitch.md#)
 
-[DescribeVSwitchAttributes](../intl.en-US/API reference/VSwitch/DescribeVSwitchAttributes.md#)
+[DescribeVSwitchAttributes](../reseller.en-US/API reference/VSwitch/DescribeVSwitchAttributes.md#)
 
