@@ -47,7 +47,7 @@ To add a subnet route entry to the created custom route table, follow these step
 3.  In the left-side navigation pane, click **Route Tables**.
 4.  Find the target route table, click the route table ID, and then click the **Route Entry List** tab.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/161231/155731652845150_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/161231/155801067145150_en-US.png)
 
 5.  Click **Add Route Entry**.
 6.  In the displayed dialog box, configure the subnet route entry according to the following information, and then click **OK**.
@@ -100,7 +100,7 @@ You can associate the created route table with a VSwitch \(subnet\) to control t
 4.  Find the route table and click the route table ID.
 5.  Click the **Associated VSwitches** tab. Then, click **Associate VSwitch**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/161231/155731652845151_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/161231/155801067145151_en-US.png)
 
 6.  In the displayed dialog box, select the target VSwitch. Then, click **OK**.
 
