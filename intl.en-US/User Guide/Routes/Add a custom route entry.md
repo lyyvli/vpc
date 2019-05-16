@@ -6,22 +6,22 @@ Each item in a route table is a route entry. A route entry specifies the destina
 
 You can add custom routes to a system route table or a custom route table.
 
-1.  Log on to the [专有网络控制台](https://vpcnext.console.aliyun.com)。 
-2.  Select the region to which the target VPC belongs. 
-3.  In the left-side navigation pane, select **Route Tables**. 
+1.  Log on to the [专有网络控制台](https://vpcnext.console.aliyun.com)。
+2.  Select the region to which the target VPC belongs.
+3.  In the left-side navigation pane, select **Route Tables**.
 4.  Click the ID of the target route table, and then click the **Route Entry List** tab page. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17037/15547999588671_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17037/15580107968671_en-US.png)
 
-5.  Click **Add Route Entry**. 
+5.  Click **Add Route Entry**.
 6.  In the displayed dialog box, configure the route entry according to the following information and click **OK**. 
 
     |Configuration|Description|
     |:------------|:----------|
-    |**Destination CIDR Block**|The destination CIDR block.    -   **IPv4 CIDR Block**: Traffic is forwarded to an IPv4 address.
+    |**Destination CIDR Block**|The destination CIDR block.     -   **IPv4 CIDR Block**: Traffic is forwarded to an IPv4 address.
     -   **IPv6 CIDR Block**: Traffic is forwarded to an IPv6 address.
-|
-    |**Next Hop Type and Next Hop**|Select the next hop type:    -   **ECS Instance**: Direct the traffic pointing to the destination CIDR block to the selected ECS instance.
+ |
+    |**Next Hop Type and Next Hop**|Select the next hop type:     -   **ECS Instance**: Direct the traffic pointing to the destination CIDR block to the selected ECS instance.
 
 Select this type when you want to direct the specifed traffic to an ECS instance to uniformly forward and manage the traffic. For example, configure an ECS instance as an Internet gateway to manage the access of other ECS instances to the Internet.
 
@@ -49,8 +49,8 @@ In this mode, you also need to select the route type:
 
     -   **IPv6 Gateway**: Direct traffic pointing to the destination IDR block to the selected IPv6 Gateway instance.
 
-**说明：** This option is available only when the destination CIDR block is an IPv6 CIDR block.
+**Note:** This option is available only when the destination CIDR block is an IPv6 CIDR block.
 
-|
+ |
 
 
