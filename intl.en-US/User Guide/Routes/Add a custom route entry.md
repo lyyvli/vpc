@@ -6,12 +6,12 @@ Each item in a route table is a route entry. A route entry specifies the destina
 
 You can add custom routes to a system route table or a custom route table.
 
-1.  Log on to the [专有网络控制台](https://vpcnext.console.aliyun.com)。
+1.  Log on to the [VPC Console](https://vpcnext.console.aliyun.com).
 2.  Select the region to which the target VPC belongs.
 3.  In the left-side navigation pane, select **Route Tables**.
 4.  Click the ID of the target route table, and then click the **Route Entry List** tab page. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17037/15580107968671_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17037/15580109598671_en-US.png)
 
 5.  Click **Add Route Entry**.
 6.  In the displayed dialog box, configure the route entry according to the following information and click **OK**. 
