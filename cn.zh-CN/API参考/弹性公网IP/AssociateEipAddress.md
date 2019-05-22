@@ -1,6 +1,6 @@
-# AssociateEipAddress {#doc_api_1116072 .reference}
+# AssociateEipAddress {#doc_api_Vpc_AssociateEipAddress .reference}
 
-调用AssociateEipAddress接将弹性公网IP（EIP）绑定到同地域的云产品实例上。
+调用AssociateEipAddress接口将弹性公网IP（EIP）绑定到同地域的云产品实例上。
 
 在调用本接口时，请注意：
 
@@ -15,15 +15,13 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|AssociateEipAddress|要执行的操作。
-
- 取值：**AssociateEipAddress**。
+|Action|String|是|AssociateEipAddress|要执行的操作，取值：**AssociateEipAddress**。
 
  |
-|AllocationId|String|是|eip-2zeerraiwb7uj6i0d0fo3|EIP的ID。
+|AllocationId|String|是|eip-2zeerraiwb7ujxxxxxxxx|EIP的ID。
 
  |
-|InstanceId|String|是|i-2zebb08phycz6pok9xwe|要绑定的实例ID。
+|InstanceId|String|是|i-2zebb08phyczxxxxxxxx|要绑定的实例ID。
 
  |
 |RegionId|String|是|cn-hangzhou|EIP所属的地域ID。
@@ -32,12 +30,13 @@
 |InstanceRegionId|String|否|cn-hangzhou|绑定的实例所属地域ID。
 
  |
-|InstanceType|String|否|EcsInstance|要绑定的云产品实例的类型。
-
- 取值：**Nat|SlbInstance|EcsInstance|NetworkInterface**
+|InstanceType|String|否|EcsInstance|要绑定的云产品实例的类型，取值：**Nat|SlbInstance|EcsInstance|NetworkInterface**。
 
  |
-|PrivateIpAddress|String|否|192.168.0.4|输入交换机网段内的一个IP地址。
+|Mode|String|否|NAT|绑定模式，取值：**NAT|MULTI\_BINDED**。
+
+ |
+|PrivateIpAddress|String|否|192.xx.xx.4|输入交换机网段内的一个IP地址。
 
  如果不输入，系统根据VPC ID和交换机ID自动分配一个私网IP地址。
 
@@ -58,8 +57,8 @@
 ``` {#request_demo}
 
 http(s)://vpc.aliyuncs.com/?Action=AssociateEipAddress
-&AllocationId=eip-2zeerraiwb7uj6i0d0fo3
-&InstanceId=i-2zebb08phycz6pok9xwe
+&AllocationId=eip-2zeerraiwb7ujxxxxxxxx
+&InstanceId=i-2zebb08phyczxxxxxxxx
 &<公共请求参数>
 
 ```
@@ -102,6 +101,7 @@ http(s)://vpc.aliyuncs.com/?Action=AssociateEipAddress
 |400|BIND\_INSTANCE\_HAVE\_PORTMAP\_OR\_BIND\_EIP|The instance may have portMap or already bind eip.|ECS 实例已经存在端口转发规则，请删除相应的端口转发规则再进行操作。|
 |400|BIND\_INSTANCE\_OWENER\_ERROR|Cannot operate the eip.|不能操作这个EIP。|
 |404|InvalidAllocationId.NotFound|Specified allocation ID is not found|指定的公网 IP 不存在，请您检查您填写的参数是否正确。|
+|400|InvalidParams.NotFound|instance not found|实例不存在。|
 
 [查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
 
