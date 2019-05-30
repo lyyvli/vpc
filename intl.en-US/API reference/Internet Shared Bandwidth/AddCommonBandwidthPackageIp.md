@@ -1,71 +1,84 @@
-# AddCommonBandwidthPackageIp {#reference_i4w_xmt_ndb .reference}
+# AddCommonBandwidthPackageIp {#doc_api_Vpc_AddCommonBandwidthPackageIp .reference}
 
-Add an EIP to an Internet Shared Bandwidth instance.
+Adds an EIP to an Internet Shared Bandwidth instance.
 
-Note the following before calling this API to add an EIP:
+Note the following before you call this action:
 
--   You can only add a Pay-As-You-Go EIP.
-
+-   Only Pay-As-You-Go EIPs can be added.
 -   The EIP and the Internet Shared Bandwidth instance must be in the same region.
 
+## Debug {#apiExplorer .section}
 
-## Request parameters {#section_cch_pjg_mdb .section}
+Use [API Explorer](https://api.aliyun.com/#product=Vpc&api=AddCommonBandwidthPackageIp) to perform debug operation and generate code examples.
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-|Action|String|Yes| The action to perform. Valid value: 
+## Request parameters {#parameters .section}
 
- AddCommonBandwidthPackageIp
-
- |
-|RegionId|String |Yes| The ID of the region where the Internet Shared Bandwidth instance is located.
-
- You can obtain the region ID by calling the DescribeRegions API.
+|Parameter|Type|Required?|Example value|Description|
+|---------|----|---------|-------------|-----------|
+|Action|String|Yes|AddCommonBandwidthPackageIp|The name of this action. Value: **AddCommonBandwidthPackageIp**.
 
  |
-|BandwidthPackageId|String |Yes| The ID of the Internet Shared Bandwidth instance.
+|BandwidthPackageId|String|Yes|cbwp-2ze2ic1xd2qeqxxxxxxxx|The ID of the Internet Shared Bandwidth instance.
 
  |
-|IpInstanceId|String|No| The ID of the EIP instance.
+|IpInstanceId|String|Yes|eip-2zeerraiwb7uxxxxxxxx|The ID of the EIP instance.
 
- You can obtain the ID of the EIP instance by calling the DescribeEipAddresses API.
+ To query the ID of the EIP instance, call [DescribeEipAddresses](~~36018~~).
+
+ |
+|RegionId|String|Yes|cn-hangzhou|The ID of the region where the Internet Shared Bandwidth instance is located.
+
+ To query the region ID, call [DescribeRegions](~~36063~~) .
 
  |
 
-## Response parameters {#section_ugs_f1g_cz .section}
+## Response parameters {#resultMapping .section}
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
+|Parameter|Type|Example value|Description|
+|---------|----|-------------|-----------|
+|RequestId|String|EC0A01C5-62E2-4E50-B558-CDAA09094B96|The ID of the request. 
 
-## Examples {#section_ix5_h1g_cz .section}
+ |
 
-**Request example**
+## Examples {#demo .section}
 
-``` {#createVPCpub}
+Request example
+
+``` {#request_demo}
+
 https://vpc.aliyuncs.com/?Action=AddCommonBandwidthPackageIp
-&RegionID=cn-hangzhou
-&BandwidthPackageId=cbwp-bp1vevu8h3ieh5xkcdhdy
-&IpInstanceId=eip-bp13e9i2qst4g6jzi35tc
-&CommonParameters
-```
-
-**Response example**
-
-JSON format
+&BandwidthPackageId=cbwp-2ze2ic1xd2qeqxxxxxxxx 
+&IpInstanceId=eip-2zeerraiwb7ujxxxxxxxx 
+&RegionId=cn-hangzhou
+&<CommonParameters>
 
 ```
+
+Response example
+
+`XML` format
+
+``` {#xml_return_success_demo}
+<AddCommonBandwidthPackageIpResponse>
+  <RequestId>01FDDD49-C4B7-4D2A-A8E5-A93915C450A6</RequestId>
+</AddCommonBandwidthPackageIpResponse>
+
+```
+
+`JSON` format
+
+``` {#json_return_success_demo}
 {
-    "RequestId": "01FDDD49-C4B7-4D2A-A8E5-A93915C450A6"
+	"RequestId": "01FDDD49-C4B7-4D2A-A8E5-A93915C450A6"
 }
 ```
 
-XML format
+## Error codes { .section}
 
-```
-<? xml version="1.0" encoding="UTF-8" ? >
-<AddCommonBandwidthPackageIpResponse>
-    <RequestId>01FDDD49-C4B7-4D2A-A8E5-A93915C450A6</RequestId>
-</AddCommonBandwidthPackageIpResponse>
-```
+|HTTP status code|Error code|Error message |Description|
+|----------------|----------|--------------|-----------|
+|404|InvalidRegionId.NotFound|The specified RegionId does not exist in our records.|The specified region ID does not exist.|
+|404|InvalidBandwidthPackageId.NotFound|The specified bandwidthPackageId does not exist in our records.|The specified Internet Shared Bandwidth does not exist.|
+
+[See common error codes](https://error-center.aliyun.com/status/product/Vpc)
 
