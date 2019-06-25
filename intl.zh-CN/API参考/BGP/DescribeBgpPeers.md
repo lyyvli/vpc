@@ -1,6 +1,6 @@
-# DescribeBgpPeers {#doc_api_1088224 .reference}
+# DescribeBgpPeers {#doc_api_Vpc_DescribeBgpPeers .reference}
 
-使用DescribeBgpPeers查询指定地域下的BGP邻居。
+调用DescribeBgpPeers接口查询指定地域下的BGP邻居。
 
 ## 调试 {#apiExplorer .section}
 
@@ -10,20 +10,16 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeBgpPeers|要执行的操作。
-
- 取值： **DescribeBgpPeers**。
+|Action|String|是|DescribeBgpPeers|要执行的操作，取值： **DescribeBgpPeers**。
 
  |
-|RegionId|String|是|cn-shanghai|BGP组所在的地域。
-
- 您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
+|RegionId|String|是|cn-shanghai|BGP组所在的地域。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|BgpGroupId|String|否|bgpg-2zev8h2wo414sfhjgdlhh|指定BGP组的ID。
+|BgpGroupId|String|否|bgpg-2zev8h2wo414xxxxxxx|指定BGP组的ID。
 
  |
-|BgpPeerId|String|否|bgp-2ze3un0ft1jd1xdppusul|BGP邻居的ID。
+|BgpPeerId|String|否|bgp-2ze3un0ft1jd1xxxxxxxx|BGP邻居的ID。
 
  |
 |IsDefault|Boolean|否|false|是否是默认BGP组。
@@ -38,7 +34,7 @@
 |PageSize|Integer|否|1|分页查询时每页的行数，最大值为50，默认值为10。
 
  |
-|RouterId|String|否|vrt-acfmxazb4ph6aiy|路由器的ID。
+|RouterId|String|否|vrt-acfmxazxxxxxxxx|路由器的ID。
 
  |
 
@@ -52,13 +48,13 @@
 |└Name|String|test|BGP邻居的名称。
 
  |
-|└PeerIpAddress|String|116.62.222.28|BGP邻居的IP地址。
+|└PeerIpAddress|String|116.62.xx.xx|BGP邻居的IP地址。
 
  |
 |└AuthKey|String|!PWZ2wsq|BGP组的认证密钥。
 
  |
-|└RouterId|String|vbr-2zecmmvg5gvu8i4telkhw|BGP邻居的状态。
+|└RouterId|String|vbr-2zecmmvg5gvu8xxxxxxxx|路由器ID。
 
  |
 |└Status|String|active|BGP邻居的状态。
@@ -67,13 +63,19 @@
 |└BgpGroupId|String|bgp-wz977wcrmb69axxxxxxxx|BGP组的ID。
 
  |
-|└BgpPeerId|String|bgp-wz977wcrmb69agdbab8s1|BGP邻居的ID。
+|└BgpPeerId|String|bgp-wz977wcrmb69axxxxxxxx|BGP邻居的ID。
 
  |
 |└BgpStatus|String|Established|BGP的连接状态。
 
  |
 |└Description|String|xxxxxxxxx|BGP组的描述。
+
+ |
+|└EnableBfd|Boolean|true|是否开启BFD功能，取值：
+
+ -   **true**：开启BFD功能。
+-   **false**：不开启BFD功能。
 
  |
 |└Hold|String|30|保持时间。
@@ -85,7 +87,7 @@
 |└Keepalive|String|10|保活时间。
 
  |
-|└LocalAsn|String|45104|本地ASN号
+|└LocalAsn|String|45104|本地ASN号。
 
  |
 |└PeerAsn|String|active|BGP邻居的ASN。
@@ -127,50 +129,50 @@ https://vpc.aliyuncs.com/?Action=DescribeBgpPeers
 `XML` 格式
 
 ``` {#xml_return_success_demo}
-<<?xml version="1.0" encoding="UTF-8" ?>
-<DescribeBgpGroupsResponse>
-	<TotalCount>2</TotalCount>
-	<PageSize>10</PageSize>
-	<RequestId>16DFA5E6-9771-41B7-B079-DD7C2DF49BE6</RequestId>
-	<BgpPeers>
-		<BgpPeer>
-			<BgpGroupId>bgpg-2zev8h2wo414sfhjgdlhh</BgpGroupId>
-			<LocalAsn>45104</LocalAsn>
-			<PeerIpAddress>11.11.11.1</PeerIpAddress>
-			<Hold>30</Hold>
-			<Description></Description>
-			<AuthKey></AuthKey>
-			<IsFake>true</IsFake>
-			<PeerAsn>234</PeerAsn>
-			<Keepalive>10</Keepalive>
-			<RouteLimit>99</RouteLimit>
-			<BgpPeerId>bgp-2ze3un0ft1jd1xdppusul</BgpPeerId>
-			<Name></Name>
-			<Status>Available</Status>
-			<BgpStatus></BgpStatus>
-			<RouterId>vbr-2zecmmvg5gvu8i4telkhw</RouterId>
-			<RegionId>cn-beijing</RegionId>
-		</BgpPeer>
-		<BgpPeer>
-			<BgpGroupId>bgpg-2zev8h2wo414sfhjgdlhh</BgpGroupId>
-			<LocalAsn>45104</LocalAsn>
-			<PeerIpAddress>11.11.11.2</PeerIpAddress>
-			<Hold>30</Hold>
-			<Description></Description>
-			<AuthKey></AuthKey>
-			<IsFake>true</IsFake>
-			<PeerAsn>234</PeerAsn>
-			<Keepalive>10</Keepalive>
-			<RouteLimit>99</RouteLimit>
-			<BgpPeerId>bgp-2zeu54rbreqqzyb5bg1hq</BgpPeerId>
-			<Name></Name>
-			<Status>Available</Status>
-			<BgpStatus></BgpStatus>
-			<RouterId>vbr-2zecmmvg5gvu8i4telkhw</RouterId>
-			<RegionId>cn-beijing</RegionId>
-		</BgpPeer>
-	</BgpPeers>
-</DescribeBgpGroupsResponse>
+<DescribeBgpPeers>
+  <TotalCount>2</TotalCount>
+  <PageSize>10</PageSize>
+  <RequestId>16DFA5E6-9771-41B7-B079-DD7C2DF49BE6</RequestId>
+  <BgpPeers>
+    <BgpPeer>
+      <BgpGroupId>bgpg-2zev8h2wo414sxxxxxxxx</BgpGroupId>
+      <LocalAsn>45104</LocalAsn>
+      <PeerIpAddress>11.11.xx.xx</PeerIpAddress>
+      <Hold>30</Hold>
+      <Description/>
+      <AuthKey/>
+      <IsFake>true</IsFake>
+      <PeerAsn>234</PeerAsn>
+      <Keepalive>10</Keepalive>
+      <RouteLimit>99</RouteLimit>
+      <BgpPeerId>bgp-2ze3un0ft1jd1xxxxxxxx</BgpPeerId>
+      <Name/>
+      <Status>Available</Status>
+      <BgpStatus/>
+      <RouterId>vbr-2zecmmvg5gvu8xxxxxxxx</RouterId>
+      <RegionId>cn-beijing</RegionId>
+    </BgpPeer>
+    <BgpPeer>
+      <BgpGroupId>bgpg-2zev8h2wo414sxxxxxxxx</BgpGroupId>
+      <LocalAsn>45104</LocalAsn>
+      <PeerIpAddress>11.11.xx.xx</PeerIpAddress>
+      <Hold>30</Hold>
+      <Description/>
+      <AuthKey/>
+      <IsFake>true</IsFake>
+      <PeerAsn>234</PeerAsn>
+      <Keepalive>10</Keepalive>
+      <RouteLimit>99</RouteLimit>
+      <BgpPeerId>bgp-2zeu54rbreqqzxxxxxxxx</BgpPeerId>
+      <Name/>
+      <Status>Available</Status>
+      <BgpStatus/>
+      <RouterId>vbr-2zecmmvg5gvu8xxxxxxxx</RouterId>
+      <RegionId>cn-beijing</RegionId>
+    </BgpPeer>
+  </BgpPeers>
+</DescribeBgpPeers>
+
 ```
 
 `JSON` 格式
@@ -183,9 +185,9 @@ https://vpc.aliyuncs.com/?Action=DescribeBgpPeers
 	"BgpPeers":{
 		"BgpPeer":[
 			{
-				"BgpGroupId":"bgpg-2zev8h2wo414sfhjgdlhh",
+				"BgpGroupId":"bgpg-2zev8h2wo414sxxxxxxxx",
 				"LocalAsn":45104,
-				"PeerIpAddress":"11.11.11.1",
+				"PeerIpAddress":"11.11.xx.xx",
 				"Hold":30,
 				"Description":"",
 				"AuthKey":"",
@@ -193,17 +195,17 @@ https://vpc.aliyuncs.com/?Action=DescribeBgpPeers
 				"PeerAsn":234,
 				"Keepalive":10,
 				"RouteLimit":99,
-				"BgpPeerId":"bgp-2ze3un0ft1jd1xdppusul",
+				"BgpPeerId":"bgp-2ze3un0ft1jd1xxxxxxxx",
 				"Name":"",
 				"Status":"Available",
 				"BgpStatus":"",
-				"RouterId":"vbr-2zecmmvg5gvu8i4telkhw",
+				"RouterId":"vbr-2zecmmvg5gvu8xxxxxxxx",
 				"RegionId":"cn-beijing"
 			},
 			{
-				"BgpGroupId":"bgpg-2zev8h2wo414sfhjgdlhh",
+				"BgpGroupId":"bgpg-2zev8h2wo414sxxxxxxxx",
 				"LocalAsn":45104,
-				"PeerIpAddress":"11.11.11.2",
+				"PeerIpAddress":"11.11.xx.xx",
 				"Hold":30,
 				"Description":"",
 				"AuthKey":"",
@@ -211,11 +213,11 @@ https://vpc.aliyuncs.com/?Action=DescribeBgpPeers
 				"PeerAsn":234,
 				"Keepalive":10,
 				"RouteLimit":99,
-				"BgpPeerId":"bgp-2zeu54rbreqqzyb5bg1hq",
+				"BgpPeerId":"bgp-2zeu54rbreqqzxxxxxxxx",
 				"Name":"",
 				"Status":"Available",
 				"BgpStatus":"",
-				"RouterId":"vbr-2zecmmvg5gvu8i4telkhw",
+				"RouterId":"vbr-2zecmmvg5gvu8xxxxxxxx",
 				"RegionId":"cn-beijing"
 			}
 		]
