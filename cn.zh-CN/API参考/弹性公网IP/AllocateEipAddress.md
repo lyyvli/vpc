@@ -1,6 +1,6 @@
 # AllocateEipAddress {#doc_api_Vpc_AllocateEipAddress .reference}
 
-使用AllocateEipAddress接口申请弹性公网IP（EIP）。
+调用AllocateEipAddress接口申请弹性公网IP（EIP）。
 
 调用本接口后将在指定的地域内随机获取一个状态为**Available**的弹性公网IP。弹性公网IP在传输层目前只支持ICMP、TCP和UDP协议，不支持IGMP和SCTP等协议。
 
@@ -23,45 +23,56 @@
  -   **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
 -   **true**：开启自动付费，自动支付订单。
 
- **说明：** **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+ **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
 
  |
 |Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为5。
 
  |
-|ClientToken|String|否|02fb3da4-130e-11e9-8e44-001xxxxxxxx|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-001xxxxxxxx|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
 
  |
 |ISP|String|否|BGP|线路类型，默认值为**BGP**。
 
- **说明：** 如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。
+ -   对于已开通单线带宽白名单的用户，ISP字段可以设置为**ChinaTelecom**、**ChinaUnicom**和**ChinaMobile**，用来开通中国电信、中国联通、中国移动的单线EIP。
+-   如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。
 
  |
 |InstanceChargeType|String|否|PostPaid|EIP的付费方式，取值：
 
- -   **PostPaid**（默认值）：后付费。
+ **PrePaid**：预付费。
+
+ **PostPaid**（默认值）：后付费。
+
+ 当取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。
 
  |
 |InternetChargeType|String|否|PayByBandwidth|EIP的计费方式，取值：
 
- -   **PayByTraffic**：按流量计费。
+ **PayByBandwidth**（默认值）：按带宽计费。
+
+ **PayByTraffic**：按流量计费。
+
+ 当**InstanceChargeType**取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。
 
  |
 |Netmode|String|否|Public|网络类型，默认值为**Public**。
 
  |
-|Period|Integer|否|10|购买时长。取值：
+|Period|Integer|否|10|购买时长。
 
- -   当选择按月付费时，取值范围为**1-9**。
--   当选择按年付费时，取值范围为**1-3**。**InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+ -   当**PricingCycle**取值**Month**时，**Period**取值范围为**1-9**。
+-   当**PricingCycle**取值**Year**时，**Period**取值范围为**1-3**。
+
+ **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
 
  |
 |PricingCycle|String|否|Month|预付费的计费周期，取值：
 
- -   **Month**（默认值）：按月付费
+ -   **Month**（默认值）：按月付费。
 -   **Year**：按年付费。
 
-**说明：** **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+**InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
 
 
  |
@@ -79,7 +90,7 @@
 |AllocationId|String|eip-25877c70xxxxxxxx|EIP的ID。
 
  |
-|OrderId|Long|10|订单号。只有预付费时返回。
+|OrderId|Long|10|订单号，仅预付费时返回。
 
  |
 |RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。
