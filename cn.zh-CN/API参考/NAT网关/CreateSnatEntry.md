@@ -2,12 +2,10 @@
 
 调用CreateSnatEntry接口在SNAT列表中添加SNAT条目。
 
-每个SNAT条目由SourceVSwitchId（交换机）和SnatIp（公网IP）组成。添加SNAT条目后，交换机下的ECS实例将通过SnatIp访问公网。
+调用本接口添加SNAT条目时，请注意：
 
-调用本接口添加DNAT条目时，请注意：
-
--   SNAT条目中的指定的交换机必须在NAT网关所属的VPC内。
--   每个交换机只能属于一个SNAT条目。
+-   SNAT条目中指定的交换机和ECS实例必须在NAT网关所属的VPC内。
+-   每个交换机和ECS实例只能属于一个SNAT条目。
 -   如果交换机中存在HAVIP实例，则无法添加SNAT条目。
 -   SNAT条目中的公网IP（SnatIp）需满足以下条件：
     -   对于2017年11月3日之前账户下存在NAT带宽包的用户，SnatIp必须是该NAT网关的NAT带宽包中的公网IP地址。
@@ -22,9 +20,7 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|CreateSnatEntry|要执行的操作。
-
- 取值： **CreateSnatEntry**。
+|Action|String|是|CreateSnatEntry|要执行的操作，取值：**CreateSnatEntry**。
 
  |
 |RegionId|String|是|cn-hangzhou|NAT网关所在的地域。
@@ -32,16 +28,19 @@
  您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|SnatIp|String|是|47.XXX.XXX.98|公网IP地址。多个IP之间逗号隔开。
+|SnatIp|String|是|47.XXX.XXX.98|公网IP地址，多个IP之间用逗号隔开。
 
  |
 |SnatTableId|String|是|stb-bp190wu8io1vgevxxxxxx|SNAT表ID。
 
  |
-|SnatEntryName|String|否|SnatEntry-1|SNAT规则的名称。长度为2-128个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
+|SnatEntryName|String|否|SnatEntry-1|SNAT条目的名称。长度为2-128个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
-|SourceCIDR|String|否|10.1.1.0/24|指定交换机的网段。比如10.0.0.1/24。
+|SourceCIDR|String|否|10.1.1.0/24|交换机或ECS实例的网段。
+
+ -   交换机粒度：指定交换机的网段（如192.168.1.0/24），当交换机下的ECS实例发起互联网访问请求时，NAT网关会为其提供SNAT服务（代理上网服务），且使用的公网IP为指定的公网IP。
+-   ECS粒度：指定ECS实例的地址（如192.168.1.1/32），当ECS实例发起互联网访问请求时，NAT网关会为其提供SNAT服务（代理上网服务），且使用的公网IP为指定的公网IP。
 
  **说明：** 此参数和**SourceVSwtichId**参数互斥，不能同时出现。如果指定了**SourceVSwitchId**，则不能指定**SourceCIDR**参数。如果指定了**SourceCIDR**参数，则不能指定**SourceVSwitchId**参数。
 
