@@ -1,6 +1,8 @@
 # DescribeEipGatewayInfo {#doc_api_Vpc_DescribeEipGatewayInfo .reference}
 
-调用DescribeEipGatewayInfo接口查询EIP的网关和掩码。
+调用DescribeEipGatewayInfo接口查询EIP的网关和掩码信息。
+
+仅支持查询以多EIP网卡可见模式绑定辅助弹性网卡的EIP的网关和掩码信息。
 
 ## 调试 {#apiExplorer .section}
 
@@ -20,26 +22,26 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|String|200|操作状态码，其中200表示操作成功。
+|Code|String|200|操作状态码。
 
  |
 |EipInfos| | |EIP详细信息。
 
  |
-|└Ip|String|47.xx.xx.236|EIP的IP地址。
+|Ip|String|47.xx.xx.236|EIP的IP地址。
 
  |
-|└IpGw|String|47.xx.xx.1|EIP的网关地址。
+|IpGw|String|47.xx.xx.1|EIP的网关地址。
 
  |
-|└IpMask|String|255.255.255.0|EIP的子网掩码。
+|IpMask|String|255.255.255.0|EIP的子网掩码。
 
  |
-|Message|String|successful|传递的操作信息，当`code`=**200**时，`message`为**successful**。
+|Message|String|successful|传递的操作信息。
 
  |
 |RequestId|String|C0FD0EED-F90D-4479-803D-DD62335357E5|请求ID。
@@ -53,7 +55,7 @@
 ``` {#request_demo}
 
 http(s)://vpc.aliyuncs.com/?Action=DescribeEipGatewayInfo
-&InstanceId=eni-bp1d66qjxb3qoin3xxxx
+&InstanceId=eni-bp1d66qjxb3qoin3****
 &RegionId=cn-zhangjiakou
 &<公共请求参数>
 
@@ -104,5 +106,5 @@ http(s)://vpc.aliyuncs.com/?Action=DescribeEipGatewayInfo
 |--------|---|----|--|
 |403|Forbbiden|User not authorized to operate on the specified resource.|您没有权限操作该资源，请您申请操作权限后再试。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
