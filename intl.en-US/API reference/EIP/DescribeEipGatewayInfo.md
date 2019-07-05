@@ -2,6 +2,8 @@
 
 Queries the gateway address and subnet mask of an EIP.
 
+You can only query the gateway address and subnet mask of an EIP that is associated with a secondary Elastic Network Interface \(ENI\) in the multi-EIP to ENI mode.
+
 ## Debug {#apiExplorer .section}
 
 Use [OpenAPI Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeEipGatewayInfo) to perform debug operations and generate SDK code examples.
@@ -10,13 +12,13 @@ Use [OpenAPI Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeEipGatewa
 
 |Parameter|Type|Required?|Example value|Description|
 |---------|----|---------|-------------|-----------|
-| Action |String|Yes|DescribeEipGatewayInfo| The name of this action. Value: **DescribeEipGatewayInfo** 
+|Action|String|Yes|DescribeEipGatewayInfo| The name of this action. Value: **DescribeEipGatewayInfo**
 
  |
-| InstanceId |String|Yes|eni-bp1d66qjxb3qoin3xxxx| The ID of the ENI with which the EIP is associated.
+|InstanceId|String|Yes|eni-bp1d66qjxb3qoin3xxxx| The ID of the ENI with which the EIP is associated.
 
  |
-| RegionId |String|Yes|cn-zhangjiakou| The region ID of the EIP. To query the region ID, call [DescribeRegions](~~36063~~) .
+|RegionId|String|Yes|cn-zhangjiakou| The region ID of the EIP. To query the region ID, call [DescribeRegions](~~36063~~).
 
  |
 
@@ -24,22 +26,22 @@ Use [OpenAPI Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeEipGatewa
 
 |Parameter|Type|Example value|Description|
 |---------|----|-------------|-----------|
-|Code|String|200| The status code that indicates whether the request is successful. The value 200 indicates that the operation is successful.
+|Code|String|200| The status code of the request.
 
  |
 |EipInfos| | | The details of the EIP.
 
  |
-|└Ip|String|47.xx.xx.236| The IP address of the EIP.
+|Ip|String|47.xx.xx.236| The IP address of the EIP.
 
  |
-|└IpGw|String|47.xx.xx.1| The gateway address of the EIP.
+|IpGw|String|47.xx.xx.1| The gateway address of the EIP.
 
  |
-|└IpMask|String|255.255.255.0| The subnet mask of the EIP.
+|IpMask|String|255.255.255.0| The subnet mask of the EIP.
 
  |
-|Message|String|successful| The message stating whether the request is successful. If the value of `code` is **200** , the value of `message` is **successful** .
+|Message|String|successful| The message indicating whether the request is successful.
 
  |
 |RequestId|String|C0FD0EED-F90D-4479-803D-DD62335357E5| The ID of the request.
@@ -53,7 +55,7 @@ Request example
 ``` {#request_demo}
 
 http(s)://vpc.aliyuncs.com/? Action=DescribeEipGatewayInfo
-&InstanceId=eni-bp1d66qjxb3qoin3xxxx
+&InstanceId=eni-bp1d66qjxb3qoin3****
 &RegionId=cn-zhangjiakou
 &<CommonParameters>
 
@@ -61,7 +63,7 @@ http(s)://vpc.aliyuncs.com/? Action=DescribeEipGatewayInfo
 
 Response examples
 
- `XML` format
+`XML` format
 
 ``` {#xml_return_success_demo}
 <DescribeEipGatewayInfoResponse>
@@ -79,7 +81,7 @@ Response examples
 
 ```
 
- `JSON` format
+`JSON` format
 
 ``` {#json_return_success_demo}
 {
@@ -98,11 +100,9 @@ Response examples
 }
 ```
 
-## Error codes { .section}
+## Error codes {#section_6d8_2uc_6h4 .section}
 
 |HTTP status code|Error code|Error message|Description|
 |----------------|----------|-------------|-----------|
 |403|Forbbiden|User not authorized to operate on the specified resource.|You are not authorized to operate on this resource.|
-
- [See common error codes.](https://error-center.aliyun.com/status/product/Vpc) 
 
