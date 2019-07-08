@@ -1,6 +1,6 @@
-# CreatePhysicalConnectionSetupOrder {#doc_api_1032091 .reference}
+# CreatePhysicalConnectionSetupOrder {#doc_api_Vpc_CreatePhysicalConnectionSetupOrder .reference}
 
-调用CreatePhysicalConnectionSetupOrder创建资源占用费订单。
+调用CreatePhysicalConnectionSetupOrder创建初装费订单。
 
 ## 调试 {#apiExplorer .section}
 
@@ -15,7 +15,7 @@
  |
 |Action|String|是|CreatePhysicalConnectionSetupOrder|要执行的操作。
 
- 取值：**CreatePhysicalConnectionSetupOrder**
+ 取值：**CreatePhysicalConnectionSetupOrder**。
 
  |
 |LineOperator|String|是|CT|提供接入物理线路的运营商，取值：
@@ -51,11 +51,8 @@
 |RedundantPhysicalConnectionId|String|否|pc-bp10zsv5ntpxxxxxxxxxx|冗余物理专线的ID，该专线的状态必须为**Allocated**、**Confirmed**或**Enabled**。
 
  |
-|Type|String|否|VPC|物理专线类型。
 
- |
-
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -81,7 +78,7 @@ http(s)://[Endpoint]/?AccessPointId=ap-cn-beijing-ft-A
 `XML` 格式
 
 ``` {#xml_return_success_demo}
-<CreatePhysicalConnectionSetupOrder>
+<CreatePhysicalConnectionSetupOrderResponse>
   <code>200</code>
   <data>
     <orderId>203255400960138</orderId>
@@ -90,7 +87,7 @@ http(s)://[Endpoint]/?AccessPointId=ap-cn-beijing-ft-A
   <message>successful</message>
   <requestId>AA874147-4A58-41D4-95E2-F2FFDAF417A6</requestId>
   <success>true</success>
-</CreatePhysicalConnectionSetupOrder>
+</CreatePhysicalConnectionSetupOrderResponse>
 
 ```
 
@@ -111,5 +108,5 @@ http(s)://[Endpoint]/?AccessPointId=ap-cn-beijing-ft-A
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
