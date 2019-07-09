@@ -1,6 +1,6 @@
 # CreatePhysicalConnectionOccupancyOrder {#doc_api_Vpc_CreatePhysicalConnectionOccupancyOrder .reference}
 
-调用CreatePhysicalConnectionOccupancyOrder创建初装费订单。
+调用CreatePhysicalConnectionOccupancyOrder创建资源占用费订单。
 
 ## 调试 {#apiExplorer .section}
 
