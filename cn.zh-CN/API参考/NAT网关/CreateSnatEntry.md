@@ -28,10 +28,10 @@
  您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|SnatIp|String|是|47.XXX.XXX.98|公网IP地址，多个IP之间用逗号隔开。
+|SnatIp|String|是|47.XX.XX.98|公网IP地址，多个IP之间用逗号隔开。
 
  |
-|SnatTableId|String|是|stb-bp190wu8io1vgevxxxxxx|SNAT表ID。
+|SnatTableId|String|是|stb-bp190wu8io1vgev\*\*\*\*|SNAT表ID。
 
  |
 |SnatEntryName|String|否|SnatEntry-1|SNAT条目的名称。长度为2-128个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
@@ -39,21 +39,21 @@
  |
 |SourceCIDR|String|否|10.1.1.0/24|交换机或ECS实例的网段。
 
- -   交换机粒度：指定交换机的网段（如192.168.1.0/24），当交换机下的ECS实例发起互联网访问请求时，NAT网关会为其提供SNAT服务（代理上网服务），且使用的公网IP为指定的公网IP。
--   ECS粒度：指定ECS实例的地址（如192.168.1.1/32），当ECS实例发起互联网访问请求时，NAT网关会为其提供SNAT服务（代理上网服务），且使用的公网IP为指定的公网IP。
+ -   交换机粒度：指定交换机的网段（如192.168.1.0/24），当交换机下的ECS实例发起互联网访问请求时，NAT网关会为其提供SNAT服务（代理上网服务）。如果**SnatIp**仅指定了一个公网IP，ECS实例使用指定的公网IP访问互联网；如果**SnatIp**指定了多个公网IP，ECS实例随机使用**SnatIp**中的公网IP访问互联网。
+-   ECS粒度：指定ECS实例的地址（如192.168.1.1/32），当ECS实例发起互联网访问请求时，NAT网关会为其提供SNAT服务（代理上网服务）。如果**SnatIp**仅指定了一个公网IP，ECS实例使用指定的公网IP访问互联网；如果**SnatIp**指定了多个公网IP，ECS实例随机使用**SnatIp**中的公网IP访问互联网。
 
  **说明：** 此参数和**SourceVSwtichId**参数互斥，不能同时出现。如果指定了**SourceVSwitchId**，则不能指定**SourceCIDR**参数。如果指定了**SourceCIDR**参数，则不能指定**SourceVSwitchId**参数。
 
  |
-|SourceVSwitchId|String|否|vsw-bp1nhx2s9ui5oxxxxxxxx|需要公网访问的交换机的ID。
+|SourceVSwitchId|String|否|vsw-bp1nhx2s9ui5o\*\*\*\*|需要公网访问的交换机的ID。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|SnatEntryId|String|snat-kmd6nv8fyxxxxxxxx|SNAT条目ID。
+|SnatEntryId|String|snat-kmd6nv8fy\*\*\*\*|SNAT条目ID。
 
  |
 |RequestId|String|2315DEB7-5E92-423A-91F7-4C1EC9AD97C3|请求ID。
@@ -68,8 +68,8 @@
 
 https://vpc.aliyuncs.com/?Action=CreateSnatEntry
 &RegionId=cn-hangzhou
-&SnatIp=47.XXX.XXX.98
-&SnatTableId=stb-bp190wu8io1vgevxxxxxx
+&SnatIp=47.XX.XX.98
+&SnatTableId=stb-bp190wu8io1vgevx****
 &<公共请求参数>
 
 ```
@@ -81,7 +81,7 @@ https://vpc.aliyuncs.com/?Action=CreateSnatEntry
 ``` {#xml_return_success_demo}
 <CreateSnatEntryResponse>
   <RequestId>2315DEB7-5E92-423A-91F7-4C1EC9AD97C3</RequestId>
-  <SnatEntryId>snat-119smw5tkxxxxxxxx</SnatEntryId>
+  <SnatEntryId>snat-119smw5tkx****</SnatEntryId>
 </CreateSnatEntryResponse>
 
 ```
@@ -91,7 +91,7 @@ https://vpc.aliyuncs.com/?Action=CreateSnatEntry
 ``` {#json_return_success_demo}
 {
 	"RequestId":"2315DEB7-5E92-423A-91F7-4C1EC9AD97C3",
-	"SnatEntryId":"snat-kmd6nv8fyxxxxxxxx"
+	"SnatEntryId":"snat-kmd6nv8fyx****"
 }
 ```
 
@@ -114,5 +114,5 @@ https://vpc.aliyuncs.com/?Action=CreateSnatEntry
 |400|Forbindden|The specified Instance already bind eip|该实例已经绑定了 EIP，请将 ECS 实例与 EIP 解绑后再添加该端口转发规则。|
 |400|InvalidParameter.Name.Malformed|The specified Name is not valid.|该名称不合法，请您按照正确的格式书写名称。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
