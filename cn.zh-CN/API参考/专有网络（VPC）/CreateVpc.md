@@ -46,35 +46,35 @@
 |Ipv6CidrBlock|String|否|2408:4004:0:6axx::/56|VPC的IPv6网段。
 
  |
-|ResourceGroupId|String|否|rg-acfmxazb4ph6aiyxxxx|资源组ID。关于资源组的更多信息，请参见[什么是资源组](~~94475~~)。
+|ResourceGroupId|String|否|rg-acfmxazb4ph6aiy\*\*\*\*|资源组ID。关于资源组的更多信息，请参见[什么是资源组](~~94475~~)。
 
  |
 |UserCidr|String|否|189.16.0.0/12|用户侧网络的网段，如需定义多个网段请使用半角逗号隔开，最多支持3个网段。
 
- **说明：** VPC定义的默认私网转发网段为10.0.0.0/8、172.16.0.0/12、192.168.0.0/16、100.64.0.0/10和VPC CIDR网段。如果ECS实例或弹性网卡已经具备了公网访问能力（ECS实例分配了固定公网IP、ECS实例或弹性网卡绑定了公网IP、ECS实例或弹性网卡设置了DNAT IP映射规则），这类资源访问非上述默认私网转发网段的请求均会通过公网IP直接转发至公网。当希望按照路由表在私网（如VPC内、通过VPN/高速通道/云企业网搭建的混合云网络）转发访问非上述默认私网网段的请求时，需要将网络请求的目的网段设置为ECS或弹性网卡所在VPC的UserCidr。为VPC设置UserCidr后，该VPC中访问UserCidr地址的请求将按照路由表进行转发，而不通过公网IP转发。
+ VPC定义的默认私网转发网段为10.0.0.0/8、172.16.0.0/12、192.168.0.0/16、100.64.0.0/10和VPC CIDR网段。如果ECS实例或弹性网卡已经具备了公网访问能力（ECS实例分配了固定公网IP、ECS实例或弹性网卡绑定了公网IP、ECS实例或弹性网卡设置了DNAT IP映射规则），这类资源访问非上述默认私网转发网段的请求均会通过公网IP直接转发至公网。当希望按照路由表在私网（如VPC内、通过VPN/高速通道/云企业网搭建的混合云网络）转发访问非上述默认私网网段的请求时，需要将网络请求的目的网段设置为ECS或弹性网卡所在VPC的UserCidr。为VPC设置UserCidr后，该VPC中访问UserCidr地址的请求将按照路由表进行转发，而不通过公网IP转发。
 
  |
-|VpcName|String|否|vpc-hp3ld1aq7kl4k7skhxxxx|VPC的名称。长度为2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
+|VpcName|String|否|vpc-hp3ld1aq7kl4k7skh\*\*\*\*|VPC的名称。长度为2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|VpcId|String|vpc-bp15zckdt37pq72zvxxxx|VPC的ID。
+|VpcId|String|vpc-bp15zckdt37pq72zv\*\*\*\*|VPC的ID。
 
  |
-|VRouterId|String|vrt-bp1lhl0taikrteen8xxxx|路由器的ID。
+|VRouterId|String|vrt-bp1lhl0taikrteen8\*\*\*\*|路由器的ID。
 
  |
-|RouteTableId|String|vtb-bp145q7glnuzdvxxxx|路由表的ID。
+|RouteTableId|String|vtb-bp145q7glnuzdv\*\*\*\*|路由表的ID。
 
  |
 |RequestId|String|0ED8D006-F706-4D23-88ED-E11ED28DCAC0|请求ID。
 
  |
-|ResourceGroupId|String|rg-acfmxazb4ph6aiyxxxx|资源组ID。
+|ResourceGroupId|String|rg-acfmxazb4ph6aiy\*\*\*\*|资源组ID。
 
  |
 
@@ -96,11 +96,11 @@ https://vpc.aliyuncs.com/?Action=CreateVpc
 
 ``` {#xml_return_success_demo}
 <CreateVpcResponse>
-  <ResourceGroupId>rg-acfmxazb4phxxxx</ResourceGroupId>
+  <ResourceGroupId>rg-acfmxazb4ph****</ResourceGroupId>
   <RequestId>8B2F5262-6B57-43F2-97C4-971425462DFE</RequestId>
-  <RouteTableId>vtb-bp1krxxzp0c2xxxx</RouteTableId>
-  <VRouterId>vrt-bp1jcg5cmxjbl9xgcxxxx</VRouterId>
-  <VpcId>vpc-bp1qpo0kug3a20qqexxxx</VpcId>
+  <RouteTableId>vtb-bp1krxxzp0c2****</RouteTableId>
+  <VRouterId>vrt-bp1jcg5cmxjbl9xgc****</VRouterId>
+  <VpcId>vpc-bp1qpo0kug3a20qqe****</VpcId>
 </CreateVpcResponse>
 
 ```
@@ -110,10 +110,10 @@ https://vpc.aliyuncs.com/?Action=CreateVpc
 ``` {#json_return_success_demo}
 {
 	"RequestId":"8B2F5262-6B57-43F2-97C4-971425462DFE",
-	"ResourceGroupId":"rg-acfmxazb4phxxxx",
-	"RouteTableId":"vtb-bp1krxxzp0c29xxxx",
-	"VpcId":"vpc-bp1qpo0kug3a20qqexxxx",
-	"VRouterId":"vrt-bp1jcg5cmxjbl9xgcxxxx"
+	"ResourceGroupId":"rg-acfmxazb4ph****",
+	"RouteTableId":"vtb-bp1krxxzp0c29****",
+	"VpcId":"vpc-bp1qpo0kug3a20qqe****",
+	"VRouterId":"vrt-bp1jcg5cmxjbl9xgc****"
 }
 ```
 
@@ -135,5 +135,5 @@ https://vpc.aliyuncs.com/?Action=CreateVpc
 |400|InvalidUserCidr.Malformed|Specified UserCidr overlapping in of 100.64.0.0/10.|该UserCird和100.64.0.0/10重叠。|
 |500|InternalError|The request processing has failed due to some unknown error.|请求处理由于某些未知错误失败。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
