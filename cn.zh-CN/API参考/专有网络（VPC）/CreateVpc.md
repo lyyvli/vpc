@@ -10,9 +10,9 @@
 -   创建VPC后，会自动创建一个虚拟路由器和一个路由表。
 -   每个VPC支持三个用户侧网段。如果多个用户侧网段之间存在互相包含，掩码较短的网段实际生效。例如10.0.0.0/8和10.1.0.0/16中，10.0.0.0/8实际生效。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=CreateVpc)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=CreateVpc&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -37,7 +37,7 @@
 |Description|String|否|This is my first Vpc.|VPC的描述信息。长度为2-256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
-|EnableIpv6|Boolean|否|0|是否开启IPv6网段，取值：
+|EnableIpv6|Boolean|否|false|是否开启IPv6网段，取值：
 
  -   **false**（默认值）：不开启。
 -   **true**：开启。
@@ -96,13 +96,12 @@ https://vpc.aliyuncs.com/?Action=CreateVpc
 
 ``` {#xml_return_success_demo}
 <CreateVpcResponse>
-  <ResourceGroupId>rg-acfmxazb4ph****</ResourceGroupId>
-  <RequestId>8B2F5262-6B57-43F2-97C4-971425462DFE</RequestId>
-  <RouteTableId>vtb-bp1krxxzp0c2****</RouteTableId>
-  <VRouterId>vrt-bp1jcg5cmxjbl9xgc****</VRouterId>
-  <VpcId>vpc-bp1qpo0kug3a20qqe****</VpcId>
+      <ResourceGroupId>rg-acfmxazb4ph****</ResourceGroupId>
+	  <RequestId>8B2F5262-6B57-43F2-97C4-971425462DFE</RequestId>
+	  <RouteTableId>vtb-bp1krxxzp0c2****</RouteTableId>
+	  <VRouterId>vrt-bp1jcg5cmxjbl9xgc****</VRouterId>
+	  <VpcId>vpc-bp1qpo0kug3a20qqe****</VpcId>
 </CreateVpcResponse>
-
 ```
 
 `JSON` 格式
