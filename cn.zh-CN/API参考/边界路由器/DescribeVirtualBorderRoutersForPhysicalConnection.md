@@ -1,10 +1,10 @@
-# DescribeVirtualBorderRoutersForPhysicalConnection {#doc_api_1088689 .reference}
+# DescribeVirtualBorderRoutersForPhysicalConnection {#doc_api_Vpc_DescribeVirtualBorderRoutersForPhysicalConnection .reference}
 
-使用DescribeVirtualBorderRoutersForPhysicalConnection查询指定物理专线下的边界路由器（VBR），包括物理专线所有者的VBR和其他账号的VBR。
+调用DescribeVirtualBorderRoutersForPhysicalConnection接口查询指定物理专线下的边界路由器（VBR），包括物理专线所有者的VBR和其他账号的VBR。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeVirtualBorderRoutersForPhysicalConnection)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeVirtualBorderRoutersForPhysicalConnection&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -15,69 +15,78 @@
  取值： **DescribeVirtualBorderRoutersForPhysicalConnection**。
 
  |
-|PhysicalConnectionId|String|是|pc-119mfjzm7|物理专线的ID。
+|PhysicalConnectionId|String|是|pc-119mfj\*\*\*\*|物理专线的ID。
 
  |
 |RegionId|String|是|cn-shanghai|物理专线所在的地域。 您可以通过调用[DescribeRegions](~~36063~~) 接口获取地域ID。
 
  |
-|Filter.N.Key|String|否|1|过滤条件的key。N取值：1-5。
+|Filter.N.Key|String|否|1|过滤条件的key。N取值：**1-5**。
 
  |
-|Filter.N.Value.N|RepeatList|否|1|对应过滤条件的取值。N取值：1-5。
+|Filter.N.Value.N|RepeatList|否|1|对应过滤条件的取值。N取值：**1-5**。
 
  |
-|PageNumber|Integer|否|10|列表的页码，默认值为1。
+|PageNumber|Integer|否|1|列表的页码，默认值为**1**。
 
  |
-|PageSize|Integer|否|10|分页查询时每页的行数，最大值为50，默认值为10。
+|PageSize|Integer|否|10|分页查询时每页的行数，最大值为**50**，默认值为**10**。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |VirtualBorderRouterForPhysicalConnectionSet| | |查询到的VBR合集 。
 
  |
-|└ActivationTime|String|2017-06-08T12:20:55|VBR第一次激活的时间。
+|ActivationTime|String|2017-06-08T12:20:55|VBR第一次激活的时间。
 
  |
-|└CircuitCode|String|longtel001|运营商为物理专线提供的电路编码。
+|CircuitCode|String|longtel001|运营商为物理专线提供的电路编码。
 
  |
-|└CreationTime|String|2017-06-08T12:20:55|VBR的创建时间。
+|CreationTime|String|2017-06-08T12:20:55|VBR的创建时间。
 
  |
-|└LocalGatewayIp|String|10.0.0.4|VBR的阿里云侧互联IP。
+|EccId|String|ecc-sjghe\*\*\*\*|高速上云服务实例ID。
 
  |
-|└PeerGatewayIp|String|10.0.0.5|VBR的客户侧互联IP。
+|LocalGatewayIp|String|10.0.0.XX|VBR的阿里云侧互联IP。
 
  |
-|└PeeringSubnetMask|String|255.255.255.0|VBR的阿里云侧和客户侧互联IP的子网掩码。
+|PeerGatewayIp|String|10.0.0.XX|VBR的客户侧互联IP。
 
  |
-|└RecoveryTime|String|2017-06-08T12:20:55|VBR最近一次从Terminated状态恢复到Active状态的时间。
+|PeeringSubnetMask|String|255.255.255.0|VBR的阿里云侧和客户侧互联IP的子网掩码。
 
  |
-|└TerminationTime|String|2017-06-08T12:20:55|VBR最近一次被终止的时间。
+|RecoveryTime|String|2017-06-08T12:20:55|VBR最近一次从Terminated状态恢复到Active状态的时间。
 
  |
-|└VbrId|String|12|VBR的ID。
+|Status|String|Available|边界路由器VBR状态。
 
  |
-|└VbrOwnerUid|Long|1342435124|VBR所有者的账号ID，VBR和物理专线的所有者相同时该参数为空。
+|TerminationTime|String|2017-06-08T12:20:55|VBR最近一次被终止的时间。
 
  |
-|└VlanId|Integer|10|VBR的VLAN ID。
+|Type|String|pconnVBR|边界路由器类型。
 
  |
-|TotalCount|Integer|10|列表条条目数。
+|VbrId|String|vbr-bp16ksp61j7e0tknxxxx|VBR的ID。
 
  |
-|PageNumber|Integer|10|当前页码。
+|VbrOwnerUid|Long|1231579085529|VBR所有者的账号ID，VBR和物理专线的所有者相同时该参数为空。
+
+ |
+|VlanId|Integer|1678|VBR的VLAN ID。
+
+ |
+|TotalCount|Integer|2|列表条条目数。
+
+ |
+|PageNumber|Integer|1|当前页码。
 
  |
 |PageSize|Integer|10|每页包含多少条目。
@@ -93,8 +102,8 @@
 
 ``` {#request_demo}
 
-http(s)://vpc.aliyuncs.com/?Action=DescribeVirtualBorderRoutersForPhysicalConnection
-&PhysicalConnectionId=pc-119mfjzm7
+http(s)://[Endpoint]/?Action=DescribeVirtualBorderRoutersForPhysicalConnection
+&PhysicalConnectionId=pc-119mf****
 &RegionId=cn-shanghai
 &<公共请求参数>
 
@@ -176,5 +185,5 @@ http(s)://vpc.aliyuncs.com/?Action=DescribeVirtualBorderRoutersForPhysicalConnec
 |--------|---|----|--|
 |404|InvalidPhysicalConnectionId.NotFound|The specified PhysicalConnectionId does not belong to user.|该物理专线不属于您的账号。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
