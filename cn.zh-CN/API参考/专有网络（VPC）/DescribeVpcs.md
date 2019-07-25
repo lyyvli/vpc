@@ -1,10 +1,12 @@
-# DescribeVpcs {#doc_api_949157 .reference}
+# DescribeVpcs {#doc_api_Vpc_DescribeVpcs .reference}
 
-使用DescribeVpcs查询已创建的VPC。
+调用DescribeVpcs接口查询已创建的VPC。
 
-## 调试 {#apiExplorer .section}
+ **** 
 
-单击[这里](https://api.aliyun.com/#product=Vpc&api=DescribeVpcs)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
+## 调试 {#api_explorer .section}
+
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeVpcs&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -24,22 +26,16 @@
 -   **false**：不查询默认VPC。
 
  |
-|PageNumber|Integer|否|10|列表的页码，默认值为1。
+|PageNumber|Integer|否|1|列表的页码，默认值为**1**。
 
  |
-|PageSize|Integer|否|1|分页查询时每页的行数，最大值为50，默认值为10。
+|PageSize|Integer|否|10|分页查询时每页的行数，最大值为**50**，默认值为**10**。
 
  |
-|ResourceGroupId|String|否|xxxxx|要查询的VPC所属资源组ID。
+|ResourceGroupId|String|否|rg-acfmxazb4p\*\*\*\*|要查询的VPC所属资源组ID。
 
  |
-|Tag.N.Key|String|否|Tag.1.name|过滤条件。N取值范围为1-5。
-
- |
-|Tag.N.Value|String|否|Tag.1.myvpc|对应过滤条件的值。N的取值范围为1-5。
-
- |
-|VpcId|String|否|vpc-257gq64xxxxx|VPC的ID。
+|VpcId|String|否|vpc-257gq64\*\*\*\*|VPC的ID。
 
  最多支持指定20个VPC ID，多个VPC ID之间用半角逗号隔开。
 
@@ -48,80 +44,80 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |Vpcs| | |VPC的详细信息。
 
  |
-|└CidrBlock|String|10.0.0.0/24|VPC的网段。
+|CidrBlock|String|10.0.0.0/24|VPC的网段。
 
  |
-|└CreationTime|String|2018-04-18T15:02:37Z|VPC的创建时间。
+|CreationTime|String|2018-04-18T15:02:37Z|VPC的创建时间。
 
  |
-|└Description|String|description|VPC的描述信息。
+|Description|String|This is my VPC.|VPC的描述信息。
 
  |
-|└Ipv6CidrBlock|String|224.224.223.212/24|VPC的IPv6网段。
+|Ipv6CidrBlock|String|224.224.223.212/24|VPC的IPv6网段。
 
  |
-|└IsDefault|Boolean|false|是否是该地域的默认VPC。
+|IsDefault|Boolean|false|是否是该地域的默认VPC。
 
  |
-|└NatGatewayIds| |nat-245xxxftwt4567|NAT网关的ID。
+|NatGatewayIds| |nat-245xxxftwt45\*\*\*\*111|NAT网关的ID。
 
  |
-|└RegionId|String|cn-hangzhou|VPC所在的地域。
+|RegionId|String|cn-hangzhou|VPC所在的地域。
 
  |
-|└ResourceGroupId|String|rg-acfmxazb4ph6aiy|地域ID。
+|ResourceGroupId|String|rg-acfmxazb4ph\*\*\*\*|地域ID。
 
  |
-|└RouterTableIds| |vtb-bp145q7glnuzdvzu21pom|路由表ID。
+|RouterTableIds| |vtb-bp1krxxzp0c29fmon\*\*\*\*|路由表ID。
 
  |
-|└Status|String|Available|VPC的状态，取值：
+|Status|String|Available|VPC的状态，取值：
 
  -   Pending：配置中
 -   Available：可用
 
  |
-|└Tags| | |VPC的标签。
+|Tags| | |VPC的标签。
 
  |
-|└Key|String|env|标签的键值。
+|Key|String|env|标签的键值。
 
  |
-|└Value|String|internal|标签的取值。
+|Value|String|internal|标签的取值。
 
  |
-|└UserCidrs| |10.0.0.0/8|用户侧网段的列表。
+|UserCidrs| |10.0.0.0/8|用户侧网段的列表。
 
  |
-|└VRouterId|String|vrt-bp1lhl0taikrteen80oxx|VPC路由器的ID。
+|VRouterId|String|vrt-bp1jcg5cmxjbl9xgc\*\*\*\*|VPC路由器的ID。
 
  |
-|└VSwitchIds| |\{ "VSwitchId": \[\] \}|VPC中交换机的列表。
+|VSwitchIds| |\{ "VSwitchId": \[\] \}|VPC中交换机的列表。
 
  |
-|└VpcId|String|vpc-bp15zckdt37pq72zvw3|VPC的ID。
+|VpcId|String|vpc-bp1qpo0kug3a20qqe\*\*\*\*|VPC的ID。
 
  |
-|└VpcName|String|vpc1|VPC的名称。
+|VpcName|String|vpc1|VPC的名称。
 
  |
-|TotalCount|Integer|1|列表条条目数。
+|TotalCount|Integer|2|列表条目数。
 
  |
 |PageNumber|Integer|1|当前页码。
 
  |
-|PageSize|Integer|21|每页包含多少条目。
+|PageSize|Integer|10|每页包含多少条目。
 
  |
-|RequestId|String|9B941224-B647-4644-A746-641906D6B954|请求ID。
+|RequestId|String|C6532AA8-D0F7-497F-A8EE-094126D441F5|请求ID。
 
  |
 
@@ -131,7 +127,8 @@
 
 ``` {#request_demo}
 
-https://vpc.aliyuncs.com/?RegionId=cn-hangzhou
+http(s)://[Endpoint]/?Action=DescribeVpcs
+&RegionId=cn-hangzhou
 &<公共请求参数>
 
 ```
@@ -144,52 +141,52 @@ https://vpc.aliyuncs.com/?RegionId=cn-hangzhou
 <DescribeVpcsResponse>
   <PageNumber>1</PageNumber>
   <Vpcs>
-    <Vpc>
-      <VpcName/>
-      <Description/>
-      <IsDefault>false</IsDefault>
-      <ResourceGroupId>rg-acfmxazb4ph6aiy</ResourceGroupId>
-      <UserCidrs/>
-      <NatGatewayIds/>
-      <RouterTableIds>
-        <RouterTableIds>vtb-bp1krxxzp0c29fmontbal</RouterTableIds>
-      </RouterTableIds>
-      <VpcId>vpc-bp1qpo0kug3a20qqe9h7v</VpcId>
-      <VRouterId>vrt-bp1jcg5cmxjbl9xgc58bw</VRouterId>
-      <CreationTime>2018-12-06T06:11:55Z</CreationTime>
-      <Status>Available</Status>
-      <CidrBlock>172.16.0.0/12</CidrBlock>
-      <VSwitchIds/>
-      <RegionId>cn-hangzhou</RegionId>
-      <Ipv6CidrBlock/>
-    </Vpc>
-    <Vpc>
-      <VpcName>kttest</VpcName>
-      <Description/>
-      <IsDefault>false</IsDefault>
-      <ResourceGroupId>rg-acfmxazb4ph6aiy</ResourceGroupId>
-      <UserCidrs/>
-      <NatGatewayIds/>
-      <RouterTableIds>
-        <RouterTableIds>vtb-bp1blq1oh0ybfnpm1bh20</RouterTableIds>
-      </RouterTableIds>
-      <VpcId>vpc-bp1aevy8sofi8mh1qc5cm</VpcId>
-      <VRouterId>vrt-bp149ve7yeyvio4ncklxz</VRouterId>
-      <CreationTime>2018-11-08T08:54:03Z</CreationTime>
-      <Status>Available</Status>
-      <CidrBlock>192.168.0.0/16</CidrBlock>
-      <VSwitchIds>
-        <VSwitchId>vsw-bp12mw1f8k3jgygk9bmlj</VSwitchId>
-      </VSwitchIds>
-      <RegionId>cn-hangzhou</RegionId>
-      <Ipv6CidrBlock/>
-    </Vpc>
-  </Vpcs>
+		    <Vpc>
+			      <VpcName></VpcName>
+			      <Description></Description>
+			      <IsDefault>false</IsDefault>
+			      <ResourceGroupId>rg-acfmxazb4ph****</ResourceGroupId>
+			      <UserCidrs></UserCidrs>
+			      <NatGatewayIds></NatGatewayIds>
+			      <RouterTableIds>
+				        <RouterTableIds>vtb-bp1krxxzp0c29fmon****</RouterTableIds>
+			      </RouterTableIds>
+			      <VpcId>vpc-bp1qpo0kug3a20qqe****</VpcId>
+			      <VRouterId>vrt-bp1jcg5cmxjbl9xgc****</VRouterId>
+			      <CreationTime>2018-12-06T06:11:55Z</CreationTime>
+			      <Status>Available</Status>
+			      <CidrBlock>172.16.0.0/12</CidrBlock>
+			      <VSwitchIds></VSwitchIds>
+			      <RegionId>cn-hangzhou</RegionId>
+			      <Ipv6CidrBlock></Ipv6CidrBlock>
+		    </Vpc>
+		    <Vpc>
+			      <VpcName>kttest</VpcName>
+			      <Description></Description>
+			      <IsDefault>false</IsDefault>
+			      <ResourceGroupId>rg-acfmxazb4ph****</ResourceGroupId>
+			      <UserCidrs></UserCidrs>
+			      <NatGatewayIds></NatGatewayIds>
+			      <RouterTableIds>
+				        <RouterTableIds>vtb-bp1blq1oh0ybfnpm1****</RouterTableIds>
+			      </RouterTableIds>
+			      <VpcId>vpc-bp1aevy8sofi8mh1q****</VpcId>
+			      <VRouterId>vrt-bp149ve7yeyvio4nc****</VRouterId>
+			      <CreationTime>2018-11-08T08:54:03Z</CreationTime>
+			      <Status>Available</Status>
+			      <CidrBlock>192.168.0.0/16</CidrBlock>
+			      <VSwitchIds>
+				        <VSwitchId>vsw-bp12mw1f8k3jgygk****</VSwitchId>
+			      </VSwitchIds>
+			      <RegionId>cn-hangzhou</RegionId>
+			      <Ipv6CidrBlock></Ipv6CidrBlock>
+		    </Vpc>
+	  </Vpcs>
+	
   <TotalCount>2</TotalCount>
   <PageSize>10</PageSize>
   <RequestId>C6532AA8-D0F7-497F-A8EE-094126D441F5</RequestId>
 </DescribeVpcsResponse>
-
 ```
 
 `JSON` 格式
@@ -204,7 +201,7 @@ https://vpc.aliyuncs.com/?RegionId=cn-hangzhou
 				"VpcName":"",
 				"Description":"",
 				"IsDefault":false,
-				"ResourceGroupId":"rg-acfmxazb4ph6aiy",
+				"ResourceGroupId":"rg-acfmxazb4ph****",
 				"UserCidrs":{
 					"UserCidr":[]
 				},
@@ -213,11 +210,11 @@ https://vpc.aliyuncs.com/?RegionId=cn-hangzhou
 				},
 				"RouterTableIds":{
 					"RouterTableIds":[
-						"vtb-bp1krxxzp0c29fmontbal"
+						"vtb-bp1krxxzp0c29fmon****"
 					]
 				},
-				"VpcId":"vpc-bp1qpo0kug3a20qqe9h7v",
-				"VRouterId":"vrt-bp1jcg5cmxjbl9xgc58bw",
+				"VpcId":"vpc-bp1qpo0kug3a20qqe****",
+				"VRouterId":"vrt-bp1jcg5cmxjbl9xgc****",
 				"CreationTime":"2018-12-06T06:11:55Z",
 				"Status":"Available",
 				"CidrBlock":"172.16.0.0/12",
@@ -231,7 +228,7 @@ https://vpc.aliyuncs.com/?RegionId=cn-hangzhou
 				"VpcName":"kttest",
 				"Description":"",
 				"IsDefault":false,
-				"ResourceGroupId":"rg-acfmxazb4ph6aiy",
+				"ResourceGroupId":"rg-acfmxazb4ph****",
 				"UserCidrs":{
 					"UserCidr":[]
 				},
@@ -240,17 +237,17 @@ https://vpc.aliyuncs.com/?RegionId=cn-hangzhou
 				},
 				"RouterTableIds":{
 					"RouterTableIds":[
-						"vtb-bp1blq1oh0ybfnpm1bh20"
+						"vtb-bp1blq1oh0ybfnpm1****"
 					]
 				},
-				"VpcId":"vpc-bp1aevy8sofi8mh1qc5cm",
-				"VRouterId":"vrt-bp149ve7yeyvio4ncklxz",
+				"VpcId":"vpc-bp1aevy8sofi8mh1q****",
+				"VRouterId":"vrt-bp149ve7yeyvio4nc****",
 				"CreationTime":"2018-11-08T08:54:03Z",
 				"Status":"Available",
 				"CidrBlock":"192.168.0.0/16",
 				"VSwitchIds":{
 					"VSwitchId":[
-						"vsw-bp12mw1f8k3jgygk9bmlj"
+						"vsw-bp12mw1f8k3jgygk9****"
 					]
 				},
 				"RegionId":"cn-hangzhou",
@@ -269,5 +266,5 @@ https://vpc.aliyuncs.com/?RegionId=cn-hangzhou
 |--------|---|----|--|
 |500|InternalError|The request processing has failed due to some unknown error.|请求处理由于某些未知错误失败。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
