@@ -69,9 +69,6 @@
 |IsDefault|Boolean|false|是否是默认VPC。
 
  |
-|NetworkAclNum|String|1|ACL规则数量。
-
- |
 |RegionId|String|cn-hangzhou|VPC所在的地域。
 
  |
