@@ -1,10 +1,10 @@
-# DescribeCustomerGateway {#doc_api_951823 .reference}
+# DescribeCustomerGateway {#doc_api_Vpc_DescribeCustomerGateway .reference}
 
 调用DescribeCustomerGateway接口查询已创建的用户网关的详细信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeCustomerGateway)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeCustomerGateway&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -15,7 +15,7 @@
  取值： **DescribeCustomerGateway**。
 
  |
-|CustomerGatewayId|String|是|vpn-bp1q8bgx4xnkm2ogj0fiu|用户网关的ID。
+|CustomerGatewayId|String|是|vpn-bp1q8bgx4xnkm2ogj\*\*\*\*|用户网关的ID。
 
  |
 |RegionId|String|是|cn-shanghai|用户网关所在的地域。
@@ -24,11 +24,11 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|CustomerGatewayId|String|cgw-bp1pvpl9r9adju6l5nxck|用户网关的ID。
+|CustomerGatewayId|String|cgw-bp1pvpl9r9adju6l5\*\*\*\*|用户网关的ID。
 
  |
 |Name|String|test|用户网关的名称。
@@ -54,7 +54,7 @@
 ``` {#request_demo}
 
 https://vpc.aliyuncs.com/?Action=DescribeCustomerGateway
-&CustomerGatewayId=vpn-bp1q8bgx4xnkm2ogj0fiu
+&CustomerGatewayId=vpn-bp1q8bgx4xnkm2ogj****
 &RegionId=cn-shanghai
 &<公共请求参数>
 
@@ -66,13 +66,12 @@ https://vpc.aliyuncs.com/?Action=DescribeCustomerGateway
 
 ``` {#xml_return_success_demo}
 <DescribeCustomerGatewayResponse>
-  <Name>test</Name>
-  <CustomerGatewayId>cgw-bp1pvpl9r9adju6l5nxck</CustomerGatewayId>
-  <CreateTime>1492747187000</CreateTime>
-  <RequestId>99506ECB-218F-45A5-AE8E-79518451F615</RequestId>
-  <IpAddress>139.196.32.xxx</IpAddress>
+      <Name>test</Name>
+      <CustomerGatewayId>cgw-bp1pvpl9r9adju6l5****</CustomerGatewayId>
+      <CreateTime>1492747187000</CreateTime>
+      <RequestId>99506ECB-218F-45A5-AE8E-79518451F615</RequestId>
+      <IpAddress>139.196.32.xxx</IpAddress>
 </DescribeCustomerGatewayResponse>
-
 ```
 
 `JSON` 格式
@@ -80,7 +79,7 @@ https://vpc.aliyuncs.com/?Action=DescribeCustomerGateway
 ``` {#json_return_success_demo}
 {
 	"Name":"test",
-	"CustomerGatewayId":"cgw-bp1pvpl9r9adju6l5nxck",
+	"CustomerGatewayId":"cgw-bp1pvpl9r9adju6l5****",
 	"CreateTime":1492747187000,
 	"RequestId":"A0457BC9-6C0F-4437-AB9D-FB2EABC1D6A2",
 	"IpAddress":"139.196.32.xxx"
@@ -95,5 +94,5 @@ https://vpc.aliyuncs.com/?Action=DescribeCustomerGateway
 |403|Forbidden|User not authorized to operate on the specified resource.|您没有权限操作指定资源，请提交工单咨询。|
 |404|InvalidCustomerGatewayInstanceId.NotFound|The specified customer gateway instance id does not exist.|指定的 Instance 不存在，请您检查 Instance 是否正确。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
