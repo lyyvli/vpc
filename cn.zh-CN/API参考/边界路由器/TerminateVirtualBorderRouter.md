@@ -1,14 +1,14 @@
-# TerminateVirtualBorderRouter {#doc_api_951284 .reference}
+# TerminateVirtualBorderRouter {#doc_api_Vpc_TerminateVirtualBorderRouter .reference}
 
-使用TerminateVirtualBorderRouter终止边界路由器（VBR）。
+调用TerminateVirtualBorderRouter接口终止边界路由器（VBR）。
 
 调用该接口后VBR从**Enabled**状态进入**Terminated**状态，终止成功后进入**Terminated**状态。
 
 **说明：** 只有物理专线的所有者可以调用该接口。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=TerminateVirtualBorderRouter)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=TerminateVirtualBorderRouter&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -24,14 +24,16 @@
  您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|VbrId|String|是|vbr-bp15zckdt37pq72zvw3|VBR的ID。
+|VbrId|String|是|vbr-bp15zckdt37pq72\*\*\*\*|VBR的ID。
 
  |
-|ClientToken|String|否|02fb3da4-130e-11e9-8e44-0016e04115b|客户端token，用于保证请求的幂等性。 由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-0016e04115b|客户端token，用于保证请求的幂等性。
+
+ 由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -45,9 +47,9 @@
 
 ``` {#request_demo}
 
-http(s)://vpc.aliyuncs.com/?Action=TerminateVirtualBorderRouter
+http(s)://[Endpoint]/?Action=TerminateVirtualBorderRouter
 &RegionId=cn-shanghai
-&VbrId=vbr-bp15zckdt37pq72zvw3
+&VbrId=vbr-bp15zckdt37pq72****
 &<公共请求参数>
 
 ```
@@ -58,9 +60,8 @@ http(s)://vpc.aliyuncs.com/?Action=TerminateVirtualBorderRouter
 
 ``` {#xml_return_success_demo}
 <TerminateVirtualBorderRouterResponse>
-  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+      <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </TerminateVirtualBorderRouterResponse>
-
 ```
 
 `JSON` 格式
@@ -79,5 +80,5 @@ http(s)://vpc.aliyuncs.com/?Action=TerminateVirtualBorderRouter
 |400|InvalidOperation.OperationNotAllowedInState|The specified VirutalBorderRouter is in invalid state.|该VirutalBorderRouter状态不合法，请检查VirutalBorderRouter状态。|
 |403|Forbidden.OperationNotAllowedByUser|The caller is not allowed to terminate the specified VirtualBorderRouter.|不允许终止边界路由器。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
