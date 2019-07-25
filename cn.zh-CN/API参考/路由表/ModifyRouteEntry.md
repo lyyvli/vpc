@@ -13,7 +13,7 @@
 |Action|String|是|ModifyRouteEntry|要执行的操作，取值：**ModifyRouteEntry**。
 
  |
-|RegionId|String|是|cn-hangzhou|路由条目所在的地域ID。
+|RegionId|String|是|cn-hangzhou|路由条目所在的地域ID。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
 |RouteEntryId|String|是|rte-1234567890|自定义路由条目ID。
