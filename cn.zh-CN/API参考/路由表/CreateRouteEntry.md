@@ -1,6 +1,6 @@
 # CreateRouteEntry {#doc_api_Vpc_CreateRouteEntry .reference}
 
-调用CreateRouteEntry在VPC路由器或边界路由器（VBR）上创建自定义路由条目。
+调用CreateRouteEntry接口在VPC路由器或边界路由器（VBR）上创建自定义路由条目。
 
 使用该接口为专有网络的路由器的路由表添加自定义路由条目时，请注意：
 
@@ -15,7 +15,7 @@
     -   添加普通（非 ECMP ）自定义路由时，需指定DestinationCidrBlock、NextHopType和NextHopId参数，且不能指定 NextHopList参数。
     -   添加ECMP路由时，需指定DestinationCidrBlock和NextHopList参数，且不能指定NextHopType 和 NextHopId参数。
 
-        使用该接口为VBR的路由表添加自定义路由条目时，请注意：
+使用该接口为VBR的路由表添加自定义路由条目时，请注意：
 
 -   同一个路由表中自定义路由条目不能超过48条。
 -   不支持NextHopList参数。
@@ -27,9 +27,9 @@
 -   只允许在VBR状态是Active，而且对应的物理专线状态是Enabled且没有被欠费锁定的情况下在VBR上新建路由条目。
 -   仅支持添加普通路由（非ECMP），需指定DestinationCidrBlock、NextHopType和NextHopId参数，且不能指定 NextHopList参数。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=CreateRouteEntry)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=CreateRouteEntry&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -51,21 +51,23 @@
 |RegionId|String|是|cn-hangzhou|路由表所属地域的ID。
 
  |
-|RouteTableId|String|是|vtb-bp145q7glnuzdxxxxxxxx|路由表ID。
+|RouteTableId|String|是|vtb-bp145q7glnuzd\*\*\*\*|路由表ID。
 
  |
-|ClientToken|String|否|02fb3da4-130e-11e9-8e44-001xxxxxxxx|客户端token，用于保证请求的幂等性。 由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-001\*\*\*\*|客户端token，用于保证请求的幂等性。
+
+ 由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个 ASCII 字符。
 
  |
-|NextHopId|String|否|ri-2zeo3xzyf38r4xxxxxxxx|下一跳实例的ID。
+|NextHopId|String|否|ri-2zeo3xzyf38r4\*\*\*\*|下一跳实例的ID。
 
  |
-|NextHopList.N.NextHopId|String|否|ri-2zeo3xzyf38r4xxxxxxxx|下一跳实例的ID。
+|NextHopList.N.NextHopId|String|否|ri-2zeo3xzyf38r4\*\*\*\*|下一跳实例的ID。
 
  |
 |NextHopList.N.NextHopType|String|否|RouterInterface|下一跳的类型，取值：
 
- RouterInterface：路由器接口
+ **RouterInterface：路由器接口**。
 
  |
 |NextHopList.N.Weight|Integer|否|10|下一跳的路由权重。
@@ -73,16 +75,16 @@
  |
 |NextHopType|String|否|RouterInterface|下一跳的类型，取值：
 
- -   Instance：ECS实例（默认值）
--   HaVip：高可用虚拟IP
--   RouterInterface：路由器接口
--   NetworkInterface：弹性网卡
--   VpnGateway：VPN网关
--   IPv6Gateway：IPv6网关
+ -   **Instance**：ECS实例（默认值）
+-   **HaVip**：高可用虚拟IP
+-   **RouterInterface**：路由器接口
+-   **NetworkInterface**：弹性网卡
+-   **VpnGateway**：VPN网关
+-   **IPv6Gateway**：IPv6网关
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -98,7 +100,7 @@
 
 https://vpc.aliyuncs.com/?Action=CreateRouteEntry
 &DestinationCidrBlock=192.168.0.1/24
-&RouteTableId=vtb-bp145q7glnuzdxxxxxxxx
+&RouteTableId=vtb-bp145q7glnuzd****
 &<公共请求参数>
 
 ```
@@ -109,9 +111,8 @@ https://vpc.aliyuncs.com/?Action=CreateRouteEntry
 
 ``` {#xml_return_success_demo}
 <CreateRouteEntryResponse>
-  <RequestId>12D086F6-8F31-4658-84C1-006DED011A85</RequestId>
+      <RequestId>12D086F6-8F31-4658-84C1-006DED011A85</RequestId>
 </CreateRouteEntryResponse>
-
 ```
 
 `JSON` 格式
@@ -166,5 +167,5 @@ https://vpc.aliyuncs.com/?Action=CreateRouteEntry
 |400|InvalidRouteEntrySize|The Specified routerEntry size not legal.|等价路由需要选择2-4个路由器接口作为路由下一跳。|
 |400|InvalidRouteEntry|Specified routeEntry not exist.|该路由条目不存在。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
