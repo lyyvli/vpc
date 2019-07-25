@@ -2,140 +2,142 @@
 
 调用DescribeVirtualBorderRouters接口查询已创建的边界路由器（VBR）。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeVirtualBorderRouters)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeVirtualBorderRouters&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeVirtualBorderRouters|要执行的操作，取值： **DescribeVirtualBorderRouters**。
+|Action|String|是|DescribeVirtualBorderRouters|要执行的操作。
+
+ 取值：**DescribeVirtualBorderRouters**。
 
  |
-|RegionId|String|是|cn-shanghai|VBR所在的地域。您可以通过调用[DescribeRegions](~~36063~~) 接口获取地域ID。
+|RegionId|String|是|cn-shanghai|VBR所在的地域。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|Filter.N.Key|String|否|1|第n个过滤器的类型。N取值：1-5
+|Filter.N.Key|String|否|1|第n个过滤器的类型，N取值：**1-5**。
 
  |
-|Filter.N.Value.N|RepeatList|否|1|第n个过滤器的第m个值。M取值：1-5
+|Filter.N.Value.N|RepeatList|否|1|第n个过滤器的第m个值，M取值：**1-5**。
 
  |
-|PageNumber|Integer|否|10|列表的页码，默认值为1。
+|PageNumber|Integer|否|1|列表的页码，默认值为**1**。
 
  |
-|PageSize|Integer|否|1|分页查询时每页的行数，最大值为50，默认值为10。
+|PageSize|Integer|否|10|分页查询时每页的行数，最大值为**50**，默认值为**10**。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|VirtualBorderRouterSet| | |查询到的VBR合集 。
+|VirtualBorderRouterSet| | |查询到的VBR合集。
 
  |
-|└AccessPointId|String|ap-cn-kojok1xxxxxxxx|物理专线接入点的ID。
+|AccessPointId|String|ap-cn-kojok1xxxxxxxx|物理专线接入点的ID。
 
  |
-|└ActivationTime|String|2017-06-08T12:20:55|VBR第一次激活的时间。
+|ActivationTime|String|2017-06-08T12:20:55|VBR第一次激活的时间。
 
  |
-|└AssociatedCens| | |云企业网。
+|AssociatedCens| | |云企业网。
 
  |
-|└CenId|String|cen-kojok19xxxxxxxx|云企业网实例的ID。
+|CenId|String|cen-kojok19xxxxxxxx|云企业网实例的ID。
 
  |
-|└CenOwnerId|Long|1086496381294461|云企业网实例所属账号的UID。
+|CenOwnerId|Long|1086496381294461|云企业网实例所属账号的UID。
 
  |
-|└CenStatus|String|Attached|云企业网状态。
+|CenStatus|String|Attached|云企业网状态。
 
  |
-|└AssociatedPhysicalConnections| | |绑定的物理连接。
+|AssociatedPhysicalConnections| | |绑定的物理连接。
 
  |
-|└CircuitCode|String|12|VBR专线侧接口对应运营商的电路编码。
+|CircuitCode|String|12|VBR专线侧接口对应运营商的电路编码。
 
  |
-|└LocalGatewayIp|String|116.62.xx.xx|VBR专线侧接口本端的IP地址。
+|LocalGatewayIp|String|116.62.xx.xx|VBR专线侧接口本端的IP地址。
 
  |
-|└PeerGatewayIp|String|116.62.xx.xx|VBR专线侧接口对端的IP地址。
+|PeerGatewayIp|String|116.62.xx.xx|VBR专线侧接口对端的IP地址。
 
  |
-|└PeeringSubnetMask|String|255.255.255.252|实VBR专线侧接口本端与对端互联的子网掩码。
+|PeeringSubnetMask|String|255.255.255.252|实VBR专线侧接口本端与对端互联的子网掩码。
 
  |
-|└PhysicalConnectionBusinessStatus|String|Normal|物理专线业务状态。
+|PhysicalConnectionBusinessStatus|String|Normal|物理专线业务状态。
 
  |
-|└PhysicalConnectionId|String|pc-119mfjzm7xxxxxxxx|物理专线ID。
+|PhysicalConnectionId|String|pc-119mfjzm7xxxxxxxx|物理专线ID。
 
  |
-|└PhysicalConnectionOwnerUid|String|qfrgrgs|物理专线owner的UID。
+|PhysicalConnectionOwnerUid|String|qfrgrgs|物理专线owner的UID。
 
  |
-|└PhysicalConnectionStatus|String|Normal|物理专线状态。
+|PhysicalConnectionStatus|String|Normal|物理专线状态。
 
  |
-|└VlanId|String|0|VBR的VLAN ID。
+|VlanId|String|0|VBR的VLAN ID。
 
  |
-|└VlanInterfaceId|String|ri-kojok19x3j0q6kxxxxxxxxx|虚拟边界路由器（VBR）专线侧接口（RouterInterface）的ID。可以用来做VBR上路由的下一跳。
+|VlanInterfaceId|String|ri-kojok19x3j0q6kxxxxxxxxx|虚拟边界路由器（VBR）专线侧接口（RouterInterface）的ID。可以用来做VBR上路由的下一跳。
 
  |
-|└CircuitCode|String|longtel001|运营商为物理专线提供的电路编码。
+|CircuitCode|String|longtel001|运营商为物理专线提供的电路编码。
 
  |
-|└CreationTime|String|2017-06-08T12:20:55|VBR的创建时间。
+|CreationTime|String|2017-06-08T12:20:55|VBR的创建时间。
 
  |
-|└Description|String|VBR|VBR的描述信息。
+|Description|String|VBR|VBR的描述信息。
 
  |
-|└DetectMultiplier|Long|3|检测时间倍数。即接收方允许发送方发送报文的最大连接丢包数，用来检测链路是否正常，取值：3-50。
+|DetectMultiplier|Long|3|检测时间倍数。即接收方允许发送方发送报文的最大连接丢包数，用来检测链路是否正常，取值：3-10。
 
  |
-|└LocalGatewayIp|String|116.62.xx.xx|阿里云侧互联IP。
+|LocalGatewayIp|String|116.62.xx.xx|阿里云侧互联IP。
 
  |
-|└MinRxInterval|Long|100|配置BFD报文的接收间隔，取值：100-1000，单位为us。
+|MinRxInterval|Long|100|配置BFD报文的接收间隔，取值：200-1000，单位为ms。
 
  |
-|└MinTxInterval|Long|100|配置BFD报文的发送间隔，取值：100-1000，单位为us。
+|MinTxInterval|Long|100|配置BFD报文的发送间隔，取值：200-1000，单位为ms。
 
  |
-|└Name|String|test|VBR的名称。
+|Name|String|test|VBR的名称。
 
  |
-|└PeerGatewayIp|String|116.62.xx.xx|客户侧互联IP。
+|PeerGatewayIp|String|116.62.xx.xx|客户侧互联IP。
 
  |
-|└PeeringSubnetMask|String|255.255.255.252|阿里云侧互联IP和客户侧互联IP的子网掩码。
+|PeeringSubnetMask|String|255.255.255.252|阿里云侧互联IP和客户侧互联IP的子网掩码。
 
  |
-|└PhysicalConnectionBusinessStatus|String|Normal|物理专线业务状态。
+|PhysicalConnectionBusinessStatus|String|Normal|物理专线业务状态。
 
  |
-|└PhysicalConnectionId|String|pc-119mfjzm7xxxxxxxx|VBR所属的物理专线的ID。
+|PhysicalConnectionId|String|pc-119mfjzm7xxxxxxxx|VBR所属的物理专线的ID。
 
  |
-|└PhysicalConnectionOwnerUid|String|usdgbh123fvgf|物理专线owner的UID。
+|PhysicalConnectionOwnerUid|String|usdgbh123fvgf|物理专线owner的UID。
 
  |
-|└PhysicalConnectionStatus|String|Normal|物理专线状态。
+|PhysicalConnectionStatus|String|Normal|物理专线状态。
 
  |
-|└RecoveryTime|String|2017-06-08T12:20:55|VBR最近一次从Terminated状态恢复到Active状态的时间。
+|RecoveryTime|String|2017-06-08T12:20:55|VBR最近一次从Terminated状态恢复到Active状态的时间。
 
  |
-|└RouteTableId|String|rtb-bp1nxxxxxxxxxxxxxxxx|VBR的路由表的ID。
+|RouteTableId|String|rtb-bp1nxxxxxxxxxxxxxxxx|VBR的路由表的ID。
 
  |
-|└Status|String|active|物理专线状态：
+|Status|String|active|物理专线状态：
 
  -   Initial：申请中
 -   Approved：审批通过
@@ -149,22 +151,22 @@
 -   Terminated：已终止
 
  |
-|└TerminationTime|String|2017-06-08T12:20:55|VBR最近一次被终止的时间。
+|TerminationTime|String|2017-06-08T12:20:55|VBR最近一次被终止的时间。
 
  |
-|└VbrId|String|vbr-kojok19xxxxxxxxx|VBR的ID。
+|VbrId|String|vbr-kojok19xxxxxxxxx|VBR的ID。
 
  |
-|└VlanId|Integer|10|VBR的VLAN ID。
+|VlanId|Integer|10|VBR的VLAN ID。
 
  |
-|└VlanInterfaceId|String|ri-2zeo3xzyf38r4xxxxxxxx|VBR的路由器接口的ID。
+|VlanInterfaceId|String|ri-2zeo3xzyf38r4xxxxxxxx|VBR的路由器接口的ID。
 
  |
-|TotalCount|Integer|10|列表条条目数。
+|TotalCount|Integer|1|列表条条目数。
 
  |
-|PageNumber|Integer|10|当前页码。
+|PageNumber|Integer|1|当前页码。
 
  |
 |PageSize|Integer|10|每页包含多少条目。
@@ -180,7 +182,7 @@
 
 ``` {#request_demo}
 
-http(s)://vpc.aliyuncs.com/?Action=DescribeVirtualBorderRouters
+http(s)://[Endpoint]/?Action=DescribeVirtualBorderRouters
 &RegionId=cn-shanghai
 &<公共请求参数>
 
@@ -192,31 +194,30 @@ http(s)://vpc.aliyuncs.com/?Action=DescribeVirtualBorderRouters
 
 ``` {#xml_return_success_demo}
 <DescribeVirtualBorderRoutersResponse>
-  <RequestId>AE65530E-8436-4FB1-8217-DCD35712AC89</RequestId>
-  <PageNumber>1</PageNumber>
-  <VirtualBorderRouterSet>
-    <VirtualBorderRouterType>
-      <LocalGatewayIp>10.1.xx.xx</LocalGatewayIp>
-      <PeerGatewayIp>10.2.xx.xx</PeerGatewayIp>
-      <PhysicalConnectionOwnerUid>123157908XXXXXXXX</PhysicalConnectionOwnerUid>
-      <VlanId>10</VlanId>
-      <PhysicalConnectionStatus>Enabled</PhysicalConnectionStatus>
-      <PhysicalConnectionId>pc-2zeoaxkq3jotxxxxxxxx</PhysicalConnectionId>
-      <RouteTableId>vtb-2ze9hmd6yofwvxxxxxxxx</RouteTableId>
-      <PeeringSubnetMask>255.0.0.0</PeeringSubnetMask>
-      <CreationTime>2018-03-06T11:16:34Z</CreationTime>
-      <ActivationTime>2018-03-06T11:16:34Z</ActivationTime>
-      <Status>active</Status>
-      <PhysicalConnectionBusinessStatus>Normal</PhysicalConnectionBusinessStatus>
-      <VlanInterfaceId>ri-2zeum6rgu0586xxxxxxxx</VlanInterfaceId>
-      <AccessPointId>ap-cn-beijing-dx-A</AccessPointId>
-      <VbrId>vbr-2zecmmvg5gxxxxxxxx</VbrId>
-    </VirtualBorderRouterType>
-  </VirtualBorderRouterSet>
-  <TotalCount>1</TotalCount>
-  <PageSize>10</PageSize>
+		  <RequestId>AE65530E-8436-4FB1-8217-DCD35712AC89</RequestId>
+		  <PageNumber>1</PageNumber>
+		  <VirtualBorderRouterSet>
+			    <VirtualBorderRouterType>
+				      <LocalGatewayIp>10.1.xx.xx</LocalGatewayIp>
+				      <PeerGatewayIp>10.2.xx.xx</PeerGatewayIp>
+				      <PhysicalConnectionOwnerUid>123157908XXXXXXXX</PhysicalConnectionOwnerUid>
+				      <VlanId>10</VlanId>
+				      <PhysicalConnectionStatus>Enabled</PhysicalConnectionStatus>
+				      <PhysicalConnectionId>pc-2zeoaxkq3jotxxxxxxxx</PhysicalConnectionId>
+				      <RouteTableId>vtb-2ze9hmd6yofwvxxxxxxxx</RouteTableId>
+				      <PeeringSubnetMask>255.0.0.0</PeeringSubnetMask>
+				      <CreationTime>2018-03-06T11:16:34Z</CreationTime>
+				      <ActivationTime>2018-03-06T11:16:34Z</ActivationTime>
+				      <Status>active</Status>
+				      <PhysicalConnectionBusinessStatus>Normal</PhysicalConnectionBusinessStatus>
+				      <VlanInterfaceId>ri-2zeum6rgu0586xxxxxxxx</VlanInterfaceId>
+				      <AccessPointId>ap-cn-beijing-dx-A</AccessPointId>
+				      <VbrId>vbr-2zecmmvg5gxxxxxxxx</VbrId>
+			    </VirtualBorderRouterType>
+		  </VirtualBorderRouterSet>
+		  <TotalCount>1</TotalCount>
+		  <PageSize>10</PageSize>
 </DescribeVirtualBorderRoutersResponse>
-
 ```
 
 `JSON` 格式
@@ -257,5 +258,5 @@ http(s)://vpc.aliyuncs.com/?Action=DescribeVirtualBorderRouters
 |--------|---|----|--|
 |404|InvalidFilterKey.ValueNotSupported|Specified filter key is not supported: Filter.X.key|该过滤器的Key不支持：Filter.X.key|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
