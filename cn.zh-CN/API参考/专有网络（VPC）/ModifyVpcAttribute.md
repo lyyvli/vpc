@@ -2,9 +2,9 @@
 
 调用ModifyVpcAttribute接口修改指定VPC的名称和描述信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=ModifyVpcAttribute)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=ModifyVpcAttribute&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -16,7 +16,7 @@
 |RegionId|String|是|cn-hangzhou|VPC的地域。
 
  |
-|VpcId|String|是|vpc-bp1qtbach57ywecfxxxxxx|VPC的ID。
+|VpcId|String|是|vpc-bp1qtbach57ywecf\*\*\*\*|VPC的ID。
 
  |
 |CidrBlock|String|否|192.168.0.0/24|VPC的网段，支持将VPC网段在10.0.0.0/8、172.16.0.0/12和192.168.0.0/16以及它们的子网范围内放大或缩小，网段的掩码为8-24位。
@@ -28,13 +28,14 @@
 |EnableIPv6|Boolean|否|true|是否开启IPv6网段，取值：
 
  -   **true**：开启。
+-   **false**：关闭。
 
  |
 |VpcName|String|否|Vpc-1|VPC的名称。长度为2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -48,9 +49,8 @@
 
 ``` {#request_demo}
 
-https://vpc.aliyuncs.com/?Action=ModifyVpcAttribute
-&VpcId=vpc-bp1qtbach57ywecfxxxxxx
-&VpcName=Vpc-1
+http(s)://[Endpoint]/?Action=ModifyVpcAttribute
+&VpcId=vpc-bp1qtbach57ywecf****
 &<公共请求参数>
 
 ```
@@ -61,9 +61,8 @@ https://vpc.aliyuncs.com/?Action=ModifyVpcAttribute
 
 ``` {#xml_return_success_demo}
 <ModifyVpcAttributeResponse>
-  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+      <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </ModifyVpcAttributeResponse>
-
 ```
 
 `JSON` 格式
@@ -88,5 +87,5 @@ https://vpc.aliyuncs.com/?Action=ModifyVpcAttribute
 |400|IncorrectVpcStatus|Current VPC status does not support this operation.|当前 VPC 的状态无法支持这个操作。|
 |400|InvalidCidrBlock.Malformed|Specified CIDR block is not valid.|该 CIDR 格式不正确。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
