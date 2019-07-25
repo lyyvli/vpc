@@ -1,6 +1,6 @@
 # RecoverVirtualBorderRouter {#doc_api_Vpc_RecoverVirtualBorderRouter .reference}
 
-调用RecoverVirtualBorderRouter恢复被终止的边界路由器（VBR）。
+调用RecoverVirtualBorderRouter接口恢复被终止的边界路由器（VBR）。
 
 调用该接口后VBR从**Terminated**状态变为**Recovering**状态，恢复成功后进入**Enabled**状态。
 
@@ -9,9 +9,9 @@
 -   只有物理专线的所有者可以调用该接口。
 -   VBR所属的物理专线必须处于**Enabled**状态。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=RecoverVirtualBorderRouter)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=RecoverVirtualBorderRouter&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -27,10 +27,12 @@
  您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|VbrId|String|是|vbr-bp1lhl0taikrteen80|VBR的ID。
+|VbrId|String|是|vbr-bp1lhl0taikrte\*\*\*\*|VBR的ID。
 
  |
-|ClientToken|String|否|02fb3da4-130e-11e9-8e44-0016e04115b|用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个ASCII字符。
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-0016e04115b|用于保证请求的幂等性。
+
+ 由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个ASCII字符。
 
  |
 
@@ -50,7 +52,7 @@
 
 http(s)://[Endpoint]/?Action=RecoverVirtualBorderRouter
 &RegionId=cn-shanghai
-&VbrId=vbr-bp1lhl0taikrteen80
+&VbrId=vbr-bp1lhl0taikrte****
 &<公共请求参数>
 
 ```
@@ -61,9 +63,8 @@ http(s)://[Endpoint]/?Action=RecoverVirtualBorderRouter
 
 ``` {#xml_return_success_demo}
 <RecoverVirtualBorderRouterResponse>
-  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+      <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </RecoverVirtualBorderRouterResponse>
-
 ```
 
 `JSON` 格式
