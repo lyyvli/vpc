@@ -2,9 +2,9 @@
 
 调用ModifyBgpGroupAttribute接口修改BGP邻居的属性。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=ModifyBgpPeerAttribute)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=ModifyBgpPeerAttribute&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -35,7 +35,7 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -62,9 +62,8 @@ https://vpc.aliyuncs.com/?Action=ModifyBgpPeerAttribute
 
 ``` {#xml_return_success_demo}
 <CreateBgpPeerResponse>
-  <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+      <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
 </CreateBgpPeerResponse>
-
 ```
 
 `JSON` 格式
@@ -81,5 +80,5 @@ https://vpc.aliyuncs.com/?Action=ModifyBgpPeerAttribute
 |--------|---|----|--|
 |400|InvalidRegionId.NotFound|The specified RegionId does not exist in our records.|指定的 RegionId 不存在，请您检查此产品在该地域是否可用。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
