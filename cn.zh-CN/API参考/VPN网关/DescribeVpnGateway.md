@@ -1,10 +1,10 @@
-# DescribeVpnGateway {#doc_api_951815 .reference}
+# DescribeVpnGateway {#doc_api_Vpc_DescribeVpnGateway .reference}
 
 调用DescribeVpnGateway接口查询指定VPN网关的详细信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeVpnGateway)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeVpnGateway&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -20,24 +20,24 @@
  您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|VpnGatewayId|String|是|vpn-bp1q8bgx4xnkm2ogj0fiu|VPN网关的ID。
+|VpnGatewayId|String|是|vpn-bp1q8bgx4xnkm2ogj\*\*\*\*|VPN网关的ID。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|VpnGatewayId|String|vpn-bp1q8bgx4xnkm2ogj0fiu|VPN网关的ID。
+|VpnGatewayId|String|vpn-bp1q8bgx4xnkm2ogj\*\*\*\*|VPN网关的ID。
 
  |
-|VpcId|String|vpc-23rsxdfxxxxxxxxxxxxxx|VPN网关所属VPC的ID。
+|VpcId|String|vpc-bp1ub1yt9cvakoelj\*\*\*\*|VPN网关所属VPC的ID。
 
  |
-|VSwitchId|String|vsw-bp1y9ovl1cu9ou4tvma0l|VPN网关所属交换机的ID。
+|VSwitchId|String|vsw-bp1y9ovl1cu9ou4tv\*\*\*\*|VPN网关所属交换机的ID。
 
  |
-|InternetIp|String|116.62.222.28|公网IP地址。
+|InternetIp|String|116.62.222.XX|公网IP地址。
 
  |
 |CreateTime|Long|1495382400000|VPN网关的创建时间。
@@ -76,6 +76,9 @@
 |SslVpn|String|enable|是否开启了SSL-VPN功能。
 
  |
+|Tag|String|tag1|VPN网关标签。
+
+ |
 
 ## 示例 {#demo .section}
 
@@ -85,7 +88,7 @@
 
 https://vpc.aliyuncs.com/?Action=DescribeVpnGateway
 &RegionId=cn-shanghai
-&VpnGatewayId=vpn-bp1q8bgx4xnkm2ogj0fiu
+&VpnGatewayId=vpn-bp1q8bgx4xnkm2ogj****
 &<公共请求参数>
 
 ```
@@ -96,18 +99,17 @@ https://vpc.aliyuncs.com/?Action=DescribeVpnGateway
 
 ``` {#xml_return_success_demo}
 <DescribeVpnGatewayResponse>
-  <Status>active</Status>
-  <VpnGatewayId>vpn-bp1q8bgx4xnkm2ogj0fiu</VpnGatewayId>
-  <Spec>5M</Spec>
-  <BusinessStatus>Normal</BusinessStatus>
-  <RequestId>98C99F30-A3D2-42E1-AC75-0C882FBE92F7</RequestId>
-  <CreateTime>1492753580000</CreateTime>
-  <InternetIp>116.62.69.64</InternetIp>
-  <EndTime>1495382400000</EndTime>
-  <VSwitchId>vsw-bp1y9ovl1cu9ou4tvma0l</VSwitchId>
-  <VpcId>vpc-bp1ub1yt9cvakoelj1y9c</VpcId>
+      <Status>active</Status>
+      <VpnGatewayId>vpn-bp1q8bgx4xnkm2ogj****</VpnGatewayId>
+      <Spec>5M</Spec>
+      <BusinessStatus>Normal</BusinessStatus>
+      <RequestId>98C99F30-A3D2-42E1-AC75-0C882FBE92F7</RequestId>
+      <CreateTime>1492753580000</CreateTime>
+      <InternetIp>116.62.69.64</InternetIp>
+      <EndTime>1495382400000</EndTime>
+      <VSwitchId>vsw-bp1y9ovl1cu9ou4tv****</VSwitchId>
+      <VpcId>vpc-bp1ub1yt9cvakoelj****</VpcId>
 </DescribeVpnGatewayResponse>
-
 ```
 
 `JSON` 格式
@@ -115,15 +117,15 @@ https://vpc.aliyuncs.com/?Action=DescribeVpnGateway
 ``` {#json_return_success_demo}
 {
 	"Status":"active",
-	"VpnGatewayId":"vpn-bp1q8bgx4xnkm2ogj0fiu",
+	"VpnGatewayId":"vpn-bp1q8bgx4xnkm2ogj****",
 	"Spec":"5M",
 	"BusinessStatus":"Normal",
 	"RequestId":"E98A9651-7098-40C7-8F85-C818D1EBBA85",
 	"CreateTime":1492753580000,
-	"InternetIp":"116.62.69.64",
+	"InternetIp":"116.62.69.XX",
 	"EndTime":1495382400000,
-	"VSwitchId":"vsw-bp1y9ovl1cu9ou4tvma0l",
-	"VpcId":"vpc-bp1ub1yt9cvakoelj1y9c"
+	"VSwitchId":"vsw-bp1y9ovl1cu9ou4tv****",
+	"VpcId":"vpc-bp1ub1yt9cvakoelj****"
 }
 ```
 
@@ -135,5 +137,5 @@ https://vpc.aliyuncs.com/?Action=DescribeVpnGateway
 |403|Forbidden|User not authorized to operate on the specified resource.|您没有权限操作指定资源，请提交工单咨询。|
 |404|InvalidVpnGatewayInstanceId.NotFound|The specified vpn gateway instance id does not exist.|指定的 VPN 网关不存在，请您检查 VPN 网关是否正确。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
