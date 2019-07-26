@@ -1,10 +1,10 @@
-# AddIPv6TranslatorAclListEntry {#doc_api_1029430 .reference}
+# AddIPv6TranslatorAclListEntry {#doc_api_Vpc_AddIPv6TranslatorAclListEntry .reference}
 
 在访问控制策略组中添加IP条目。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=AddIPv6TranslatorAclListEntry)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=AddIPv6TranslatorAclListEntry&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -26,7 +26,7 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -54,10 +54,9 @@ http(s)://vpc.aliyuncs.com/?Action=AddIPv6TranslatorAclListEntry
 
 ``` {#xml_return_success_demo}
 <CreateIPv6TranslatorAclListResponse>
-  <AclEntryId>ipv6transaclentry-bp105jrsxxxx</AclEntryId>
-  <RequestId>8B2F5262-6B57-43F2-xxxxx</RequestId>
+      <AclEntryId>ipv6transaclentry-bp105jrsxxxx</AclEntryId>
+	  <RequestId>8B2F5262-6B57-43F2-xxxxx</RequestId>
 </CreateIPv6TranslatorAclListResponse>
-
 ```
 
 `JSON` 格式
@@ -77,5 +76,5 @@ http(s)://vpc.aliyuncs.com/?Action=AddIPv6TranslatorAclListEntry
 |403|Forbidden|User not authorized to operate on the specified resource.|您没有权限操作指定资源，请提交工单咨询。|
 |400|Resource.QuotaFull|The quota of resource is full|资源配额已达上限。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
