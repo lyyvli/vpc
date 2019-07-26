@@ -2,9 +2,9 @@
 
 调用CreatePhysicalConnectionSetupOrder创建初装费订单。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=CreatePhysicalConnectionSetupOrder)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=CreatePhysicalConnectionSetupOrder&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -59,6 +59,12 @@
 |OrderId|String|202844382740728|订单ID。
 
  |
+|PhysicalConnectionId|String|pc-1111111|物理专线ID。
+
+ |
+|RequestId|String|F7A6301A-64BA-41EC-8284-8F4838C15D1F|请求ID。
+
+ |
 
 ## 示例 {#demo .section}
 
@@ -79,16 +85,15 @@ http(s)://[Endpoint]/?AccessPointId=ap-cn-beijing-ft-A
 
 ``` {#xml_return_success_demo}
 <CreatePhysicalConnectionSetupOrderResponse>
-  <code>200</code>
-  <data>
-    <orderId>203255400960138</orderId>
-  </data>
-  <httpStatusCode>200</httpStatusCode>
-  <message>successful</message>
-  <requestId>AA874147-4A58-41D4-95E2-F2FFDAF417A6</requestId>
-  <success>true</success>
-</CreatePhysicalConnectionSetupOrderResponse>
-
+      <code>200</code>
+	  <data>
+		    <orderId>203255400960138</orderId>
+	  </data>
+	  <httpStatusCode>200</httpStatusCode>
+	  <message>successful</message>
+	  <requestId>AA874147-4A58-41D4-95E2-F2FFDAF417A6</requestId>
+	  <success>true</success>
+    </CreatePhysicalConnectionSetupOrderResponse>
 ```
 
 `JSON` 格式
@@ -108,5 +113,5 @@ http(s)://[Endpoint]/?AccessPointId=ap-cn-beijing-ft-A
 
 ## 错误码 { .section}
 
-访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
 
