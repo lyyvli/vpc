@@ -2,8 +2,6 @@
 
 调用DescribeVpcs接口查询已创建的VPC。
 
- **** 
-
 ## 调试 {#api_explorer .section}
 
 [您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeVpcs&type=RPC&version=2016-04-28)
