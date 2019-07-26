@@ -2,9 +2,9 @@
 
 调用ApplyPhysicalConnectionLOA申请LOA。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=ApplyPhysicalConnectionLOA)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=ApplyPhysicalConnectionLOA&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -99,9 +99,8 @@ http(s)://[Endpoint]/?Action=ApplyPhysicalConnectionLOA
 
 ``` {#xml_return_success_demo}
 <ApplyPhysicalConnectionLOAResponse>
-  <RequestId>A47BD386-7FDE-42C4-8D22-C6223D18AA1C</RequestId>
-</ApplyPhysicalConnectionLOAResponse>
-
+	  <RequestId>A47BD386-7FDE-42C4-8D22-C6223D18AA1C</RequestId>
+    </ApplyPhysicalConnectionLOAResponse>
 ```
 
 `JSON` 格式
