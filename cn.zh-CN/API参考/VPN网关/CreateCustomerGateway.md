@@ -2,9 +2,9 @@
 
 调用CreateCustomerGateway接口创建用户网关。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=CreateCustomerGateway)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=CreateCustomerGateway&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -81,12 +81,11 @@ https://vpc.aliyuncs.com/?Action=CreateCustomerGateway
 
 ``` {#xml_return_success_demo}
 <CreateCustomerGatewayResponse>
-  <CustomerGatewayId>cgw-bp1aw0a5nfff03xp****</CustomerGatewayId>
-  <RequestId>185E81B1-3916-4667-B48F-C52409B33F2B</RequestId>
-  <CreateTime>1493363486000</CreateTime>
-  <IpAddress>100.1.1.XX</IpAddress>
+      <CustomerGatewayId>cgw-bp1aw0a5nfff03xp****</CustomerGatewayId>
+      <RequestId>185E81B1-3916-4667-B48F-C52409B33F2B</RequestId>
+      <CreateTime>1493363486000</CreateTime>
+      <IpAddress>100.1.1.XX</IpAddress>
 </CreateCustomerGatewayResponse>
-
 ```
 
 `JSON` 格式
