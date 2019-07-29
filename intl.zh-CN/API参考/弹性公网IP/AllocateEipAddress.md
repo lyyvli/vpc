@@ -27,6 +27,8 @@
  -   **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
 -   **true**：开启自动付费，自动支付订单。
 
+ **InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
+
  |
 |Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为**5**。
 
@@ -68,6 +70,8 @@
  -   **Month**（默认值）：按月付费。
 -   **Year**：按年付费。
 
+
+ **InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
 
  |
 |ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|企业资源组ID。

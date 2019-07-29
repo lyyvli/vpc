@@ -27,7 +27,7 @@
  -   **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
 -   **true**：开启自动付费，自动支付订单。
 
- **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
+ **InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
 
  |
 |Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为**5**。
@@ -44,24 +44,16 @@
  |
 |InstanceChargeType|String|否|PostPaid|EIP的付费方式，取值：
 
- **PrePaid**：预付费。
-
  **PostPaid**（默认值）：后付费。
 
- 当取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。
-
- 预付费和后付费的详细信息，请参见[预付费](~~27767~~)和[后付费](~~72142~~)。
+ 后付费的详细信息，请参见[后付费](~~72142~~)。
 
  |
 |InternetChargeType|String|否|PayByTraffic|EIP的计费方式，取值：
 
- **PayByBandwidth**（默认值）：按带宽计费。
-
  **PayByTraffic**：按流量计费。
 
- 当**InstanceChargeType**取值为**PrePaid**时，**InternetChargeType**必须取值**PayByBandwidth**。详细信息，请参见[预付费](~~27767~~)。
-
- 当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**可取值**PayByBandwidth**或**PayByTraffic**。详细信息，请参见[按使用流量](~~72142~~)和[按固定带宽](~~72142~~)。
+ 当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**取值为**PayByTraffic**。详细信息，请参见[按使用流量](~~72142~~)。
 
  |
 |Netmode|String|否|Public|网络类型，默认值为**Public**。
@@ -72,16 +64,14 @@
  -   当**PricingCycle**取值**Month**时，**Period**取值范围为**1-9**。
 -   当**PricingCycle**取值**Year**时，**Period**取值范围为**1-3**。
 
- **InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
-
  |
 |PricingCycle|String|否|Month|预付费的计费周期，取值：
 
  -   **Month**（默认值）：按月付费。
 -   **Year**：按年付费。
 
-**InstanceChargeType**参数的值为**PrePaid**时，该参数必选。
 
+ **InstanceChargeType**参数的值为**PostPaid**时，该参数可不填。
 
  |
 |ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|企业资源组ID。
@@ -154,5 +144,5 @@ http(s)://[Endpoint]/?Action=AllocateEipAddress
 |400|ReserveIpFail|Reserve eip failed.|EIP预留失败。|
 |400|InvalidRegion.NotSupport|The specified region does not support.|该 RegionId 不支持此操作。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
