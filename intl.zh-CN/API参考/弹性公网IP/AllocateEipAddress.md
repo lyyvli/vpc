@@ -2,87 +2,95 @@
 
 调用AllocateEipAddress接口申请弹性公网IP（EIP）。
 
-调用本接口后将在指定的地域内随机获取一个状态为 **Available** 的弹性公网IP。弹性公网IP在传输层目前只支持ICMP、TCP和UDP协议，不支持IGMP和SCTP等协议。
+## API描述 {#description .section}
 
-## 调试 {#apiExplorer .section}
+请确保在使用该接口前，已充分了解EIP的收费方式和价格。详细信息，请参见[计费概述](~~122035~~)。
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=AllocateEipAddress)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+调用本接口后将在指定的地域内随机获取一个状态为**Available**的弹性公网IP。弹性公网IP在传输层目前只支持ICMP、TCP和UDP协议，不支持IGMP和SCTP等协议。
+
+## 调试 {#api_explorer .section}
+
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=AllocateEipAddress&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-| Action |String|是|AllocateEipAddress| 要执行的操作，取值： **AllocateEipAddress** 。
+|Action|String|是|AllocateEipAddress|要执行的操作，取值：**AllocateEipAddress**。
 
  |
-| RegionId |String|是|cn-hangzhou| 弹性公网IP所属的地域ID。您可以通过调用 [DescribeRegions](~~36063~~) 接口获取地域ID。
+|RegionId|String|是|cn-hangzhou|弹性公网IP所属的地域ID。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-| AutoPay |Boolean|否|false| 是否自动付费，取值：
+|AutoPay|Boolean|否|false|是否自动付费，取值：
 
- -    **false** ：不开启自动付费，生成订单后需要到订单中心完成支付。
--    **true** ：开启自动付费，自动支付订单。
-
- |
-| Bandwidth |String|否|5| EIP的带宽峰值，单位为Mbps，默认值为5。
+ -   **false**：不开启自动付费，生成订单后需要到订单中心完成支付。
+-   **true**：开启自动付费，自动支付订单。
 
  |
-| ClientToken |String|否|02fb3da4-130e-11e9-8e44-001xxxxxxxx| 客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
+|Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为**5**。
 
  |
-| ISP |String|否|BGP| 线路类型，默认值为 **BGP** 。
-
- -   对于已开通单线带宽白名单的用户，ISP字段可以设置为 **ChinaTelecom** 、 **ChinaUnicom** 和 **ChinaMobile** ，用来开通中国电信、中国联通、中国移动的单线EIP。
--   如果是杭州金融云用户，该字段必填，取值： **BGP\_FinanceCloud** 。
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-001\*\*\*\*|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
 
  |
-| InstanceChargeType |String|否|PostPaid| EIP的付费方式，取值：
+|ISP|String|否|BGP|线路类型，默认值为**BGP**。
 
-  **PostPaid** （默认值）：后付费。
-
- |
-| InternetChargeType |String|否|PayByBandwidth| EIP的计费方式，取值：
-
-  **PayByTraffic** ：按流量计费。
+ -   对于已开通单线带宽白名单的用户，ISP字段可以设置为**ChinaTelecom**、**ChinaUnicom**和**ChinaMobile**，用来开通中国电信、中国联通、中国移动的单线EIP。
+-   如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。
 
  |
-| Netmode |String|否|Public| 网络类型，默认值为 **Public** 。
+|InstanceChargeType|String|否|PostPaid|EIP的付费方式，取值：
+
+ **PostPaid**（默认值）：后付费。
+
+ 后付费的详细信息，请参见[后付费](~~72142~~)。
 
  |
-| Period |Integer|否|10| 购买时长。
+|InternetChargeType|String|否|PayByTraffic|EIP的计费方式，取值：
 
- -   当 **PricingCycle** 取值 **Month** 时， **Period** 取值范围为 **1-9** 。
--   当 **PricingCycle** 取值 **Year** 时， **Period** 取值范围为 **1-3** 。
+ **PayByTraffic**：按流量计费。
 
- |
-| PricingCycle |String|否|Month| 预付费的计费周期，取值：
-
- -    **Month** （默认值）：按月付费。
--    **Year** ：按年付费。
-
+ 当**InstanceChargeType**取值为**PostPaid**时，**InternetChargeType**取值为**PayByTraffic**。详细信息，请参见[按使用流量](~~72142~~)。
 
  |
-| ResourceGroupId |String|否|rg-acfmxazxxxxxxxx| 企业资源组ID。
+|Netmode|String|否|Public|网络类型，默认值为**Public**。
+
+ |
+|Period|Integer|否|1|购买时长。
+
+ -   当**PricingCycle**取值**Month**时，**Period**取值范围为**1-9**。
+-   当**PricingCycle**取值**Year**时，**Period**取值范围为**1-3**。
+
+ |
+|PricingCycle|String|否|Month|预付费的计费周期，取值：
+
+ -   **Month**（默认值）：按月付费。
+-   **Year**：按年付费。
+
+
+ |
+|ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|企业资源组ID。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|EipAddress|String|12.xx.xx.78| 分配的EIP。
+|EipAddress|String|12.xx.xx.78|分配的EIP。
 
  |
-|AllocationId|String|eip-25877c70xxxxxxxx| EIP的ID。
+|AllocationId|String|eip-25877c70gddh\*\*\*\*|EIP的ID。
 
  |
-|OrderId|Long|10| 订单号，仅预付费时返回。
+|OrderId|Long|10|订单号，仅预付费时返回。
 
  |
-|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF| 请求ID。
+|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|请求ID。
 
  |
-|ResourceGroupId|String|rg-acfmxazxxxxxxxx| 企业资源组ID。
+|ResourceGroupId|String|rg-acfmxazfdgdg\*\*\*\*|企业资源组ID。
 
  |
 
@@ -92,32 +100,31 @@
 
 ``` {#request_demo}
 
-https://vpc.aliyuncs.com/?Action=AllocateEipAddress
-&RegionId=cn-beijing
-&公共请求参数
+http(s)://[Endpoint]/?Action=AllocateEipAddress
+&RegionId=cn-hangzhou
+&<公共请求参数>
 
 ```
 
 正常返回示例
 
- `XML` 格式
+`XML` 格式
 
 ``` {#xml_return_success_demo}
 <AllocateEipAddressResponse>
-  <AllocationId>eip-25877c70xxxxxxxx</AllocationId>
-  <EipAddress>123.xx.xx.206</EipAddress>
-  <RequestId>B6B9F518-60F8-4D81-9242-1207B356754D</RequestId>
+      <AllocationId>eip-25877c70gfdkh****</AllocationId>
+      <EipAddress>123.xx.xx.206</EipAddress>
+      <RequestId>B6B9F518-60F8-4D81-9242-1207B356754D</RequestId>
 </AllocateEipAddressResponse>
-
 ```
 
- `JSON` 格式
+`JSON` 格式
 
 ``` {#json_return_success_demo}
 {
 	"RequestId":"B6B9F518-60F8-4D81-9242-1207B356754D",
 	"EipAddress":"123.xx.xx.206",
-	"AllocationId":"eip-25877c70xxxxxxxx"
+	"AllocationId":"eip-25877c70gfdkh****"
 }
 ```
 
@@ -133,5 +140,5 @@ https://vpc.aliyuncs.com/?Action=AllocateEipAddress
 |400|ReserveIpFail|Reserve eip failed.|EIP预留失败。|
 |400|InvalidRegion.NotSupport|The specified region does not support.|该 RegionId 不支持此操作。|
 
- [查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc) 
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
