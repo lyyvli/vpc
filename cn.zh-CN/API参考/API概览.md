@@ -2,7 +2,7 @@
 
 专有网络VPC提供以下相关API接口。
 
-## 专有网络（VPC） {#section_krp_va2_bfr .section}
+## 专有网络（VPC） {#section_snu_8fj_eze .section}
 
 |API|描述|
 |---|--|
@@ -14,7 +14,7 @@
 |[DisableVpcClassicLink](cn.zh-CN/API参考/专有网络（VPC）/DisableVpcClassicLink.md)|调用DisableVpcClassicLink关闭ClassicLink。|
 |[EnableVpcClassicLink](cn.zh-CN/API参考/专有网络（VPC）/EnableVpcClassicLink.md)|调用EnableVpcClassicLink开启ClassicLink。|
 
-## 交换机 {#section_l9o_cq8_6ft .section}
+## 交换机 {#section_pxm_h8e_bym .section}
 
 |API|描述|
 |---|--|
@@ -24,14 +24,14 @@
 |[CreateVSwitch](cn.zh-CN/API参考/交换机/CreateVSwitch.md)|调用CreateVSwitch接口创建一个交换机。|
 |[DeleteVSwitch](cn.zh-CN/API参考/交换机/DeleteVSwitch.md)|调用DeleteVSwitch接口删除交换机。|
 
-## 路由器 {#section_8fp_dcj_dkz .section}
+## 路由器 {#section_sj1_fwh_a23 .section}
 
 |API|描述|
 |---|--|
 |[DescribeVRouters](cn.zh-CN/API参考/路由器/DescribeVRouters.md)|调用DescribeVRouters接口查询指定地域的路由器列表。|
 |[ModifyVRouterAttribute](cn.zh-CN/API参考/路由器/ModifyVRouterAttribute.md)|调用ModifyVRouterAttribute接口修改路由器的名称和描述信息。|
 
-## 路由表 {#section_w5m_bzp_gde .section}
+## 路由表 {#section_snf_uk8_i4x .section}
 
 |API|描述|
 |---|--|
@@ -46,7 +46,7 @@
 |[DeleteRouteEntry](cn.zh-CN/API参考/路由表/DeleteRouteEntry.md)|调用DeleteRouteEntry接口删除VPC路由器或边界路由器的路由表中的路由条目。|
 |[ModifyRouteEntry](cn.zh-CN/API参考/路由表/ModifyRouteEntry.md)|调用ModifyRouteEntry修改一条自定义路由条目的名称。|
 
-## 地域 {#section_3da_t4q_zq0 .section}
+## 地域 {#section_abg_aeu_bmt .section}
 
 |API|描述|
 |---|--|
@@ -54,7 +54,15 @@
 |[DescribeAccessPoints](cn.zh-CN/API参考/地域/DescribeAccessPoints.md)|调用DescribeAccessPoints接口查询指定地域中的物理专线接入点。|
 |[DescribeRegions](cn.zh-CN/API参考/地域/DescribeRegions.md)|调用DescribeRegions接口查询可用地域。|
 
-## 路由器接口 {#section_hhm_xx1_4bd .section}
+## 标签 {#section_9rr_whv_nxo .section}
+
+|API|描述|
+|---|--|
+|[TagResources](cn.zh-CN/API参考/标签/TagResources.md)|调用TagResources为指定的ECS资源列表统一创建并绑定标签。|
+|[ListTagResources](cn.zh-CN/API参考/标签/ListTagResources.md)|调用ListTagResources查询一个或多个 VPC、EIP 资源已经绑定的标签列表。|
+|[UnTagResources](cn.zh-CN/API参考/标签/UnTagResources.md)|调用UntagResources为指定的资源列表统一解绑并删除标签。|
+
+## 路由器接口 {#section_ksu_hgd_bqs .section}
 
 |API|描述|
 |---|--|
@@ -67,7 +75,7 @@
 |[ModifyRouterInterfaceAttribute](cn.zh-CN/API参考/路由器接口/ModifyRouterInterfaceAttribute.md)|调用ModifyRouterInterfaceAttribute接口修改路由器接口的配置。|
 |[DeleteRouterInterface](cn.zh-CN/API参考/路由器接口/DeleteRouterInterface.md)|调用DeleteRouterInterface接口删除路由器接口。|
 
-## BGP {#section_53t_5ju_bas .section}
+## BGP {#section_luq_0ha_fjf .section}
 
 |API|描述|
 |---|--|
@@ -83,7 +91,7 @@
 |[DeleteBgpNetwork](cn.zh-CN/API参考/BGP/DeleteBgpNetwork.md)|使用DeleteBgpNetwork删除已宣告的BGP网络。|
 |[ModifyBgpPeerAttribute](cn.zh-CN/API参考/BGP/ModifyBgpPeerAttribute.md)|调用ModifyBgpGroupAttribute接口修改BGP邻居的属性。|
 
-## 边界路由器 {#section_8y0_qv2_wok .section}
+## 边界路由器 {#section_fwp_ssg_muw .section}
 
 |API|描述|
 |---|--|
@@ -97,7 +105,7 @@
 |[AssociatePhysicalConnectionToVirtualBorderRouter](cn.zh-CN/API参考/边界路由器/AssociatePhysicalConnectionToVirtualBorderRouter.md)|调用AssociatePhysicalConnectionToVirtualBorderRouter将VBR关联物理专线。|
 |[UnassociatePhysicalConnectionFromVirtualBorderRouter](cn.zh-CN/API参考/边界路由器/UnassociatePhysicalConnectionFromVirtualBorderRouter.md)|调用UnassociatePhysicalConnectionFromVirtualBorderRouter解绑VBR和物理专线。|
 
-## 物理专线 {#section_nn7_azw_fn3 .section}
+## 物理专线 {#section_hpp_pkc_fkj .section}
 
 |API|描述|
 |---|--|
@@ -114,7 +122,7 @@
 |[CreatePhysicalConnectionSetupOrder](cn.zh-CN/API参考/物理专线/CreatePhysicalConnectionSetupOrder.md)|调用CreatePhysicalConnectionSetupOrder创建初装费订单。|
 |[DescribePhysicalConnectionLOA](cn.zh-CN/API参考/物理专线/DescribePhysicalConnectionLOA.md)|调用DescribePhysicalConnectionLOA查询物理专线LOA信息。|
 
-## 高速上云服务 {#section_dit_2dg_amj .section}
+## 高速上云服务 {#section_srg_amm_nqo .section}
 
 |API|描述|
 |---|--|
@@ -123,7 +131,7 @@
 |[ModifyExpressCloudConnectionBandwidth](cn.zh-CN/API参考/高速上云服务/ModifyExpressCloudConnectionBandwidth.md)|调用ModifyExpressCloudConnectionBandwidth修改高速上云服务带宽。|
 |[DescribeExpressCloudConnections](cn.zh-CN/API参考/高速上云服务/DescribeExpressCloudConnections.md)|调用DescribeExpressCloudConnections查询某个区域的高速上云服务列表。|
 
-## VPN网关 {#section_ccz_yqb_oye .section}
+## VPN网关 {#section_t8p_vwu_4ca .section}
 
 |API|描述|
 |---|--|
@@ -162,7 +170,7 @@
 |[CreateVpnRouteEntry](cn.zh-CN/API参考/VPN网关/CreateVpnRouteEntry.md)|调用CreateVpnRouteEntry创建VPN目的路由。|
 |[DescribeVpnSslServerLogs](cn.zh-CN/API参考/VPN网关/DescribeVpnSslServerLogs.md)|调用DescribeVpnSslServerLogs查看SSL服务端的日志。|
 
-## NAT网关 {#section_ehc_5js_erz .section}
+## NAT网关 {#section_3yx_4lg_nop .section}
 
 |API|描述|
 |---|--|
@@ -188,7 +196,7 @@
 |[DeleteSnatEntry](cn.zh-CN/API参考/NAT网关/DeleteSnatEntry.md)|调用DeleteSnatEntry接口删除指定的SNAT条目。|
 |[ConvertBandwidthPackage](cn.zh-CN/API参考/NAT网关/ConvertBandwidthPackage.md)|调用ConvertBandwidthPackage转换NAT带宽包。|
 
-## 全球加速 {#section_nzu_2jb_vl1 .section}
+## 全球加速 {#section_q0l_eac_8ff .section}
 
 |API|描述|
 |---|--|
@@ -203,7 +211,7 @@
 |[AddGlobalAccelerationInstanceIp](cn.zh-CN/API参考/全球加速/AddGlobalAccelerationInstanceIp.md)|调用AddGlobalAccelerationInstanceIp接口添加EIP到指定的带宽共享实例中。|
 |[RemoveGlobalAccelerationInstanceIp](cn.zh-CN/API参考/全球加速/RemoveGlobalAccelerationInstanceIp.md)|调用RemoveGlobalAccelerationInstanceIp接口从带宽共享实例中移除EIP。|
 
-## 共享带宽 {#section_cre_vd0_bsr .section}
+## 共享带宽 {#section_57u_e4r_psn .section}
 
 |API|描述|
 |---|--|
@@ -217,7 +225,7 @@
 |[CancelCommonBandwidthPackageIpBandwidth](cn.zh-CN/API参考/共享带宽/CancelCommonBandwidthPackageIpBandwidth.md)|调用CancelCommonBandwidthPackageIpBandwidth接口取消已经加入共享带宽中的EIP的最大可用带宽值的设置。|
 |[ModifyCommonBandwidthPackageIpBandwidth](cn.zh-CN/API参考/共享带宽/ModifyCommonBandwidthPackageIpBandwidth.md)|调用ModifyCommonBandwidthPackageIpBandwidth接口为已经加入共享带宽中的EIP设置最大可用的带宽值。|
 
-## 弹性公网IP {#section_tej_7dq_nwo .section}
+## 弹性公网IP {#section_f47_tji_ywu .section}
 
 |API|描述|
 |---|--|
@@ -230,7 +238,7 @@
 |[DescribeEipMonitorData](cn.zh-CN/API参考/弹性公网IP/DescribeEipMonitorData.md)|调用DescribeEipMonitorData接口查看EIP的监控信息。|
 |[DescribeEipGatewayInfo](cn.zh-CN/API参考/弹性公网IP/DescribeEipGatewayInfo.md)|调用DescribeEipGatewayInfo接口查询EIP的网关和掩码信息。|
 
-## 流日志 {#section_8gl_mjm_nzz .section}
+## 流日志 {#section_d9b_ffk_rmm .section}
 
 |API|描述|
 |---|--|
@@ -241,7 +249,7 @@
 |[DeactiveFlowLog](cn.zh-CN/API参考/流日志/DeactiveFlowLog.md)|调用DeactiveFlowLog接口停止流日志，停止后不再捕获指定资源的流量。|
 |[DeleteFlowLog](cn.zh-CN/API参考/流日志/DeleteFlowLog.md)|调用DeleteFlowLog接口删除流日志。|
 
-## IPv6转换服务 {#section_noh_pim_yo7 .section}
+## IPv6转换服务 {#section_cmq_syh_pn0 .section}
 
 |API|描述|
 |---|--|
@@ -262,7 +270,7 @@
 |[DeleteIPv6Translator](cn.zh-CN/API参考/IPv6转换服务/DeleteIPv6Translator.md)|删除IPv6转换服务实例。|
 |[CreateIPv6Translator](cn.zh-CN/API参考/IPv6转换服务/CreateIPv6Translator.md)|创建IPv6转换服务实例。|
 
-## IPv6网关 {#section_x7v_upt_2rw .section}
+## IPv6网关 {#section_5ci_jqw_tx4 .section}
 
 |API|描述|
 |---|--|
