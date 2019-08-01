@@ -22,7 +22,7 @@
 |RegionId|String|是|cn-hangzhou|弹性公网IP所属的地域ID。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|AutoPay|Boolean|否|false| 该参数可不填。
+|AutoPay|Boolean|否|false| 是否自动付费，该参数可不填。
 
  |
 |Bandwidth|String|否|5|EIP的带宽峰值，单位为Mbps，默认值为**5**。
@@ -37,7 +37,7 @@
 -   如果是杭州金融云用户，该字段必填，取值：**BGP\_FinanceCloud**。
 
  |
-|InstanceChargeType|String|否|PostPaid| **InstanceChargeType**必须取值**PostPaid**，且**InternetChargeType**必须取值**PayByTraffic**。后付费的详细信息，请参见[后付费](~~72142~~)。
+|InstanceChargeType|String|否|PostPaid| EIP的付费方式，必须取值**PostPaid**（后付费），且**InternetChargeType**必须取值**PayByTraffic**。后付费的详细信息，请参见[后付费](~~72142~~)。
 
  |
 |InternetChargeType|String|否|PayByTraffic| EIP的计费方式，必须取值为**PayByTraffic**（按流量计费）。详细信息，请参见[按使用流量](~~72142~~)。
@@ -46,10 +46,10 @@
 |Netmode|String|否|Public|网络类型，默认值为**Public**。
 
  |
-|Period|Integer|否|1| 该参数不填。
+|Period|Integer|否|1| 购买时长，该参数不填。
 
  |
-|PricingCycle|String|否|Month| 该参数可不填。
+|PricingCycle|String|否|Month| 预付费的计费周期，该参数可不填。
 
  |
 |ResourceGroupId|String|否|rg-acfmxazffggds\*\*\*\*|企业资源组ID。
