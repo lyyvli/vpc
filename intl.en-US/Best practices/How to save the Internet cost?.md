@@ -10,14 +10,14 @@ This section analyzes Data Transfer Plan from the following aspects:
 
 -   How much can Data Transfer Plan save?
 
-    Data Traffic Package supports Idle-time Data Transfer Plan with lower price. Take Hong Kong as an example. The prices of Pay-As-You-Go traffic, Full-time Data Transfer Plan and Idle-time Data Transfer Plan are as follows:
+    Data Traffic Package supports Idle-time Data Transfer Plan with lower price. Take Hong Kong, China as an example. The prices of Pay-As-You-Go traffic, Full-time Data Transfer Plan and Idle-time Data Transfer Plan are as follows:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2450/1543572773830_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2450/1565791396830_en-US.jpg)
 
-    Take the 5-TB Data Transfer Plan in Hong Kong region as an example. The cost comparison is as follows. You can find that Data Transfer Plan saves a lot of traffic costs.
+    Take the 5-TB Data Transfer Plan in Hong Kong, China region as an example. The cost comparison is as follows. You can find that Data Transfer Plan saves a lot of traffic costs.
 
-    |Hong Kong 5-TB traffic|Unit price \(Yuan/GB\)|Total price \(Yuan\)|Cost saved \(Yuan\)|Proportion of cost saved|
-    |:---------------------|:---------------------|:-------------------|:------------------|:-----------------------|
+    |Hong Kong, China 5-TB traffic|Unit price \(Yuan/GB\)|Total price \(Yuan\)|Cost saved \(Yuan\)|Proportion of cost saved|
+    |:----------------------------|:---------------------|:-------------------|:------------------|:-----------------------|
     |Pay-As-You-Go traffic|1|5120|0|0|
     |Full-time Data Transfer Plan|0.75|3727|1393|27.2%|
     |Idle-time Data Transfer Plan|0.51|2609|2511|49%|
@@ -41,15 +41,15 @@ Besides, Internet Shared Bandwidth provides rich billing methods, including 95 b
 
 **Note:** Internet Shared Bandwidth is an independent bandwidth product that does not contain any public IP by default. You can add EIPs to Internet Shared Bandwidth.
 
-The bandwidth sharing function of Internet Shared Bandwidth helps you reduce Internet bandwidth cost, especially in the case of great bandwidth fluctuation. Suppose you have 10 ECS instances in Hong Kong and all the instances are bound to EIPs. If billing by bandwidth is adopted, the peak bandwidth is 100 Mbps. You must pay 3253 Yuan/day, which is the cost of 10 EIPs with the peak bandwidth of 100 Mbps, as shown in the following figure.
+The bandwidth sharing function of Internet Shared Bandwidth helps you reduce Internet bandwidth cost, especially in the case of great bandwidth fluctuation. Suppose you have 10 ECS instances in Hong Kong, China and all the instances are bound to EIPs. If billing by bandwidth is adopted, the peak bandwidth is 100 Mbps. You must pay 3253 Yuan/day, which is the cost of 10 EIPs with the peak bandwidth of 100 Mbps, as shown in the following figure.
 
 Traffic analysis of the 10 public IPs shows that the services differ in bandwidth fluctuation. The peak outbound bandwidth of the 10 servers is about 500 Mbps, as shown in the following figure.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2450/1543572773832_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2450/1565791396832_en-US.png)
 
 Therefore, if you use Internet Shared Bandwidth, you only need to buy a 500-Mbps Internet Shared Bandwidth and the 10 ECS instances can use it. In this way, each ECS instance can use peak bandwidth five times that of the original one, and you only need to pay 1680 Yuan per day, the cost of the 500-Mbps bandwidth. Thus 1573 Yuan, that is, 50% bandwidth cost, is saved.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2450/1543572773833_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2450/1565791397833_en-US.png)
 
 Internet Shared Bandwidth also provides 95 billing and "unlimited" peak bandwidth. The billing is based on the actual bandwidth usage minus the abrupt peak bandwidth. In this way, the bandwidth cost is saved and the impact of limited bandwidth on service is avoided. It is especially difficult for users with great bandwidth fluctuation to estimate a reasonable peak bandwidth. A high peak bandwidth will cause wasting; and a low peak bandwidth will cause packet loss and further affect service development and user experience. In this case, you can choose 95 billing.
 
