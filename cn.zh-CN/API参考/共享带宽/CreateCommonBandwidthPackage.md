@@ -2,7 +2,7 @@
 
 调用CreateCommonBandwidthPackage接口创建共享带宽实例。
 
-请确保在使用该接口前，已充分了解该产品的[计费](~~89725~~)。
+请确保在使用该接口前，已充分了解该产品的[计费](~~89732~~)。
 
 ## 调试 {#api_explorer .section}
 
@@ -29,12 +29,8 @@
  长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
-|InternetChargeType|String|否|PayByTraffic|共享带宽的计费方式，取值：
-
- -   **PayByBandwidth**（默认值）：按带宽计费。
--   **PayBy95**：按增强型95计费。
-
- 如需**PayByTraffic**计费方式，请提交工单。
+|InternetChargeType|String|否|PayByTraffic| 
+ 共享带宽的计费方式，取值：**PayByTraffic**。
 
  |
 |Name|String|否|test123|共享带宽的名称。
@@ -42,7 +38,9 @@
  长度为2~128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
 
  |
-|Ratio|Integer|否|100|共享带宽的保底百分比，取值范围为10~100，即保底百分比的范围是10%~100%，选择按增强型95计费时需指定该参数。
+|Ratio|Integer|否|100|共享带宽的保底百分比，取值范围为**10**~**100**，即保底百分比的范围是10%~100%。
+
+ **说明：** 仅中国站支持此参数。
 
  |
 |ResourceGroupId|String|否|rg-acfmxazdjdhd\*\*\*\*|资源组ID。
@@ -107,5 +105,5 @@ http(s)://[Endpoint]/?Action=CreateCommonBandwidthPackage
 |400|InvalidParameter.Name.Malformed|The specified Name is not valid.|该名称不合法，请您按照正确的格式书写名称。|
 |400|InvalidParameter.Description.Malformed|The specified Description is not valid.|该描述不合法。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
