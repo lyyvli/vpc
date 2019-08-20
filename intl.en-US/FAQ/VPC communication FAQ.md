@@ -20,7 +20,7 @@ Yes, different VPCs can communicate with each other through Express Connect, VPN
 
 ## Does VPCs support physical connection access? {#section_rpc_2l5_vdb .section}
 
-Yes, VPCs allow access from on-premises data centers through a physical connection. For more information, see [../../../../dita-oss-bucket/SP\_72/DNexpressconnect1847151/EN-US\_TP\_13831.md\#](../../../../reseller.en-US/Getting Started (New Console)/Connect an on-premises data center to a VPC through a physical connection.md#).
+Yes, VPCs allow access from on-premises data centers through a physical connection. For more information, see [Connect a local data center to a VPC through a physical connection](../../../../reseller.en-US/Getting Started (New Console)/Connect an on-premises data center to a VPC through a physical connection.md#).
 
 ## Does a VPC provide the VPN function? {#section_spc_2l5_vdb .section}
 
