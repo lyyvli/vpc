@@ -6,7 +6,7 @@ Before you create a flow log, make sure that the following conditions are met:
 
 -   Log Service is activated. For more information, see [Log Service page](https://www.aliyun.com/product/sls/).
 -   A Project and a Logstore are created to store traffic data. For more information, see [Create a project](../../../../reseller.en-US/Preparation/Manage projects.md#section_ahq_ggx_ndb) and [Create a Logstore.](../../../../reseller.en-US/Preparation/Manage a Logstore.md#section_v52_2jx_ndb).
--   A capture resource is created. For more information, see [../../../../dita-oss-bucket/SP\_2/DNECS19100345/EN-US\_TP\_9734.md\#](../../../../reseller.en-US/Network/Elastic Network Interfaces/Create an ENI.md#), [Create a VPC](reseller.en-US/VPCs and VSwitches/VPC management/Create a VPC.md#), and [Create a VSwitch](reseller.en-US/VPCs and VSwitches/VSwitch management/Create a VSwitch.md#).
+-   A capture resource is created. For more information, see [Create an ENI](../../../../reseller.en-US/Network/Elastic Network Interfaces/Create an ENI.md#), [Create a VPC](reseller.en-US/VPCs and VSwitches/VPC management/Create a VPC.md#), and [Create a VSwitch](reseller.en-US/VPCs and VSwitches/VSwitch management/Create a VSwitch.md#).
 
 1.  Log on to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc).
 2.  In the left-side navigation pane, click **FlowLog**.
