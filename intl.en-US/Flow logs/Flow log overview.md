@@ -51,7 +51,7 @@ The following table describes the fields of a flow log record.
 
 The following figure shows the procedure for configuring a flow log.
 
-![Flow log configuration process](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082282/156635080753062_en-US.png)
+![Flow log configuration process](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082282/156635110853062_en-US.png)
 
 1.  Activate Log Service.
 
@@ -71,7 +71,7 @@ The following figure shows the procedure for configuring a flow log.
 
 5.  Create a capture resource.
 
-    Before you create a flow log, you must create a resource whose logs you want to capture. You can capture logs of a specified ENI, VPC, or VSwitch. For more information, see [../../../../dita-oss-bucket/SP\_2/DNECS19100345/EN-US\_TP\_9734.md\#](../../../../reseller.en-US/Network/Elastic Network Interfaces/Create an ENI.md#) and [EN-US\_TP\_2435.md\#section\_ufw\_rhv\_rdb](reseller.en-US/VPCs and VSwitches/VPC management/Create a VPC.md#section_ufw_rhv_rdb).
+    Before you create a flow log, you must create a resource whose logs you want to capture. You can capture logs of a specified ENI, VPC, or VSwitch. For more information, see [Create an ENI](../../../../reseller.en-US/Network/Elastic Network Interfaces/Create an ENI.md#) ,[Create a VPC](reseller.en-US/VPCs and VSwitches/VPC management/Create a VPC.md#) and [Create a VSwitch](reseller.en-US/VPCs and VSwitches/VSwitch management/Create a VSwitch.md#).
 
 6.  Create a flow log.
 
