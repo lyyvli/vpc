@@ -51,7 +51,7 @@ The following table describes the fields of a flow log record.
 
 The following figure shows the procedure for configuring a flow log.
 
-![Flow log configuration process](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082282/156635110853062_en-US.png)
+![Flow log configuration process](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082282/156739277053062_en-US.png)
 
 1.  Activate Log Service.
 
