@@ -51,7 +51,7 @@ The following table describes the fields of a flow log record.
 
 The following figure shows the procedure for configuring a flow log.
 
-![Flow log configuration process](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082282/156739277053062_en-US.png)
+![Flow log configuration process](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082282/156739286353062_en-US.png)
 
 1.  Activate Log Service.
 
@@ -67,7 +67,7 @@ The following figure shows the procedure for configuring a flow log.
 
 4.  Create a Logstore.
 
-    A Logstore is a collection of resources created in a Project. All data in a Logstore is from the same data source. After you create a Project, you must create a Logstore. For more information, see [Create a Logstore.](../../../../reseller.en-US/Preparation/Manage a Logstore.md#section_v52_2jx_ndb).
+    A Logstore is a collection of resources created in a Project. All data in a Logstore is from the same data source. After you create a Project, you must create a Logstore. For more information, see [Create a Logstore](../../../../reseller.en-US/Preparation/Manage a Logstore.md#section_v52_2jx_ndb).
 
 5.  Create a capture resource.
 
