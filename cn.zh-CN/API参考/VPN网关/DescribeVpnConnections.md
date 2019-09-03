@@ -12,9 +12,7 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DescribeVpnConnections|要执行的操作。
-
- 取值： **DescribeVpnConnections**。
+|Action|String|是|DescribeVpnConnections|要执行的操作，取值： **DescribeVpnConnections**。
 
  |
 |RegionId|String|是|cn-hangzhou|IPsec连接所在的地域。
@@ -71,7 +69,7 @@
 |LocalId|String|116.xx.xx.64|本端ID，支持FQDN和IP格式，默认为当前选取的VPN网关IP地址。
 
  |
-|Psk|String|pgw6dy7dxxxxxxxx|预共享秘钥。
+|Psk|String|pgw6dy7dxxxxxxxx|预共享密钥。
 
  |
 |RemoteId|String|139.xx.xx.167|对端ID，支持FQDN和IP格式，默认为当前选取的用户网关IP地址。
@@ -121,7 +119,7 @@
 -   **ipsec\_sa\_established**表示第二阶段协商成功。
 
  |
-|EffectImmediately|Boolean|true|是否立即生效。
+|EffectImmediately|Boolean|true|是否立即生效：
 
  -   **是**：配置变更时触发重连。
 -   **否**：有流量时触发重连。重连有可能导致流量闪断。
@@ -257,5 +255,5 @@ https://vpc.aliyuncs.com/?Action=DescribeVpnConnections
 |403|Forbbiden.SubUser|User not authorized to operate on the specified resource as your account is created by another user.|您没有权限操作该资源，请您申请操作权限后再试。|
 |403|Forbidden|User not authorized to operate on the specified resource.|您没有权限操作指定资源，请提交工单咨询。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
