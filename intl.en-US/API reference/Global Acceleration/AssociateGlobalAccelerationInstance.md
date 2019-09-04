@@ -13,7 +13,7 @@ Note the following before you call this API action:
 
 To associate a shared-bandwidth Global Acceleration instance with a backend server instance, follow these steps:
 
-1. Add an EIP to the shared-bandwidth Global Acceleration instance. For more information, see [AddGlobalAccelerationInstanceIp](~~127807~~).
+1. Add an EIP to the shared-bandwidth Global Acceleration instance. For more information, see [AddGlobalAccelerationInstanceIp](~~86045~~).
 
 2. Associate the EIP with the backend server instance. For more information, see [AssociateEipAddress](~~120195~~). When you call AssociateEipAddress, you must specify the **InstanceRegionId** parameter.
 
@@ -25,10 +25,10 @@ To associate a shared-bandwidth Global Acceleration instance with a backend serv
 
 |Parameter|Type|Required?|Example value|Description|
 |---------|----|---------|-------------|-----------|
-|Action|String|Yes|AssociateGlobalAccelerationInstance|The name of this action. Value: **AssociateGlobalAccelerationInstance**.
+|Action|String|Yes|AssociateGlobalAccelerationInstance|The name of this action. Value: **AssociateGlobalAccelerationInstance**
 
  |
-|BackendServerId|String|Yes|i-saf23\*\*\*\*|The ID of the backend server instance.
+|BackendServerId|String|Yes|i-saf23\*\*\*\*|The ID of the backend service instance.
 
  |
 |BackendServerRegionId|String|Yes|cn-shanghai|The region to which the backend server instance belongs. This region must belong to the service area of the Global Acceleration instance.
@@ -40,7 +40,7 @@ To associate a shared-bandwidth Global Acceleration instance with a backend serv
 |RegionId|String|Yes|cn-hangzhou|The ID of the region to which the Global Acceleration instance belongs. To query the region ID, call [DescribeRegions](~~36063~~).
 
  |
-|BackendServerType|String|No|EcsInstance|The type of the backend server instance. Valid values:
+|BackendServerType|String|No|EcsInstance|Optional. The type of the backend server instance. Valid values:
 
  -   **EcsInstance** \(default\): ECS instance
 -   **SlbInstance**: SLB instance
@@ -90,8 +90,8 @@ Response example
 
 ## Errors { .section}
 
-|HTTP status code|Error code|Error message|Description|
-|----------------|----------|-------------|-----------|
+|HTTP status code|Error code|Error message |Description|
+|----------------|----------|--------------|-----------|
 |404|InvalidGlobalAccelerationInstanceId.NotFound|The specified GlobalAccelerationInstanceId is not found.|The specified Global Acceleration instance does not exist.|
 |404|InvalidBackendServerId.NotFound|The specified BackendServerId is not found.|The specified backend server instance does not exist.|
 |400|IncorrectGlobalAccelerationInstanceIdStatus|Current GlobalAccelerationInstance status does not support this operation.|The status of the specified Global Acceleration instance does not support this operation.|
