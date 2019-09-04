@@ -13,7 +13,7 @@
 
 共享型全球加速实例绑定后端服务器的操作如下：
 
-1. 将EIP加入到共享型全球加速实例。详细信息，请参见[AddGlobalAccelerationInstanceIp](~~127807~~)。
+1. 将EIP加入到共享型全球加速实例。详细信息，请参见[AddGlobalAccelerationInstanceIp](~~86045~~)。
 
 2. 将EIP绑定到后端服务器。详细信息，请参见[AssociateEipAddress](~~120195~~)，调用AssociateEipAddress接口时必须指定**InstanceRegionId**参数。
 

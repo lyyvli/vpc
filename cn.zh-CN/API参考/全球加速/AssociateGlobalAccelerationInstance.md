@@ -13,7 +13,7 @@
 
 共享型全球加速实例绑定后端服务器的操作如下：
 
-1. 将EIP加入到共享型全球加速实例。详细信息，请参见[AddGlobalAccelerationInstanceIp](~~127807~~)。
+1. 将EIP加入到共享型全球加速实例。详细信息，请参见[AddGlobalAccelerationInstanceIp](~~86045~~)。
 
 2. 将EIP绑定到后端服务器。详细信息，请参见[AssociateEipAddress](~~120195~~)，调用AssociateEipAddress接口时必须指定**InstanceRegionId**参数。
 
@@ -102,5 +102,5 @@ https://vpc.aliyuncs.com/?Action=AssociateGlobalAccelerationInstance
 |400|InvalidBackendServerType.NotFound|The specified BackendServerType is not supported.|指定的后端服务器类型不支持。|
 |400|InvalidParameter|The specified parameter is not valid.|该参数值不合法。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
