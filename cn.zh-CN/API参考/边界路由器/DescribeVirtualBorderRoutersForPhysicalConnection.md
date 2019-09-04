@@ -185,5 +185,5 @@ http(s)://[Endpoint]/?Action=DescribeVirtualBorderRoutersForPhysicalConnection
 |--------|---|----|--|
 |404|InvalidPhysicalConnectionId.NotFound|The specified PhysicalConnectionId does not belong to user.|该物理专线不属于您的账号。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
