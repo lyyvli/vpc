@@ -1,4 +1,4 @@
-# TerminatePhysicalConnection {#doc_api_951809 .reference}
+# TerminatePhysicalConnection {#doc_api_Vpc_TerminatePhysicalConnection .reference}
 
 在物理专线开通后调用TerminatePhysicalConnection接口终止物理专线接入。
 
@@ -34,7 +34,7 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -60,10 +60,11 @@ https://vpc.aliyuncs.com/?Action=TerminatePhysicalConnection
 `XML` 格式
 
 ``` {#xml_return_success_demo}
-<?xml version="1.0" encoding="UTF-8"?>
-{
-  "RequestId": "513E0A50-4F2D-4CBE-BF35-40559DF65D79"
-}
+<TerminatePhysicalConnectionResponse>
+  <RequestId>513E0A50-4F2D-4CBE-BF35-40559DF65D79"
+</RequestId>
+</TerminatePhysicalConnectionResponse>
+
 ```
 
 `JSON` 格式
@@ -81,5 +82,5 @@ https://vpc.aliyuncs.com/?Action=TerminatePhysicalConnection
 |404|InvalidPhysicalConnectionId.NotFound|The PhysicalConnectionId provided does not exist in our records.|该物理专线不存在。|
 |400|Forbidden.NotAllowedInState|The request does not allow in this state.|该状态无法执行请求。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
