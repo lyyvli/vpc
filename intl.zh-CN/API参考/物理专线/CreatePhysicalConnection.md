@@ -1,6 +1,6 @@
-# CreatePhysicalConnection {#doc_api_970360 .reference}
+# CreatePhysicalConnection {#doc_api_Vpc_CreatePhysicalConnection .reference}
 
-使用CreatePhysicalConnection接口申请物理专线接入。
+调用CreatePhysicalConnection接口申请物理专线接入。
 
 申请完成后，物理专线的状态为Initial，请联系运营商进行施工。
 
@@ -9,9 +9,9 @@
 -   申请物理专线时，处于**Enabled**状态之外的物理专线不得超过5条。
 -   若账号下存在欠费状态的物理专线，则不能再申请物理专线。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=CreatePhysicalConnection)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=CreatePhysicalConnection&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -72,7 +72,7 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -89,7 +89,7 @@
 
 ``` {#request_demo}
 
-https://vpc.aliyuncs.com/?Action=CreatePhysicalConnection
+http(s)://[Endpoint]/?Action=CreatePhysicalConnection
 &AccessPointId=AccessPointId=ap-cn-beijing-ft-A
 &ClientToken=dgfdg12344ff
 &LineOperator=CT
@@ -105,10 +105,9 @@ https://vpc.aliyuncs.com/?Action=CreatePhysicalConnection
 
 ``` {#xml_return_success_demo}
 <CreatePhysicalConnectionResponse>
-  <RequestId>8A6A5EC5-6F6C-4906-9689-56ACE58A13E0"</RequestId>
-  <PhysicalConnectionId>pc-*************</PhysicalConnectionId>
+      <RequestId>8A6A5EC5-6F6C-4906-9689-56ACE58A13E0"</RequestId>
+      <PhysicalConnectionId>pc-*************</PhysicalConnectionId>
 </CreatePhysicalConnectionResponse>
-
 ```
 
 `JSON` 格式
@@ -127,6 +126,7 @@ https://vpc.aliyuncs.com/?Action=CreatePhysicalConnection
 |400|InvalidAccessPointId.NotEnabled|Invalid access point status.|接入点状态不可用。|
 |400|InvalidType.Malformd|The Type provided was invalid.|参数Type的值不合法。|
 |400|InvalidPeerLocation.Malformd|The PeerLocation provided was invalid.|参数PeerLocation的值不合法。|
+|400|InvalidLineOperator.Malformd|The LineOperator provided was invalid.|参数LineOperator的值不合法。|
 |400|InvalidPortType.Malformd|The PortType provided was invalid.|该端口类型不合法。|
 |400|InvalidDescription.Malformed|The specifid ?Description? is not valid.|指定的资源描述格式不合法。长度为2-256个字符，不能以 http:// 和 https:// 开头。|
 |400|InvalidRedundantPhysicalConnectionId.NotFound|The RedundantPhysicalConnectionId does not found.|冗余物理专线不存在。|
@@ -138,5 +138,5 @@ https://vpc.aliyuncs.com/?Action=CreatePhysicalConnection
 |400|InvalidCircuitCode.Malformed|circuitCode is illegal.|该CircuitCode不合法。|
 |400|QuotaExceeded.freePconnPerAP|free physical connections count excceeded.|超过物理专线配额。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
