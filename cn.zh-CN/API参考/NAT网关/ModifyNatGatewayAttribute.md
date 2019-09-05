@@ -10,9 +10,7 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ModifyNatGatewayAttribute|要执行的操作。
-
- 取值： **ModifyNatGatewayAttribute**。
+|Action|String|是|ModifyNatGatewayAttribute|要执行的操作，取值： **ModifyNatGatewayAttribute**。
 
  |
 |NatGatewayId|String|是|ngw-xxoo123|NAT网关的ID。
@@ -23,10 +21,10 @@
  您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|Description|String|否|fortest|NAT网关的描述信息。 长度为 2-256个字符，必须以字母或中文开头，但不能以`http://` 或`https://`开头。
+|Description|String|否|fortest|NAT网关的描述信息。长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
-|Name|String|否|nat123|NAT网关的名称。 长度为 2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以`http://` 或``https://``开头。
+|Name|String|否|nat123|NAT网关的名称。长度为2~128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以`http://` 或`https://`开头。
 
  |
 
@@ -78,5 +76,5 @@ https://vpc.aliyuncs.com/?Action=ModifyNatGatewayAttribute
 |400|InvalidParameter.Name.Malformed|The specified Name is not valid.|该名称不合法，请您按照正确的格式书写名称。|
 |400|InvalidParameter.Description.Malformed|The specified Description is not valid.|该描述不合法。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
