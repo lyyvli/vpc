@@ -1,154 +1,225 @@
-# DescribeCommonBandwidthPackages {#reference_amt_w2p_rdb .reference}
+# DescribeCommonBandwidthPackages {#doc_api_Vpc_DescribeCommonBandwidthPackages .reference}
 
-Query Internet Shared Bandwidth instances in a region.
+Queries Internet Shared Bandwidth instances in a region.
 
-## Request parameters {#section_cch_pjg_mdb .section}
+## Debug {#api_explorer .section}
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-|Action|String |Yes| The action to perform. Valid value: 
+[Use OpenAPI Explorer to perform debug operations and generate SDK code examples.](https://api.aliyun.com/#product=Vpc&api=DescribeCommonBandwidthPackages&type=RPC&version=2016-04-28)
 
- DescribeCommonBandwidthPackages
+## Request parameters {#parameters .section}
 
- |
-|RegionId|String |Yes| The ID of the region where the Internet Shared Bandwidth instance is located.
+|Parameter|Type|Required?|Example value|Description|
+|---------|----|---------|-------------|-----------|
+|Action|String|Yes|DescribeCommonBandwidthPackages| The name of this action. Value:
 
- You can obtain the region ID by calling the DescribeRegions API.
-
- |
-|BandwidthPackageId|String |Yes| The ID of the Internet Shared Bandwidth instance.
+ **DescribeCommonBandwidthPackages**
 
  |
-|PageNumber|Integer|No| The number of pages to return. The default value is 1.
+|RegionId|String|Yes|cn-hangzhou| The ID of the region to which the Internet Shared Bandwidth instance belongs.
+
+ To query the region ID, call [DescribeRegions](~~36063~~).
 
  |
-|PageSize |Integer|No| The number of rows per page. The maximum value is 50 and the default value is 10.
+|BandwidthPackageId|String|No|cbwp-2ze2ic1xd2qeqk145pn4u| Optional. The ID of the Internet Shared Bandwidth instance.
 
  |
-
-## Response parameters {#section_hlq_4gp_rdb .section}
-
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
-|TotalCount|String|The number of queried entries.|
-|PageNumber|Integer|The current page number.|
-|PageSize|String|The number of rows per page.|
-|CommonBandwidthPackages|List|A list of Internet Shared Bandwidth instances.|
-
-|Name|Type|Description|
-|:---|:---|:----------|
-|BandwidthPackageId|String| The ID of the Internet Shared Bandwidth instance.
+|IncludeReservationData|Boolean|No|false| Optional. Indicates whether to return orders that have not taken effect. Default value: **false**
 
  |
-|Name|String| The name of the Internet Shared Bandwidth instance.
+|Name|String|No|test123| Optional. The name of the Internet Shared Bandwidth instance.
 
  |
-|Description|String| The description of the Internet Shared Bandwidth instance.
+|PageNumber|Integer|No|1| Optional. The page number. Default value: 1
 
  |
-|Bandwidth|Integer| The peak bandwidth of the Internet Shared Bandwidth instance.
+|PageSize|Integer|No|10| Optional. The number of entries per page in the case of a paged query result. Maximum value: 50. Default value: 10.
 
  |
-|InternetChargeType|String| The billing method of the Internet Shared Bandwidth instance.
-
- -   PayBy95: Pay by classic 95th percentile pricing.
-
--   PayByBandwidth: Pay by bandwidth.
-
-
- |
-|BusinessStatus |String| The business status of the Internet Shared Bandwidth instance.
-
- -   Normal: normal
-
--   FinancialLocked: Locked because the instance is overdue
-
+|ResourceGroupId|String|No|rg-acfmxazb4ph6aiy| Optional. The ID of the resource group.
 
  |
 
-|Name|Type|Description|
-|----|----|-----------|
-|IpAddress|String|The address of the EIP.|
-|AllocationId|String|The ID of the EIP instance.|
+## Response parameters {#resultMapping .section}
 
-## Examples {#section_dg4_y5r_rdb .section}
+|Parameter|Type|Example value|Description|
+|---------|----|-------------|-----------|
+|CommonBandwidthPackages| | | The details of the Internet Shared Bandwidth instance.
 
-**Request example**
+ |
+|BandwidthPackageId|String|cbwp-bp1t3sm1ffzmshdkixabo| The ID of the Internet Shared Bandwidth instance.
 
-``` {#createVPCpub}
+ |
+|Name|String|abc| The name of the Internet Shared Bandwidth instance.
+
+ |
+|Description|String|none| The description of the Internet Shared Bandwidth instance.
+
+ |
+|Bandwidth|String|20| The peak bandwidth of the Internet Shared Bandwidth instance.
+
+ |
+|InternetChargeType|String|PayByBandwidth| The billing method of the Internet Shared Bandwidth instance.
+
+ -   **PayBy95**: billed by using the 95th percentile method
+-   **PayByBandwidth**: billed according to the bandwidth consumed
+
+ |
+|Ratio|Integer|100| The minimum consumption ratio of the Internet Shared Bandwidth instance.
+
+ |
+|RegionId|String|cn-hangzhou| The ID of the region to which the Internet Shared Bandwidth instance belongs.
+
+ |
+|CreationTime|String|2017-06-28T06:39:20Z| The time when the Internet Shared Bandwidth instance was created.
+
+ |
+|InstanceChargeType|String|PostPaid| The billing method of the Internet Shared Bandwidth instance.
+
+ |
+|BusinessStatus|String|Available| The status of the Internet Shared Bandwidth instance.
+
+ |
+|PublicIpAddresses| | | The details of the public IP addresses added to the Internet Shared Bandwidth instance.
+
+ |
+|IpAddress|String|116.62.129.250| The public IP address.
+
+ |
+|AllocationId|String|eip-bp13e9i2qst4g6jzi35tc| The ID of the instance associated with the public IP address.
+
+ |
+|ExpiredTime|String|2019-01-15T03:08:37Z| The time when the Internet Shared Bandwidth instance expires.
+
+ |
+|HasReservationData|String|false| Indicates whether orders that have not taken effect exist.
+
+ -   false: No orders that have not taken effect exist.
+-   true: Orders that have not taken effect exist.
+
+ |
+|ISP|String|BGP| The service provider. Generally, BGP lines are used.
+
+ |
+|ReservationActiveTime|String|2018-08-30T16:00Z| The time when the renewal takes effect.
+
+ |
+|ReservationBandwidth|String|10| The bandwidth value after the configuration change.
+
+ |
+|ReservationInternetChargeType|String|PayByBandwidth| The billing method after the configuration change.
+
+ |
+|ReservationOrderType|String|RENEWCHANGE| The type of the configuration change.
+
+ -   RENEWCHANGE: Indicates a renewal.
+-   TEMP\_UPGRADE: Indicates a temporary upgrade.
+-   UPGRADE: Indicates a configuration upgrade.
+
+ |
+|ResourceGroupId|String|rg-acfmxazb4ph6aiy| The ID of the resource group.
+
+ |
+|Status|String|Available| The status of the Internet Shared Bandwidth instance.
+
+ |
+|TotalCount|Integer|1| The total number of entries.
+
+ |
+|PageNumber|Integer|1| The current page number.
+
+ |
+|PageSize|Integer|10| The number of entries per page.
+
+ |
+|RequestId|String|20E6FD1C-7321-4DAD-BDFD-EC8769E4AA33| The ID of the request.
+
+ |
+
+## Examples {#demo .section}
+
+Request example
+
+``` {#request_demo}
+
 https://vpc.aliyuncs.com/?Action=DescribeCommonBandwidthPackages
 &RegionId=cn-hangzhou
-&CommonParameters
-```
-
-**Response example**
-
-JSON format
+&<CommonParameters>
 
 ```
+
+Response example
+
+`XML` format
+
+``` {#xml_return_success_demo}
+<DescribeCommonBandwidthPackagesResponse>
+      <PageNumber>1</PageNumber>
+      <TotalCount>1</TotalCount>
+      <PageSize>10</PageSize>
+      <RequestId>20E6FD1C-7321-4DAD-BDFD-EC8769E4AA33</RequestId>
+      <CommonBandwidthPackages>
+            <CommonBandwidthPackage>
+                  <Description></Description>
+                  <BandwidthPackageId>cbwp-bp1t3sm1ffzmshdkixabo</BandwidthPackageId>
+                  <ZoneId>cn-hangzhou-d</ZoneId>
+                  <InternetChargeType>PayByBandwidth</InternetChargeType>
+                  <Name>abc</Name>
+                  <CreationTime>2017-06-28T06:39:20Z</CreationTime>
+                  <Status>Available</Status>
+                  <BandwidthPackageId>cbwp-bp1vevu8h3ieh5xkcdhdy</BandwidthPackageId>
+                  <BusinessStatus>Normal</BusinessStatus>
+                  <RegionId>cn-hangzhou</RegionId>
+                  <Ratio>100</Ratio>
+                  <InstanceChargeType>PostPaid</InstanceChargeType>
+                  <PublicIpAddresses>
+                        <PublicIpAddresse>
+                              <IpAddress>116.62.129.250</IpAddress>
+                              <AllocationId>eip-bp13e9i2qst4g6jzi35tc</AllocationId>
+                        </PublicIpAddresse>
+                  </PublicIpAddresses>
+                  <Bandwidth>20</Bandwidth>
+            </CommonBandwidthPackage>
+      </CommonBandwidthPackages>
+</DescribeCommonBandwidthPackagesResponse>
+```
+
+`JSON` format
+
+``` {#json_return_success_demo}
 {
-    "DescribeCommonBandwidthPackagesResponse": {
-        "PageNumber": 1, 
-        "TotalCount": "1", 
-        "PageSize": 10, 
-        "RequestId": "20E6FD1C-7321-4DAD-BDFD-EC8769E4AA33", 
-        "CommonBandwidthPackages": {
-            "CommonBandwidthPackage": {
-                "ZoneId": "cn-hangzhou-d", 
-                "InternetChargeType": "PayByBandwidth", 
-                "Name": "abc", 
-                "CreationTime": "2017-06-28T06:39:20Z", 
-                "Status": "Available", 
-                "BandwidthPackageId": "cbwp-bp1vevu8h3ieh5xkcdhdy", 
-                "BusinessStatus": "Normal", 
-                "RegionId": "cn-hangzhou", 
-                "Ratio": "100", 
-                "InstanceChargeType": "PostPaid", 
-                "PublicIpAddresses": {
-                    "PublicIpAddresse": [
-                        "IpAddress": "116.62.129.250", 
-                        "AllocationId": "eip-bp13e9i2qst4g6jzi35tc"
-                    }
-                }, 
-                "Bandwidth": "20"
-            }
-        }
-    }
+	"DescribeCommonBandwidthPackagesResponse":{
+		"PageNumber":"1",
+		"TotalCount":"1",
+		"PageSize":"10",
+		"RequestId":"20E6FD1C-7321-4DAD-BDFD-EC8769E4AA33",
+		"CommonBandwidthPackages":{
+			"CommonBandwidthPackage":{
+				"CreationTime":"2017-06-28T06:39:20Z",
+				"Name":"abc",
+				"Status":"Available",
+				"BandwidthPackageId":"cbwp-bp1vevu8h3ieh5xkcdhdy",
+				"BusinessStatus":"Normal",
+				"Ratio":"100",
+				"RegionId":"cn-hangzhou",
+				"ZoneId":"cn-hangzhou-d",
+				"InstanceChargeType":"PostPaid",
+				"InternetChargeType":"PayByBandwidth",
+				"PublicIpAddresses":{
+					"PublicIpAddresse":{
+						"IpAddress":"116.62.129.250",
+						"AllocationId":"eip-bp13e9i2qst4g6jzi35tc"
+					}
+				},
+				"Bandwidth":"20"
+			}
+		}
+	}
 }
 ```
 
-XML format
+## Errors {#section_1ri_wnc_nzv .section}
 
-```
-<? xml version="1.0" encoding="UTF-8" ? >
-<DescribeCommonBandwidthPackagesResponse>
-    <PageNumber>1</PageNumber>
-    <TotalCount>1</TotalCount>
-    <PageSize>10</PageSize>
-    <RequestId>20E6FD1C-7321-4DAD-BDFD-EC8769E4AA33</RequestId>
-    <CommonBandwidthPackages>
-        <CommonBandwidthPackage>
-            <Description/>
-            <ZoneId>cn-hangzhou-d</ZoneId>
-            <InternetChargeType>PayByBandwidth</InternetChargeType>
-            <Name>abc</Name>
-            <CreationTime>2017-06-28T06:39:20Z</CreationTime>
-            <Status>Available</Status>
-            <BandwidthPackageId>cbwp-bp1vevu8h3ieh5xkcdhdy</BandwidthPackageId>
-            <BusinessStatus>Normal</BusinessStatus>
-            <RegionId>cn-hangzhou</RegionId>
-            <Ratio>100</Ratio>
-            <InstanceChargeType>PostPaid</InstanceChargeType>
-            <PublicIpAddresses>
-                <PublicIpAddresse>
-                    <IpAddress>116.62.129.250</IpAddress>
-                    <AllocationId>eip-bp13e9i2qst4g6jzi35tc</AllocationId>
-                </PublicIpAddresse>
-            </PublicIpAddresses>
-            <Bandwidth>20</Bandwidth>
-        </CommonBandwidthPackage>
-    </CommonBandwidthPackages>
-</DescribeCommonBandwidthPackagesResponse>
-```
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
+|404|InvalidRegionId.NotFound|The specified RegionId does not exist in our records.|The specified region ID does not exist.|
 
