@@ -2,9 +2,9 @@
 
 调用DescribeEipMonitorData接口查看EIP的监控信息。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Vpc&api=DescribeEipMonitorData)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Vpc&api=DescribeEipMonitorData&type=RPC&version=2016-04-28)
 
 ## 请求参数 {#parameters .section}
 
@@ -36,29 +36,29 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |EipMonitorDatas| | |EIP监控数据的详细信息。
 
  |
-|└EipBandwidth|Integer|10|带宽值，该值等于EipFlow/60，单位为Bps。
+|EipBandwidth|Integer|10|带宽值，该值等于EipFlow/60，单位为Bps。
 
  |
-|└EipFlow|Integer|675|流入和流出的带宽总和。
+|EipFlow|Integer|675|流入和流出的带宽总和。
 
  |
-|└EipPackets|Integer|3434|包数量。
+|EipPackets|Integer|3434|包数量。
 
  |
-|└EipRX|Integer|122|流入的带宽。单位为Byte。
+|EipRX|Integer|122|流入的带宽。单位为Byte。
 
  |
-|└EipTX|Integer|343|流出的带宽。单位为Byte。
+|EipTX|Integer|343|流出的带宽。单位为Byte。
 
  |
-|└TimeStamp|String|2010-01-21T09:50:23Z|查询监控信息的时间戳。ISO8601格式，如2018-12-20T03:14:00Z。
+|TimeStamp|String|2010-01-21T09:50:23Z|查询监控信息的时间戳。ISO8601格式，如2018-12-20T03:14:00Z。
 
  |
 |RequestId|String|C8B26B44-0189-443E-9816-D951F59623A9|请求ID。
@@ -85,27 +85,26 @@ https://vpc.aliyuncs.com/?Action=DescribeEipMonitorData
 
 ``` {#xml_return_success_demo}
 <DescribeEipMonitorData>
-  <RequestId>B7D72D42-8A6C-4764-963B-5F7C049FA769</RequestId>
-  <EipMonitorDatas>
-    <EipMonitorData>
-      <TimeStamp>2019-05-29T03:39:00Z</TimeStamp>
-      <EipFlow>32666910</EipFlow>
-      <EipTX>140370</EipTX>
-      <EipPackets>23700</EipPackets>
-      <EipRX>32526540</EipRX>
-      <EipBandwidth>544448</EipBandwidth>
-    </EipMonitorData>
-    <EipMonitorData>
-      <TimeStamp>2019-05-29T03:40:00Z</TimeStamp>
-      <EipFlow>43020</EipFlow>
-      <EipTX>17730</EipTX>
-      <EipPackets>120</EipPackets>
-      <EipRX>25290</EipRX>
-      <EipBandwidth>717</EipBandwidth>
-    </EipMonitorData>
-  </EipMonitorDatas>
+	  <RequestId>B7D72D42-8A6C-4764-963B-5F7C049FA769</RequestId>
+	  <EipMonitorDatas>
+		    <EipMonitorData>
+			      <TimeStamp>2019-05-29T03:39:00Z</TimeStamp>
+			      <EipFlow>32666910</EipFlow>
+			      <EipTX>140370</EipTX>
+			      <EipPackets>23700</EipPackets>
+			      <EipRX>32526540</EipRX>
+			      <EipBandwidth>544448</EipBandwidth>
+		    </EipMonitorData>
+		    <EipMonitorData>
+			      <TimeStamp>2019-05-29T03:40:00Z</TimeStamp>
+			      <EipFlow>43020</EipFlow>
+			      <EipTX>17730</EipTX>
+			      <EipPackets>120</EipPackets>
+			      <EipRX>25290</EipRX>
+			      <EipBandwidth>717</EipBandwidth>
+		    </EipMonitorData>
+	  </EipMonitorDatas>
 </DescribeEipMonitorData>
-
 ```
 
 `JSON` 格式
@@ -149,5 +148,5 @@ https://vpc.aliyuncs.com/?Action=DescribeEipMonitorData
 |400|OperationDenied.TooManyDataQueried|Specified operation is denied as too many data to return.|一次查询返回的数据量过多。|
 |404|Forbidden.RegionNotFound|Specified region is not found during access authentication.|指定 Region 不存在，请您检查该 Region 是否正确。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/Vpc)
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
