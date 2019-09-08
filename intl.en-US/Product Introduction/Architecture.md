@@ -1,22 +1,22 @@
 # Architecture {#concept_ddt_l3z_ndb .concept}
 
-Based on mainstream tunneling technologies,  VPCs isolate virtual networks. Each VPC has a unique tunnel ID, and a tunnel ID corresponds to only one VPC. 
+Based on the tunneling technique, VPCs isolate virtual networks. Each VPC has a unique tunnel ID, and each tunnel ID corresponds to only one VPC.
 
 ## Background information {#section_b23_p3z_ndb .section}
 
-With the continuous development of cloud computing, virtual network requirements are getting higher and higher, such as scalability, security, reliability, privacy, and higher requirements of connection performance. This gives a rise to a variety of network virtualization technologies.
+With the development of cloud computing, a variety of network virtualization techniques have been developed to meet the increasing demands for virtual networks with higher scalability, security, reliability, privacy, and connectivity.
 
-The earlier solutions combined the virtual machine's network with the physical network to form a flat network architecture, such as the large layer-2 network.  With the increase of virtual network scalability, problems are getting more serious for the earlier solutions. These problems include ARP spoofing, broadcast storms, host scanning, and more.  Various network isolation technologies emerged to resolve these problems by completely isolating the physical networks from the virtual networks.  One technology isolates users with VLAN, but VLAN only supports up to 4096 nodes. It cannot support the huge amount of users in the cloud.
+Earlier solutions combined the virtual network with the physical network to form a flat network, for example, the large layer-2 network. However, with the increase of virtual network scale, problems such as ARP spoofing, broadcast storms, and host scanning are becoming more serious. To resolve these problems, various network isolation techniques are developed to completely isolate the physical network from the virtual network. One of these techniques can isolate users with a VLAN. However, a VLAN only supports up to 4,096 nodes, which are insufficient for the large number of users in the public cloud.
 
-## VPC theory {#section_gtq_q3z_ndb .section}
+## Principles {#section_gtq_q3z_ndb .section}
 
-Based on mainstream tunneling technologies,  VPCs isolate virtual networks. Each VPC has a unique tunnel ID, and a tunnel ID corresponds to only one VPC.  A tunnel encapsulation carrying a unique tunnel ID is added to each data packet transmitted between the ECS instances within a VPC.  Then, the data packet is transmitted over the physical network.  Because the tunnel IDs are different for ECS instances in different VPCs and the ECS instances are located on two different routing planes, the ECS instances from different VPCs cannot communicate with each other and are isolated by nature. 
+Based on the tunneling technique, VPCs isolate virtual networks. Each VPC has a unique tunnel ID, and each tunnel ID corresponds to only one VPC. A tunnel encapsulation carrying a unique tunnel ID is added to each data packet transmitted over the physical network between ECS instances in a VPC. In different VPCs, ECS instances with different tunnel IDs are located on two different routing planes. Therefore, these ECS instances cannot communicate with each other.
 
-With the tunneling technology, Alibaba Cloud has developed VSwitch, Software Defined Network \(SDN\) and hardware gateway and thus created VPC.
+Based on the tunneling and Software Defined Network \(SDN\) techniques, Alibaba Cloud has developed VPCs that are integrated with gateways and VSwitches.
 
 ## Logical architecture {#section_jz5_r3z_ndb .section}
 
-As shown in the following figure, the VPC architecture contains three main components: VSwitches, gateway, and controller. VSwitches and gateways form the key data path. Controllers use the self-developed protocol to forward the forwarding table to the gateway and VSwitches, completing the key configuration path.  In the overall architecture, the configuration path and data path are separated from each other. VSwitches are distributed nodes, the gateway and controller are deployed in clusters, and all links have redundant disaster recovery. This improves the overall availability of the VPC. 
+As shown in the following figure, a VPC consists of a gateway, a controller, and one or more VSwitches. The VSwitches and gateway form a key data path. By using a protocol developed by Alibaba Cloud, the controller distributes the forwarding table to the gateway and VSwitches to provide a key configuration path. In the overall architecture, the configuration path and data path are separated from each other. The VSwitches are distributed nodes, the gateway and controller are deployed in clusters, and all links are equipped with disaster recovery. These features improve the availability of the VPC.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2428/15434931665013_en-US.png)
+ ![Logical architecture](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2428/15679427345013_en-US.png)
 
