@@ -1,91 +1,85 @@
-# ModifyEipAddressAttribute {#reference_i4w_xmt_ndb .reference}
+# ModifyEipAddressAttribute {#doc_api_Vpc_ModifyEipAddressAttribute .reference}
 
-Modifies the name, description, and peak bandwidth of an EIP.
+Modifies the name, description, and peak bandwidth of an Elastic IP Address \(EIP\).
 
-## Debug {#apiExplorer .section}
+## Debug {#api_explorer .section}
 
-By using [API Explorer](https://api.aliyun.com/#product=Vpc&api=ModifyEipAddressAttribute), you can easily debug APIs, automatically generate SDK example codes, and quickly search for APIs.
+[Use OpenAPI Explorer to perform debug operations and generate SDK code examples.](https://api.aliyun.com/#product=Vpc&api=ModifyEipAddressAttribute&type=RPC&version=2016-04-28)
 
-## Request parameters {#section_cch_pjg_mdb .section}
+## Request parameters {#parameters .section}
 
 |Parameter|Type|Required?|Example value|Description|
-|:--------|:---|:--------|-------------|:----------|
-|Action|String|Yes|ModifyEipAddressAttribute| The value of this action. Value:
+|---------|----|---------|-------------|-----------|
+|Action|String|Yes|ModifyEipAddressAttribute| The name of this action.
 
- ModifyEipAddressAttribute
-
- |
-|AllocationId|String|Yes|eip-2zeerraiwb7uj6i0d0fo3| The ID of the EIP.
+ Value: **ModifyEipAddressAttribute**
 
  |
-|RegionId|String|Yes|cn-hangzhou| The ID of the region where the VPC that the route table belongs to is located.
+|AllocationId|String|Yes|eip-2zeerraiwb7uj6i0d0fo3| The instance ID of the EIP.
 
  |
-|Bandwidth|String|No|100| The peak bandwidth of the EIP. Unit: Mbps.
+|RegionId|String|Yes|cn-hangzhou| The region ID of the VPC to which the route table belongs.
 
  |
-|Description|String|No|Description| The description of the EIP.
-
- The description must be 2 to 256 characters in length. It must start with a letter but cannot start with `http://` or `https://`.
+|Bandwidth|String|No|100| Optional. The peak bandwidth of the EIP. Unit: Mbit/s
 
  |
-|Name|String|No|Test123| The name of the EIP.
+|Description|String|No|Description| Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with `http://` or `https://`.
 
- The name must be 2 to 128 characters in length and can contain letters, numbers, periods \(.\), underscores \(\_\), or hyphens \(-\). The name must start with a letter. It cannot start with `http://` or `https://`.
+ |
+|Name|String|No|Test123| Optional. The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods \(.\), underscores \(\_\), and hyphens \(-\). It cannot start with `http://` or `https://`.
 
  |
 
-## Response parameters {#section_ugs_f1g_cz .section}
+## Response parameters {#resultMapping .section}
 
 |Parameter|Type|Example value|Description|
-|:--------|:---|-------------|:----------|
-|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF|The ID of the request.|
+|---------|----|-------------|-----------|
+|RequestId|String|4EC47282-1B74-4534-BD0E-403F3EE64CAF| The ID of the request.
 
-## Examples {#section_ix5_h1g_cz .section}
+ |
 
-**Request example**
+## Examples {#demo .section}
 
-``` {#createVPCpub}
+Request example
 
-    https://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
-    &AllocationId=eip-25877c70xxxxxxxx
-    &Name=eip1
-    &<CommonParameters>
-   
+``` {#request_demo}
+
+https://vpc.aliyuncs.com/?Action=ModifyEipAddressAttribute
+&AllocationId=eip-25877c70xxxxxxxx
+&Name=eip1
+&<CommonParameters>
+
 ```
 
- **Response example** 
+Response example
 
--   XML format
+`XML` format
 
-    ```
-    <ModifyEipAddressAttributeResponse>
-          <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
-          </ModifyEipAddressAttributeResponse>
-         
-    ```
+``` {#xml_return_success_demo}
+<ModifyEipAddressAttributeResponse>
+      <RequestId>0ED8D006-F706-4D23-88ED-E11ED28DCAC0</RequestId>
+</ModifyEipAddressAttributeResponse>
+```
 
--   JSON format
+`JSON` format
 
-    ```
-    {
-          "RequestId":"0ED8D006-F706-4D23-88ED-E11ED28DCAC0"
-          }
-    ```
+``` {#json_return_success_demo}
+{
+	"RequestId":"0ED8D006-F706-4D23-88ED-E11ED28DCAC0"
+}
+```
 
-
-## Error codes {#section_k5n_hqk_5gb .section}
+## Errors {#section_ksd_zi4_1g9 .section}
 
 |HTTP status code|Error code|Error message|Description|
 |----------------|----------|-------------|-----------|
-|400|InsufficientBalance.Eip|Your account does not have enough balance.|Your account does not have a sufficient balance. Recharge your account first.|
+|400|InsufficientBalance.Eip|Your account does not have enough balance.|Your account balance is insufficient.|
 |404|InvalidAllocationId.NotFound|Specified allocation ID is not found|The specified public IP address does not exist.|
-|400|InvalidParameter|Specified value of "Bandwidth" is not supported.|The specified bandwidth value is invalid.|
-|500|InternalError|The request processing has failed due to some unknown error.|An error occurred while the request was being processed.|
-|400|IncorrectEipStatus|Current elastic IP status does not support this operation.|The current status of the specified EIP address does not support this operation.|
+|400|InvalidParameter|Specified value of "Bandwidth" is not supported.|The specified bandwidth is invalid.|
+|500|InternalError|The request processing has failed due to some unknown error.|The request failed to be processed due to unknown errors.|
+|400|IncorrectEipStatus|Current elastic IP status does not support this operation.|The status of the specified EIP does not permit this operation.|
 |404|InvalidAllocationId.NotFound|Specified allocation ID is not found..|The specified public IP address does not exist.|
 |400|InvalidParameter|The parameter is invalid.|The specified parameter value is invalid.|
 |404|Forbidden.RegionNotFound|Specified region is not found during access authentication.|The specified region does not exist.|
-
-[See common error codes](https://error-center.aliyun.com/status/product/Vpc)
 
