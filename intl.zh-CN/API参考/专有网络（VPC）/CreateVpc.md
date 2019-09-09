@@ -46,7 +46,7 @@
 |Ipv6CidrBlock|String|否|2408:4004:0:6axx::/56|VPC的IPv6网段。
 
  |
-|ResourceGroupId|String|否|rg-acfmxazb4ph6aiy\*\*\*\*|资源组ID。关于资源组的更多信息，请参见[什么是资源组](~~94475~~)。
+|ResourceGroupId|String|否|rg-acfmxazb4ph6aiy\*\*\*\*|资源组ID。
 
  |
 |UserCidr|String|否|189.16.0.0/12|用户侧网络的网段，如需定义多个网段请使用半角逗号隔开，最多支持3个网段。

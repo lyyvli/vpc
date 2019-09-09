@@ -46,7 +46,7 @@ Creates a VPC.
 |Ipv6CidrBlock|String|No|2408:4004:0:6axx::/56| Optional. The IPv6 CIDR block of the VPC.
 
  |
-|ResourceGroupId|String|No|rg-acfmxazb4ph6aiy\*\*\*\*| Optional. The ID of the resource group. For more information about resource groups, see [What is a resource group?](~~94475~~)
+|ResourceGroupId|String|No|rg-acfmxazb4ph6aiy\*\*\*\*| Optional. The ID of the resource group.
 
  |
 |UserCidr|String|No|189.16.0.0/12| Optional. The customer-side CIDR block. Separate multiple CIDR blocks by using commas \(,\). Up to three CIDR blocks are supported.
