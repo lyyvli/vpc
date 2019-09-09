@@ -84,5 +84,5 @@ http(s)://[Endpoint]/?Action=UnassociatePhysicalConnectionFromVirtualBorderRoute
 |400|InvalidStatus.NotAllowed|Invalid virtual border router status.|当前边界路由器的状态不支持该操作。|
 |400|PHYSICAL\_NOT\_ALLOW\_ASSOCIATE\_VBR|The specified operation not allow.|无法执行该操作，物理专线有关联的边界路由器。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
