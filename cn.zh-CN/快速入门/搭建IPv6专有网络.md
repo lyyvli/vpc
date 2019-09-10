@@ -11,7 +11,7 @@
 1.  登录[专有网络管理控制台](https://vpcnext.console.aliyun.com)。
 2.  选择专有网络的地域。 专有网络的地域和要部署的云资源的地域必须相同，本操作选择**华北5（呼和浩特）**。
 
-    **说明：** 目前，仅华北5（呼和浩特）地域支持开通IPv6网段。
+    **说明：** 目前，仅华北5（呼和浩特）、华南1（深圳）、华北2（北京）地域支持开通IPv6网段。
 
 3.  在专有网络页面，单击**创建专有网络**。
 4.  在创建专有网络页面，根据以下信息配置专有网络和交换机，然后单击**确定**。 
@@ -108,7 +108,7 @@
 5.  在左侧导航栏，单击**IPv6公网带宽**。
 6.  在IPv6公网带宽页面，找到目标IPv6地址，单击**操作**列下的**开通公网带宽**。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/73838/156793026033776_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/73838/156807960033776_zh-CN.png)
 
 7.  选择计费类型和带宽峰值，然后单击**立即购买**完成支付。 公网带宽支持按流量计费和按带宽计费。详细信息，请参见[计费说明](../cn.zh-CN/产品定价/计费说明.md#)。
 
@@ -122,5 +122,5 @@ IPv4和IPv6通信彼此独立，如果当前的安全组规则不能满足业务
 
 登录ECS实例，ping一个IPv6服务测试通信是否正常。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/156793026154447_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80011/156807960054447_zh-CN.png)
 
