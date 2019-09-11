@@ -10,28 +10,28 @@ Use [OpenAPI Explorer](https://api.aliyun.com/#product=Vpc&api=ModifyVpcAttribut
 
 |Parameter|Type|Required?|Example value|Description|
 |---------|----|---------|-------------|-----------|
-|Action|String|Required|ModifyVpcAttribute|The name of this action. Value: **ModifyVpcAttribute**.
+|Action|String|Required|ModifyVpcAttribute| The name of this action. Value: **ModifyVpcAttribute**.
 
  |
-|RegionId|String|Yes|cn-hangzhou|The region to which the VPC belongs.
+|RegionId|String|Yes|cn-hangzhou| The region to which the VPC belongs.
 
  |
-|VpcId|String|Yes|vpc-bp1qtbach57ywecfxxxxxx|The ID of the VPC.
+|VpcId|String|Yes|vpc-bp1qtbach57ywecfxxxxxx| The ID of the VPC.
 
  |
-|CidrBlock|String|No|192.168.0.0/24|The CIDR block of the VPC.
+|CidrBlock|String|No|192.168.0.0/24| The CIDR block of the VPC.
 
  |
-|Description|String|No|This is VPC1.|The description of the VPC. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with `http://` or `https://`.
+|Description|String|No|This is VPC1.| The description of the VPC. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with `http://` or `https://`.
 
  |
-|EnableIPv6|Boolean|No|true|Indicates whether to enable IPv6 CIDR blocks. Valid values:
+|EnableIPv6|Boolean|No|true| Indicates whether to enable IPv6 CIDR blocks. Valid values:
 
  -   **true**: Enable.
 -   **false**: Do not enable.
 
  |
-|VpcName|String|No|Vpc-1|The name of the VPC. The instance name must be 2 to 128 characters in length and can contain letters, numbers, periods \(.\), underscores \(\_\), and hyphens \(-\). The name must start with a letter. It cannot start with `http://` or `https://`.
+|VpcName|String|No|Vpc-1| The name of the VPC. The instance name must be 2 to 128 characters in length and can contain letters, numbers, periods \(.\), underscores \(\_\), and hyphens \(-\). The name must start with a letter. It cannot start with `http://` or `https://`.
 
  |
 
@@ -39,7 +39,7 @@ Use [OpenAPI Explorer](https://api.aliyun.com/#product=Vpc&api=ModifyVpcAttribut
 
 |Parameter|Type|Example value|Description|
 |---------|----|-------------|-----------|
-|RequestId|String|0ED8D006-F706-4D23-88ED-E11ED28DCAC0|The ID of the request.
+|RequestId|String|0ED8D006-F706-4D23-88ED-E11ED28DCAC0| The ID of the request.
 
  |
 
@@ -75,17 +75,17 @@ Response example
 }
 ```
 
-## Error codes { .section}
+## Error codes {#section_psm_hyw_ltn .section}
 
-|HTTP status code|Error code|Error message |Description|
-|----------------|----------|--------------|-----------|
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
 |404|InvalidVpcId.NotFound|Specified VPC does not exist.|The specified VPC does not exist.|
 |400|InvalidVpcName.Malformed|Specified VPC name is not valid.|The name format of the specified VPC is invalid.|
 |400|InvalidVpcDiscription.Malformed|Specified VPC description is not valid.|The format of the specified VPC description is invalid.|
 |400|InvalidParameter|Specified UserCidr invalid format.|The format of the specified UserCidr is invalid.|
 |400|InvalidParameter|Specified UserCidr Subnet mask is not valid.|The specified subnet mask for UserCidr is invalid.|
-|400|InvalidUserCidr.Quota|Specified UserCidr number is greater than 3.|The number of UserCirds has reached the quota.|
-|400|InvalidUserCidr.Malformed|Specified UserCidr overlapping in of 100.64.0.0/10.|The specified UserCird overlaps with 100.64.0.0/10.|
+|400|InvalidUserCidr.Quota|Specified UserCidr number is greater than 3.|The number of UserCidrs has reached the quota.|
+|400|InvalidUserCidr.Malformed|Specified UserCidr overlapping in of 100.64.0.0/10.|The specified UserCidr overlaps with 100.64.0.0/10.|
 |400|IncorrectVpcStatus|Current VPC status does not support this operation.|The current VPC status does not support this operation.|
 |400|InvalidCidrBlock.Malformed|Specified CIDR block is not valid.|The format of the specified CIDR block is invalid.|
 
