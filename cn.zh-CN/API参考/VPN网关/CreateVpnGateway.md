@@ -44,14 +44,14 @@
 -   **false**\(默认值\) ：不开启SSL-VPN功能。
 
  |
-|InstanceChargeType|String|否|PREPAY|VPN网关的计费类型，取值：
+|InstanceChargeType|String|否|PREPAY|VPN网关的计费方式，取值：
 
- **PREPAY**：预付费。
+ **POSTPAY**：按量计费。
 
  |
 |Name|String|否|MYVPN|VPN网关的名称，默认值为VPN网关的ID。
 
- 长度为2~100个英文或中文字符，必须以大小字母或中文开头，可包含数字，下划线（\_）和短横线（-），不能以`http://`或 `https://`开头。
+ 长度为2~100个英文或中文字符，必须以大小字母或中文开头，可包含数字、下划线（\_）和短横线（-），不能以`http://`或`https://`开头。
 
  |
 |Period|Integer|否|1|购买时长，取值：**1~9|12|24|36**。
@@ -124,5 +124,5 @@ http(s)://[Endpoint]/?Action=CreateVpnGateway
 |--------|---|----|--|
 |400|Resource.QuotaFull|The quota of resource is full|资源配额已达上限。|
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Vpc)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Vpc)查看更多错误码。
 
