@@ -62,8 +62,8 @@
  |
 |RouteEntryType|String|否|System|路由条目的类型，取值：
 
- -   **Custom**：系统路由。
--   **System**：自定义路由。
+ -   **Custom**：自定义路由。
+-   **System**：系统路由。
 
  |
 
@@ -98,7 +98,7 @@
 |NextHop| | |下一跳信息。
 
  |
-|Enabled|Integer|0|是否启用下一跳。
+|Enabled|Integer|0|路由是否可用。
 
  -   **0**：不可用。
 -   **1**：可用。
@@ -155,8 +155,8 @@
  |
 |Type|String|Custom|路由条目的类型。
 
- -   **Custom**：系统路由。
--   **System**：自定义路由。
+ -   **Custom**：自定义路由。
+-   **System**：系统路由。
 
  |
 
