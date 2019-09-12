@@ -34,7 +34,7 @@ For more information, see [Hybrid access solution for smooth migration from clas
 
 8.  Click **OK**. An **Original classic endpoint** is added in the console.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2461/1568251430842_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2461/1568251512842_en-US.png)
 
 
 ## Modify the retention period of the classic network endpoint through the console {#section_pnk_cx5_sdb .section}
@@ -61,20 +61,20 @@ During the hybrid access period, you can modify the retention period of the clas
 
 2.  Call the ModifyDBInstanceNetworkType API action to switch the network type.
 
-    **Request parameters**
+    **Request parameters** 
 
     |Parameter|Type|Required?|Description|
     |:--------|:---|:--------|:----------|
-    |Action|String|Yes|The name of this action. Valid value:ModifyDBInstanceNetworkType
+    |Action|String|Yes|The name of this action. Valid value: ModifyDBInstanceNetworkType
 
-|
+ |
     |DBInstanceId|String|Yes|The ID of the Instance.|
-    |InstanceNetworkType|String|Yes|The network type of the instance. Valid values:    -   VPC: VPC instance.
+    |InstanceNetworkType|String|Yes|The network type of the instance. Valid values:     -   VPC: VPC instance.
 
     -   Classic: classic-network instance
 
-|
-    |VPCId|String|否|The ID of the VPC.|
+ |
+    |VPCId|String|No|The ID of the VPC.|
     |VSwitchId|String|No|The ID of the VSwitch. This parameter must be specified if the VPC ID is specified.|
     |PrivateIpAddress|String|No|An IP address in the VSwitch CIDR block. If no IP address is entered, the system assigns a private IP address according to the VPC ID and the VSwitch ID.|
     |RetainClassic|String|No| Indicates whether to retain the classic network endpoint. Default: False.
@@ -88,7 +88,7 @@ During the hybrid access period, you can modify the retention period of the clas
 
  |
 
-    **Response parameters**
+    **Response parameters** 
 
     |Parameter|Type|Description|
     |:--------|:---|:----------|
@@ -103,7 +103,7 @@ During the hybrid access period, you can modify the retention period of the clas
 
     -   Set the ClassicExpiredDays parameter. After the classic network endpoint expires, it will be deleted.
 
-    ```
+    ``` {#codeblock_8uw_gkq_525}
     import com.aliyuncs.DefaultAcsClient;
      import com.aliyuncs.IAcsClient;
      import com.aliyuncs.exceptions.ClientException;
@@ -146,23 +146,23 @@ During the hybrid access period, you can modify the retention period of the clas
 
     |Parameter|Type|Required?|Description|
     |:--------|:---|:--------|:----------|
-    |Action|String|Yes|The name of this action. Valid value:DescribeDBInstanceNetInfo
+    |Action|String|Yes|The name of this action. Valid value: DescribeDBInstanceNetInfo
 
-|
+ |
     |DBInstanceId|String|Yes|The ID of the Instance.|
 
-    **Response parameters**
+    **Response parameters** 
 
     |Parameter|Type|Description|
     |:--------|:---|:----------|
     |DBInstanceNetInfos|List|The connection information of the instance.|
-    |InstanceNetworkType|String|The network type of the instance. Valid values:    -   VPC: VPC instance.
+    |InstanceNetworkType|String|The network type of the instance. Valid values:     -   VPC: VPC instance.
 
     -   Classic: classic-network instance.
 
-|
+ |
 
-    **DBInstanceNetInfo**
+    **DBInstanceNetInfo** 
 
     |Parameter|Type|Description|
     |:--------|:---|:----------|
@@ -178,9 +178,9 @@ During the hybrid access period, you can modify the retention period of the clas
     |VSwitchId|String|The ID of the VSwitch.|
     |ExpiredTime|String|The expiration time.|
 
-    **Example code**
+    **Example code** 
 
-    ```
+    ``` {#codeblock_cnn_h2k_gwb}
     import com.aliyuncs.IAcsClient;
      import com.aliyuncs.exceptions.ClientException;
      import com.aliyuncs.exceptions.ServerException;
@@ -223,18 +223,18 @@ During the hybrid access period, you can modify the retention period of the clas
 
 2.  Call the ModifyDBInstanceNetworkExpireTime API action to modify the retention period of the classic network endpoint.
 
-    **Request parameters**
+    **Request parameters** 
 
     |Parameter|Type|Required?|Description|
     |:--------|:---|:--------|:----------|
-    |Action|String|Yes|The name of this action. Valid value:ModifyDBInstanceNetworkExpireTime
+    |Action|String|Yes|The name of this action. Valid value: ModifyDBInstanceNetworkExpireTime
 
-.|
+ .|
     |DBInstanceId|String|Yes|The ID of the instance.|
     |ConnectionString|String|Yes|The classic network endpoint whose retention period you want to extend. Classic network endpoints are divided into the classic network endpoint of the current instance and the classic network endpoint with separate read and write.|
     |ClassicExpiredDays|Integer|Yes|The retention period of the classic network endpoint. Value range: 1 to 120 days.|
 
-    **Response parameters**
+    **Response parameters** 
 
     |Parameter|Type|Description|
     |:--------|:---|:----------|
@@ -242,7 +242,7 @@ During the hybrid access period, you can modify the retention period of the clas
 
     **Example code**
 
-    ```
+    ``` {#codeblock_agl_d45_5ty}
     public static void main(String[] args) {
          ModifyDBInstanceNetExpireTimeRequest request = new ModifyDBInstanceNetExpireTimeRequest();
          request.setClassicExpiredDays(3);
