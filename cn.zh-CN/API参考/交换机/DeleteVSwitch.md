@@ -2,9 +2,11 @@
 
 调用DeleteVSwitch接口删除交换机。
 
+## 接口说明 {#description .section}
+
 调用该接口删除交换机时，请注意：
 
--   删除交换机之前，需要先释放或移走VPC内的所有资源，包括交换机，云产品实例，路由器接口，HAVIP等。
+-   删除交换机之前，需要先释放或移走VPC内的所有资源，包括交换机、云产品实例、路由器接口、HAVIP等。
 -   只有处于Available状态的交换机可以被删除。
 -   交换机所在的VPC正在创建/删除交换机或路由条目时，无法删除交换机。
 
@@ -16,7 +18,10 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|DeleteVSwitch|要执行的操作。 取值： **DeleteVSwitch**。
+|Action|String|是|DeleteVSwitch|要执行的操作，取值： **DeleteVSwitch**。
+
+ |
+|RegionId|String|是|cn-hangzhou|要删除的交换机的地域ID。
 
  |
 |VSwitchId|String|是|vsw-asdfjlna\*\*\*\*|要删除的交换机的ID。
