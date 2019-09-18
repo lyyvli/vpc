@@ -2,7 +2,7 @@
 
 您可以通过控制台和API将云数据库RDS版的网络类型切换至专有网络，同时保留经典网络的访问地址。
 
-关于RSD平滑迁移网络的原理介绍，请参见[经典网络平滑迁移到VPC的混访方案](../../../../../intl.zh-CN/用户指南/数据库连接/经典网络平滑迁移到VPC的混访方案.md#)。
+关于RDS平滑迁移网络的原理介绍，请参见[经典网络平滑迁移到VPC的混访方案](../../../../intl.zh-CN/用户指南/数据库连接/经典网络平滑迁移到VPC的混访方案.md#)。
 
 **说明：** 
 
@@ -15,7 +15,7 @@
 
 -   实例的网络类型是经典网络。
 
--   实例所在可用区已有可用的VPC和交换机。详情参见[管理专有网络](../../../../../intl.zh-CN/用户指南/专有网络和子网/管理专有网络.md#)。
+-   实例所在可用区已有可用的VPC和交换机。详情参见[管理专有网络](../../../../intl.zh-CN/专有网络和交换机/管理专有网络/创建专有网络.md#)。
 
 
 ## 通过控制台切换网络类型 {#section_p5v_fw5_sdb .section}
@@ -34,7 +34,7 @@
 
 8.  单击**确定**，控制台会增加**保留的经典网络地址**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2461/1551419468842_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2461/1568769588842_zh-CN.png)
 
 
 ## 通过控制台修改经典网络内网地址使用期限 {#section_pnk_cx5_sdb .section}
@@ -61,19 +61,19 @@
 
 2.  调用ModifyDBInstanceNetworkType接口进行网络切换。
 
-    **请求参数说明**
+    **请求参数说明** 
 
     |名称|类型|是否必须|说明|
     |:-|:-|:---|:-|
-    |Action|String|是|系统规定参数，取值：ModifyDBInstanceNetworkType
+    |Action|String|是|系统规定参数，取值： ModifyDBInstanceNetworkType
 
-|
+ |
     |DBInstanceId|String|是|实例ID。|
-    |InstanceNetworkType|String|是|实例的网络类型：    -   VPC：VPC类型的实例。
+    |InstanceNetworkType|String|是|实例的网络类型：     -   VPC：VPC类型的实例。
 
     -   Classic：经典网络类型的实例。
 
-|
+ |
     |VPCId|String|否|专有网络的ID|
     |VSwitchId|String|否|交换机的ID，如果指定了VPC ID，则该参数也必须指定。|
     |PrivateIpAddress|String|否|输入交换机网段内的一个IP地址。如果不输入，系统根据VPC ID和交换机ID自动分配一个私网IP地址。|
@@ -88,7 +88,7 @@
 
  |
 
-    **返回参数说明**
+    **返回参数说明** 
 
     |参数|类型|说明|
     |:-|:-|:-|
@@ -103,7 +103,7 @@
 
     -   配置ClassicExpiredDays参数，设置保留时间。到期后将删除经典网络地址。
 
-    ```
+    ``` {#codeblock_2if_yid_oil}
     import com.aliyuncs.DefaultAcsClient;
      import com.aliyuncs.IAcsClient;
      import com.aliyuncs.exceptions.ClientException;
@@ -146,23 +146,23 @@
 
     |名称|类型|是否必须|说明|
     |:-|:-|:---|:-|
-    |Action|String|是|系统规定参数，取值：DescribeDBInstanceNetInfo
+    |Action|String|是|系统规定参数，取值： DescribeDBInstanceNetInfo
 
-|
+ |
     |DBInstanceId|String|是|实例ID。|
 
-    **返回参数**
+    **返回参数** 
 
     |参数|类型|说明|
     |:-|:-|:-|
     |DBInstanceNetInfos|List|实例的连接信息。|
-    |InstanceNetworkType|String|实例的网络类型：    -   VPC：VPC类型的实例。
+    |InstanceNetworkType|String|实例的网络类型：     -   VPC：VPC类型的实例。
 
     -   Classic：经典网络类型的实例。
 
-|
+ |
 
-    **DBInstanceNetInfo数据结构**
+    **DBInstanceNetInfo数据结构** 
 
     |参数|类型|说明|
     |:-|:-|:-|
@@ -178,9 +178,9 @@
     |VSwitchId|String|交换机ID。|
     |ExpiredTime|String|过期时间。|
 
-    **参考代码**
+    **参考代码** 
 
-    ```
+    ``` {#codeblock_t7f_52r_gql}
     import com.aliyuncs.IAcsClient;
      import com.aliyuncs.exceptions.ClientException;
      import com.aliyuncs.exceptions.ServerException;
@@ -223,18 +223,18 @@
 
 2.  调用ModifyDBInstanceNetworkExpireTime接口修改经典网络使用期限。
 
-    **请求参数说明**
+    **请求参数说明** 
 
     |名称|类型|是否必须|说明|
     |:-|:-|:---|:-|
-    |Action|String|是|系统规定参数，取值：ModifyDBInstanceNetworkExpireTime
+    |Action|String|是|系统规定参数，取值： ModifyDBInstanceNetworkExpireTime
 
-。|
+ 。|
     |DBInstanceId|String|是|实例ID。|
     |ConnectionString|String|是|要延期的经典网络连接串，经典网络字符串有两种：当前实例的经典网络字符串，读写分离的经典网络字符串。|
     |ClassicExpiredDays|Integer|是|经典网络字符串保留天数\[1-120\]。|
 
-    **返回参数**
+    **返回参数** 
 
     |参数|类型|说明|
     |:-|:-|:-|
@@ -242,7 +242,7 @@
 
     **参考代码**
 
-    ```
+    ``` {#codeblock_epy_6oa_jil}
     public static void main(String[] args) {
          ModifyDBInstanceNetExpireTimeRequest request = new ModifyDBInstanceNetExpireTimeRequest();
          request.setClassicExpiredDays(3);
