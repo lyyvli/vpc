@@ -8,7 +8,7 @@
 
 -   确认当前网络类型是否为经典网络。
 
--   确认在当前数据库实例可用区下是否有可用的VPC和交换机。详情参见[创建专有网络和交换机](../../../../../cn.zh-CN/用户指南/专有网络和子网/管理专有网络.md#section_ufw_rhv_rdb)。
+-   确认在当前数据库实例可用区下是否有可用的VPC和交换机。详情参见[../../../../dita-oss-bucket/SP\_22/DNVPC11839992/ZH-CN\_TP\_2435.md\#section\_ufw\_rhv\_rdb](../../../../intl.zh-CN/专有网络和交换机/管理专有网络/创建专有网络.md#section_ufw_rhv_rdb)。
 
 
 ## 通过控制台切换网络类型 {#section_p5v_fw5_sdb .section}
@@ -26,7 +26,7 @@
     3.  单击**确定**。
 6.  在实例信息页面，单击**刷新**查看专有网络和经典网的访问地址。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2462/1555309471843_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/2462/1568792728843_zh-CN.png)
 
 
 ## 通过控制台修改经典网络内网地址使用期限 {#section_pnk_cx5_sdb .section}
